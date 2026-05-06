@@ -159,6 +159,14 @@ SECTIONS
     . = ALIGN(32);
   } >AXISRAM
 
+  .logbuf (NOLOAD) :
+  {
+    . = ALIGN(32);
+    *(.logbuf)
+    *(.logbuf*)
+    . = ALIGN(32);
+  } >SRAM1
+
   /*
    * External QSPI flash — LVGL library code + rodata, plus any object tagged
    * __attribute__((section(".extflash"))).

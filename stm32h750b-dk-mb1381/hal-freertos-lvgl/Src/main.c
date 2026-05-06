@@ -14,6 +14,7 @@
 #include "lvgl_port.h"
 #include "ui.h"
 #include "qspi_init.h"
+#include "app_log.h"
 
 /* ---- Framebuffers in AXI SRAM (DMA-accessible, linker section) ------------*/
 __attribute__((section(".framebuffers"), aligned(32)))
@@ -40,24 +41,37 @@ void vApplicationMallocFailedHook(void)
 int main(void)
 {
     CPU_CACHE_Enable();
+    APP_LOGI("BOOT", "icache+dcache enabled");
 
     HAL_Init();
     SystemClock_Config();
+    AppLog_Init();
+    APP_LOGI("BOOT", "hal init + clock config done");
 
     /* Bring up QSPI flash in memory-mapped mode before anything in EXTFLASH */
+    APP_LOGI("QSPI", "init start");
     QSPI_MemoryMapped_Init();
+    APP_LOGI("QSPI", "init done");
 
     LED_Init();
     HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_PIN, GPIO_PIN_SET);   /* green on */
+    APP_LOGI("BOOT", "leds initialized, green on");
 
     /* Init LTDC with first framebuffer */
     LTDC_Init((uint32_t)lcd_fb[0]);
+    APP_LOGI("LTDC", "init done, fb0=0x%08lx", (unsigned long)(uint32_t)lcd_fb[0]);
 
     /* Init LVGL + start LVGL FreeRTOS task */
     lvgl_port_init();
+    APP_LOGI("LVGL", "port init done");
 
     /* Build the UI */
     ui_init();
+    APP_LOGI("UI", "ui init done");
+
+    /* Start logger worker task before scheduler */
+    AppLog_StartTask(2U, 1024U);
+    APP_LOGI("BOOT", "starting scheduler");
 
     /* Start scheduler — never returns */
     vTaskStartScheduler();
@@ -130,6 +144,7 @@ static void LED_Init(void)
 void Error_Handler(void)
 {
     /* Light red LED, halt */
+    AppLog_Panic("Error_Handler entered");
     HAL_GPIO_WritePin(LED2_GPIO_PORT, LED2_PIN, GPIO_PIN_SET);
     __disable_irq();
     while (1) {}

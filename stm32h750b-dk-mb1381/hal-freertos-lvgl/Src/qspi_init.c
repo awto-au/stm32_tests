@@ -19,6 +19,7 @@
 
 #include "qspi_init.h"
 #include "main.h"       /* Error_Handler() */
+#include "app_log.h"
 #include "stm32h7xx_hal.h"
 
 /* ---- MT25TL01G command set (Micron, SPI-NOR compatible) ------------------- */
@@ -276,6 +277,7 @@ void QSPI_MemoryMapped_Init(void)
     QSPI_CommandTypeDef      cmd  = {0};
     QSPI_MemoryMappedTypeDef mmap = {0};
 
+    APP_LOGI("QSPI", "configure mpu + gpio");
     MPU_ConfigQSPI();
     QSPI_GPIO_Init();
 
@@ -293,6 +295,7 @@ void QSPI_MemoryMapped_Init(void)
     if (HAL_QSPI_Init(&hqspi) != HAL_OK) {
         Error_Handler();
     }
+    APP_LOGI("QSPI", "hal qspi init done @100MHz");
 
     /* Software reset — bring flash to a known state */
     QSPI_SendCmd1(MT25_RESET_ENABLE_CMD);
@@ -300,14 +303,17 @@ void QSPI_MemoryMapped_Init(void)
     /* Note: removed HAL_Delay(1) — tRST ≥ 30 µs spec can be met by command processing */
 
     QSPI_WaitReady();
+    APP_LOGI("QSPI", "reset complete");
 
     /* Write-enable then enter 4-byte address mode (required for >16 MB) */
     QSPI_WriteEnable();
     QSPI_SendCmd1(MT25_ENTER_4BYTE_ADDR_CMD);
     QSPI_WaitReady();
+    APP_LOGI("QSPI", "4-byte mode enabled");
 
     /* Configure dummy cycles in flash's volatile register */
     QSPI_DummyCyclesCfg();
+    APP_LOGI("QSPI", "dummy cycles configured=%u", (unsigned)MT25_DUMMY_CYCLES);
 
     /* Enable memory-mapped mode: Quad-Output Fast Read (0x6B) -------------- */
     cmd.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
@@ -326,4 +332,5 @@ void QSPI_MemoryMapped_Init(void)
     if (HAL_QSPI_MemoryMapped(&hqspi, &cmd, &mmap) != HAL_OK) {
         Error_Handler();
     }
+    APP_LOGI("QSPI", "memory-mapped mode enabled @0x90000000");
 }

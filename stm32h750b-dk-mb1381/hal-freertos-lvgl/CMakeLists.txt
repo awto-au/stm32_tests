@@ -50,6 +50,8 @@ set(HAL_SOURCES
     ${HAL_DRV}/Src/stm32h7xx_hal_ltdc_ex.c
     ${HAL_DRV}/Src/stm32h7xx_hal_dsi.c
     ${HAL_DRV}/Src/stm32h7xx_hal_qspi.c
+    ${HAL_DRV}/Src/stm32h7xx_hal_uart.c
+    ${HAL_DRV}/Src/stm32h7xx_hal_uart_ex.c
 )
 
 # ---- FreeRTOS kernel sources ------------------------------------------------
@@ -67,6 +69,8 @@ set(RTOS_SOURCES
 # ---- Application sources ----------------------------------------------------
 set(APP_SOURCES
     Src/main.c
+    Src/app_log.c
+    Src/log_uart.c
     Src/freertos_static_alloc.c
     Src/stm32h7xx_it.c
     Src/stm32h7xx_hal_timebase_tim.c

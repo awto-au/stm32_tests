@@ -9,6 +9,7 @@
 #include "main.h"
 #include "lvgl_port.h"
 #include "lvgl.h"
+#include "app_log.h"
 
 /* LVGL task config */
 #define LVGL_TASK_STACK_WORDS  4096   /* 16 KB — fonts + rendering need headroom */
@@ -19,6 +20,7 @@ static TaskHandle_t lvgl_task_handle;
 static void lvgl_task(void *arg)
 {
     (void)arg;
+    APP_LOGI("LVGL", "task started");
     while (1) {
         uint32_t sleep_ms = lv_timer_handler();
         if (sleep_ms > 10) sleep_ms = 10;
@@ -29,6 +31,7 @@ static void lvgl_task(void *arg)
 void lvgl_port_init(void)
 {
     lv_init();
+    APP_LOGI("LVGL", "lv_init done");
 
     /* Register the LTDC display: direct double-buffer mode.
      * lcd_fb[0] = first framebuffer address (LTDC initially shows this one),
@@ -41,8 +44,12 @@ void lvgl_port_init(void)
     );
 
     lv_display_set_resolution(disp, LCD_WIDTH, LCD_HEIGHT);
+    APP_LOGI("LVGL", "display configured %ux%u", (unsigned)LCD_WIDTH, (unsigned)LCD_HEIGHT);
 
     /* Start LVGL task */
-    xTaskCreate(lvgl_task, "LVGL", LVGL_TASK_STACK_WORDS, NULL,
-                LVGL_TASK_PRIORITY, &lvgl_task_handle);
+    if (xTaskCreate(lvgl_task, "LVGL", LVGL_TASK_STACK_WORDS, NULL,
+                    LVGL_TASK_PRIORITY, &lvgl_task_handle) != pdPASS) {
+        APP_LOGE("LVGL", "task create failed");
+        Error_Handler();
+    }
 }
