@@ -24,6 +24,11 @@ uint8_t lcd_fb[2][FB_SIZE];
 static void SystemClock_Config(void);
 static void CPU_CACHE_Enable(void);
 static void LED_Init(void);
+static void PreLvgl_SmokeTest(uint16_t *fb);
+static void FB_Fill(uint16_t *fb, uint16_t color);
+static void FB_DrawPixel(uint16_t *fb, int x, int y, uint16_t color);
+static void FB_DrawLine(uint16_t *fb, int x0, int y0, int x1, int y1, uint16_t color);
+static void FB_DrawRect(uint16_t *fb, int x, int y, int w, int h, uint16_t color);
 
 /* ---- FreeRTOS hooks -------------------------------------------------------*/
 void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
@@ -60,6 +65,11 @@ int main(void)
     /* Init LTDC with first framebuffer */
     LTDC_Init((uint32_t)lcd_fb[0]);
     APP_LOGI("LTDC", "init done, fb0=0x%08lx", (unsigned long)(uint32_t)lcd_fb[0]);
+
+    /* Smoke test: draw directly to framebuffer for 10s before LVGL startup */
+    APP_LOGI("SMOKE", "pre-LVGL direct draw test start");
+    PreLvgl_SmokeTest((uint16_t *)lcd_fb[0]);
+    APP_LOGI("SMOKE", "pre-LVGL direct draw test done");
 
     /* Init LVGL + start LVGL FreeRTOS task */
     lvgl_port_init();
@@ -148,4 +158,106 @@ void Error_Handler(void)
     HAL_GPIO_WritePin(LED2_GPIO_PORT, LED2_PIN, GPIO_PIN_SET);
     __disable_irq();
     while (1) {}
+}
+
+/* ---- Pre-LVGL direct framebuffer smoke test ------------------------------ */
+#define RGB565(r, g, b) (uint16_t)((((r) & 0x1FU) << 11) | (((g) & 0x3FU) << 5) | ((b) & 0x1FU))
+
+static void FB_Fill(uint16_t *fb, uint16_t color)
+{
+    uint32_t pixels = (uint32_t)LCD_WIDTH * (uint32_t)LCD_HEIGHT;
+    for (uint32_t i = 0; i < pixels; i++) {
+        fb[i] = color;
+    }
+}
+
+static void FB_DrawPixel(uint16_t *fb, int x, int y, uint16_t color)
+{
+    if ((x < 0) || (y < 0) || (x >= (int)LCD_WIDTH) || (y >= (int)LCD_HEIGHT)) {
+        return;
+    }
+    fb[(y * (int)LCD_WIDTH) + x] = color;
+}
+
+static void FB_DrawLine(uint16_t *fb, int x0, int y0, int x1, int y1, uint16_t color)
+{
+    int dx = (x1 > x0) ? (x1 - x0) : (x0 - x1);
+    int sx = (x0 < x1) ? 1 : -1;
+    int dy = -((y1 > y0) ? (y1 - y0) : (y0 - y1));
+    int sy = (y0 < y1) ? 1 : -1;
+    int err = dx + dy;
+
+    while (1) {
+        FB_DrawPixel(fb, x0, y0, color);
+        if ((x0 == x1) && (y0 == y1)) {
+            break;
+        }
+        int e2 = 2 * err;
+        if (e2 >= dy) {
+            err += dy;
+            x0 += sx;
+        }
+        if (e2 <= dx) {
+            err += dx;
+            y0 += sy;
+        }
+    }
+}
+
+static void FB_DrawRect(uint16_t *fb, int x, int y, int w, int h, uint16_t color)
+{
+    if ((w <= 0) || (h <= 0)) {
+        return;
+    }
+    FB_DrawLine(fb, x, y, x + w - 1, y, color);
+    FB_DrawLine(fb, x, y + h - 1, x + w - 1, y + h - 1, color);
+    FB_DrawLine(fb, x, y, x, y + h - 1, color);
+    FB_DrawLine(fb, x + w - 1, y, x + w - 1, y + h - 1, color);
+}
+
+static void PreLvgl_SmokeTest(uint16_t *fb)
+{
+    const uint16_t black = RGB565(0, 0, 0);
+    const uint16_t white = RGB565(31, 63, 31);
+    const uint16_t red   = RGB565(31, 0, 0);
+    const uint16_t green = RGB565(0, 63, 0);
+    const uint16_t blue  = RGB565(0, 0, 31);
+    const uint16_t cyan  = RGB565(0, 63, 31);
+    const uint16_t yellow= RGB565(31, 63, 0);
+
+    /* Phase 1: static geometry and color bars (2 seconds) */
+    FB_Fill(fb, black);
+    FB_DrawRect(fb, 0, 0, LCD_WIDTH, LCD_HEIGHT, white);
+    FB_DrawLine(fb, 0, 0, LCD_WIDTH - 1, LCD_HEIGHT - 1, red);
+    FB_DrawLine(fb, LCD_WIDTH - 1, 0, 0, LCD_HEIGHT - 1, green);
+    FB_DrawRect(fb, (LCD_WIDTH / 2) - 40, (LCD_HEIGHT / 2) - 20, 80, 40, yellow);
+
+    for (int y = 10; y < 34; y++) {
+        for (int x = 20; x < 120; x++) fb[(y * (int)LCD_WIDTH) + x] = red;
+        for (int x = 120; x < 220; x++) fb[(y * (int)LCD_WIDTH) + x] = green;
+        for (int x = 220; x < 320; x++) fb[(y * (int)LCD_WIDTH) + x] = blue;
+        for (int x = 320; x < 420; x++) fb[(y * (int)LCD_WIDTH) + x] = white;
+    }
+
+    SCB_CleanDCache();
+    HAL_Delay(2000);
+
+    /* Phase 2: animated vertical bar + frame/crosshair (8 seconds) */
+    for (uint32_t frame = 0; frame < 200; frame++) {
+        int bar_x = (int)(frame % LCD_WIDTH);
+
+        FB_Fill(fb, black);
+        FB_DrawRect(fb, 0, 0, LCD_WIDTH, LCD_HEIGHT, white);
+        FB_DrawLine(fb, LCD_WIDTH / 2, 0, LCD_WIDTH / 2, LCD_HEIGHT - 1, yellow);
+        FB_DrawLine(fb, 0, LCD_HEIGHT / 2, LCD_WIDTH - 1, LCD_HEIGHT / 2, yellow);
+
+        for (int y = 8; y < (int)LCD_HEIGHT - 8; y++) {
+            for (int w = 0; w < 8; w++) {
+                FB_DrawPixel(fb, bar_x + w, y, cyan);
+            }
+        }
+
+        SCB_CleanDCache();
+        HAL_Delay(40);
+    }
 }
