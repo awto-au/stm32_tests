@@ -67,6 +67,7 @@ set(RTOS_SOURCES
 # ---- Application sources ----------------------------------------------------
 set(APP_SOURCES
     Src/main.c
+    Src/freertos_static_alloc.c
     Src/stm32h7xx_it.c
     Src/stm32h7xx_hal_timebase_tim.c
     Src/system_stm32h7xx.c
