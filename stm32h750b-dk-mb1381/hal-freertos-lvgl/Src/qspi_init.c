@@ -38,7 +38,7 @@
  * QUADSPI FlashSize field = number_of_address_bits – 1 = 25.
  */
 #define MT25_FLASH_SIZE_FIELD         25U
-#define QSPI_CLOCK_PRESCALER          1U   /* 200 MHz / 2 = 100 MHz */
+#define QSPI_CLOCK_PRESCALER          3U   /* 200 MHz / 4 = 50 MHz (conservative for XIP debug) */
 
 /* Volatile config register dummy cycles field (bits 7:4 for quad read) */
 #define QSPI_VCR_DUMMY_CYCLES_MASK    0xF0U
@@ -46,7 +46,6 @@
 
 /* Handle is file-scope; no public API needed beyond the init function. */
 static QSPI_HandleTypeDef hqspi;
-static volatile uint8_t qspi_ready_flag = 0;
 
 /* ---- Helpers -------------------------------------------------------------- */
 
@@ -90,15 +89,6 @@ static void QSPI_GPIO_Init(void)
     /* IO3: PF6, AF9 */
     g.Pin = GPIO_PIN_6; g.Alternate = GPIO_AF9_QUADSPI;
     HAL_GPIO_Init(GPIOF, &g);
-}
-
-/**
- * HAL_QSPI_StatusMatchCallback — Set flag when auto-polling status matches
- * (Called by HAL when StatusMatch occurs in auto-polling mode)
- */
-void HAL_QSPI_StatusMatchCallback(QSPI_HandleTypeDef *hqspi)
-{
-    qspi_ready_flag = 1;
 }
 
 static void QSPI_SendCmd1(uint8_t instruction)
@@ -153,13 +143,9 @@ static void QSPI_WriteEnable(void)
     cmd.Instruction     = MT25_READ_STATUS_CMD;
     cmd.DataMode        = QSPI_DATA_1_LINE;
 
-    qspi_ready_flag = 0;
-    if (HAL_QSPI_AutoPolling_IT(&hqspi, &cmd, &cfg) != HAL_OK) {
+    if (HAL_QSPI_AutoPolling(&hqspi, &cmd, &cfg, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
         Error_Handler();
     }
-
-    /* Busy-wait for interrupt (early boot, no scheduler) */
-    while (!qspi_ready_flag);
 }
 
 /**
@@ -187,13 +173,9 @@ static void QSPI_WaitReady(void)
     cfg.Interval        = 0x10U;
     cfg.AutomaticStop   = QSPI_AUTOMATIC_STOP_ENABLE;
 
-    qspi_ready_flag = 0;
-    if (HAL_QSPI_AutoPolling_IT(&hqspi, &cmd, &cfg) != HAL_OK) {
+    if (HAL_QSPI_AutoPolling(&hqspi, &cmd, &cfg, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
         Error_Handler();
     }
-
-    /* Busy-wait for interrupt (early boot, no scheduler) */
-    while (!qspi_ready_flag);
 }
 
 /**
@@ -263,7 +245,7 @@ static void MPU_ConfigQSPI(void)
     r.AccessPermission = MPU_REGION_FULL_ACCESS;
     r.DisableExec      = MPU_INSTRUCTION_ACCESS_ENABLE; /* allow XIP          */
     r.IsShareable      = MPU_ACCESS_NOT_SHAREABLE;
-    r.IsCacheable      = MPU_ACCESS_CACHEABLE;    /* enable I+D cache         */
+    r.IsCacheable      = MPU_ACCESS_NOT_CACHEABLE;/* conservative XIP debug    */
     r.IsBufferable     = MPU_ACCESS_NOT_BUFFERABLE; /* write-through (C=1,B=0)*/
     HAL_MPU_ConfigRegion(&r);
 
@@ -332,5 +314,10 @@ void QSPI_MemoryMapped_Init(void)
     if (HAL_QSPI_MemoryMapped(&hqspi, &cmd, &mmap) != HAL_OK) {
         Error_Handler();
     }
+    __DSB();
+    __ISB();
+    SCB_InvalidateICache();
+    __DSB();
+    __ISB();
     APP_LOGI("QSPI", "memory-mapped mode enabled @0x90000000");
 }

@@ -14,7 +14,7 @@ void LogUart_Init(void)
     gpio.Mode = GPIO_MODE_AF_PP;
     gpio.Pull = GPIO_PULLUP;
     gpio.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-    gpio.Alternate = GPIO_AF7_USART1;
+    gpio.Alternate = LOG_UART_GPIO_AF;
     HAL_GPIO_Init(LOG_UART_GPIO_PORT, &gpio);
 
     hlog_uart.Instance = LOG_UART_INSTANCE;

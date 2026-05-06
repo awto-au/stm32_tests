@@ -18,13 +18,14 @@ void Error_Handler(void);
 #define LED2_GPIO_PORT        GPIOI
 #define LED2_CLK_ENABLE()     __HAL_RCC_GPIOI_CLK_ENABLE()
 
-/* ---- Logger UART (USART1 on PA9/PA10) -----------------------------------*/
-#define LOG_UART_INSTANCE        USART1
-#define LOG_UART_CLK_ENABLE()    __HAL_RCC_USART1_CLK_ENABLE()
-#define LOG_UART_GPIO_PORT       GPIOA
-#define LOG_UART_GPIO_CLK_ENABLE() __HAL_RCC_GPIOA_CLK_ENABLE()
-#define LOG_UART_TX_PIN          GPIO_PIN_9
-#define LOG_UART_RX_PIN          GPIO_PIN_10
+/* ---- Logger UART (Board COM1 / STLINK VCP: USART3 on PB10/PB11) ---------*/
+#define LOG_UART_INSTANCE          USART3
+#define LOG_UART_CLK_ENABLE()      __HAL_RCC_USART3_CLK_ENABLE()
+#define LOG_UART_GPIO_PORT         GPIOB
+#define LOG_UART_GPIO_CLK_ENABLE() __HAL_RCC_GPIOB_CLK_ENABLE()
+#define LOG_UART_TX_PIN            GPIO_PIN_10
+#define LOG_UART_RX_PIN            GPIO_PIN_11
+#define LOG_UART_GPIO_AF           GPIO_AF7_USART3
 
 /* ---- LCD ------------------------------------------------------------------*/
 /* 480x272 RGB565 via LTDC */

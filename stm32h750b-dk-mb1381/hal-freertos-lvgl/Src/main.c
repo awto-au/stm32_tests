@@ -20,10 +20,15 @@
 __attribute__((section(".framebuffers"), aligned(32)))
 uint8_t lcd_fb[2][FB_SIZE];
 
+#define RUN_PRELVGL_SMOKE_TEST 0
+
 /* ---- Private prototypes ---------------------------------------------------*/
 static void SystemClock_Config(void);
 static void CPU_CACHE_Enable(void);
 static void LED_Init(void);
+static void EarlyAliveBlink(void);
+static void HeartbeatTask(void *arg);
+static void StartupTask(void *arg);
 static void PreLvgl_SmokeTest(uint16_t *fb);
 static void FB_Fill(uint16_t *fb, uint16_t color);
 static void FB_DrawPixel(uint16_t *fb, int x, int y, uint16_t color);
@@ -46,41 +51,34 @@ void vApplicationMallocFailedHook(void)
 int main(void)
 {
     CPU_CACHE_Enable();
-    APP_LOGI("BOOT", "icache+dcache enabled");
 
     HAL_Init();
     SystemClock_Config();
-    AppLog_Init();
-    APP_LOGI("BOOT", "hal init + clock config done");
-
-    /* Bring up QSPI flash in memory-mapped mode before anything in EXTFLASH */
-    APP_LOGI("QSPI", "init start");
-    QSPI_MemoryMapped_Init();
-    APP_LOGI("QSPI", "init done");
 
     LED_Init();
-    HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_PIN, GPIO_PIN_SET);   /* green on */
-    APP_LOGI("BOOT", "leds initialized, green on");
+    EarlyAliveBlink();
 
-    /* Init LTDC with first framebuffer */
-    LTDC_Init((uint32_t)lcd_fb[0]);
-    APP_LOGI("LTDC", "init done, fb0=0x%08lx", (unsigned long)(uint32_t)lcd_fb[0]);
+    /* Bring debug UART up as early as possible (before heavy peripheral init). */
+    AppLog_Init();
+    APP_LOGI("BOOT", "icache+dcache enabled");
+    APP_LOGI("BOOT", "hal init + clock config done");
+    APP_LOGI("BOOT", "early alive blink done");
 
-    /* Smoke test: draw directly to framebuffer for 10s before LVGL startup */
-    APP_LOGI("SMOKE", "pre-LVGL direct draw test start");
-    PreLvgl_SmokeTest((uint16_t *)lcd_fb[0]);
-    APP_LOGI("SMOKE", "pre-LVGL direct draw test done");
+    /* Start logger worker before scheduler to make task logs non-blocking. */
+    AppLog_StartTask(3U, 1024U);
 
-    /* Init LVGL + start LVGL FreeRTOS task */
-    lvgl_port_init();
-    APP_LOGI("LVGL", "port init done");
+    /* RTOS heartbeat task: LED flashing should be scheduler-driven. */
+    if (xTaskCreate(HeartbeatTask, "HB", 256U, NULL, 4U, NULL) != pdPASS) {
+        AppLog_Panic("Heartbeat task create failed");
+        Error_Handler();
+    }
 
-    /* Build the UI */
-    ui_init();
-    APP_LOGI("UI", "ui init done");
+    /* Heavy board/display init runs under RTOS control. */
+    if (xTaskCreate(StartupTask, "START", 2048U, NULL, 1U, NULL) != pdPASS) {
+        AppLog_Panic("Startup task create failed");
+        Error_Handler();
+    }
 
-    /* Start logger worker task before scheduler */
-    AppLog_StartTask(2U, 1024U);
     APP_LOGI("BOOT", "starting scheduler");
 
     /* Start scheduler — never returns */
@@ -158,6 +156,64 @@ void Error_Handler(void)
     HAL_GPIO_WritePin(LED2_GPIO_PORT, LED2_PIN, GPIO_PIN_SET);
     __disable_irq();
     while (1) {}
+}
+
+static void HeartbeatTask(void *arg)
+{
+    (void)arg;
+
+    for (;;) {
+        HAL_GPIO_TogglePin(LED1_GPIO_PORT, LED1_PIN);
+        HAL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);
+        vTaskDelay(pdMS_TO_TICKS(500U));
+    }
+}
+
+static void StartupTask(void *arg)
+{
+    (void)arg;
+
+    APP_LOGI("BOOT", "startup task begin");
+
+    APP_LOGI("QSPI", "init start");
+    QSPI_MemoryMapped_Init();
+    APP_LOGI("QSPI", "init done");
+
+    LTDC_Init((uint32_t)lcd_fb[0]);
+    APP_LOGI("LTDC", "init done, fb0=0x%08lx", (unsigned long)(uint32_t)lcd_fb[0]);
+
+#if RUN_PRELVGL_SMOKE_TEST
+    APP_LOGI("SMOKE", "pre-LVGL direct draw test start");
+    PreLvgl_SmokeTest((uint16_t *)lcd_fb[0]);
+    APP_LOGI("SMOKE", "pre-LVGL direct draw test done");
+#endif
+
+    APP_LOGI("BOOT", "before lvgl_port_init");
+    lvgl_port_init();
+    APP_LOGI("BOOT", "after lvgl_port_init");
+    APP_LOGI("LVGL", "port init done");
+
+    APP_LOGI("BOOT", "before ui_init");
+    ui_init();
+    APP_LOGI("BOOT", "after ui_init");
+    APP_LOGI("UI", "ui init done");
+
+    APP_LOGI("BOOT", "startup task complete");
+    vTaskDelete(NULL);
+}
+
+static void EarlyAliveBlink(void)
+{
+    /* Drive both LEDs with explicit set/reset phases to expose polarity/pin issues. */
+    for (uint32_t i = 0; i < 8U; i++) {
+        HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_PIN, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LED2_GPIO_PORT, LED2_PIN, GPIO_PIN_RESET);
+        HAL_Delay(120U);
+
+        HAL_GPIO_WritePin(LED1_GPIO_PORT, LED1_PIN, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(LED2_GPIO_PORT, LED2_PIN, GPIO_PIN_SET);
+        HAL_Delay(120U);
+    }
 }
 
 /* ---- Pre-LVGL direct framebuffer smoke test ------------------------------ */
