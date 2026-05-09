@@ -1,0 +1,21 @@
+diff --git a/src/draw/dma2d/lv_draw_dma2d.c b/src/draw/dma2d/lv_draw_dma2d.c
+index 032e16c..a1e8eea 100644
+--- a/src/draw/dma2d/lv_draw_dma2d.c
++++ b/src/draw/dma2d/lv_draw_dma2d.c
+@@ -368,10 +368,13 @@ static int32_t wait_finish_cb(lv_draw_unit_t * draw_unit)
+ {
+     lv_draw_dma2d_unit_t * u = (lv_draw_dma2d_unit_t *) draw_unit;
+ 
+-    /* If a DMA2D task has been dispatched, wait its interrupt */
+-    lv_thread_sync_wait(&u->interrupt_signal);
++    /* lv_draw_wait_for_finish() calls this for ALL units unconditionally.
++     * Return immediately when no DMA2D transfer is in flight — otherwise
++     * lv_thread_sync_wait() blocks forever waiting for an interrupt that
++     * will never fire (e.g. when only SW draw tasks are still queued). */
++    if(u->task_act == NULL) return 0;
+ 
+-    /* Then cleanup the DMA2D draw unit to accept a new task */
++    lv_thread_sync_wait(&u->interrupt_signal);
+     post_transfer_tasks(u);
+     return 0;
+ }
