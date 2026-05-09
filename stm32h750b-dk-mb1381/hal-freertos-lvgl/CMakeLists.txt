@@ -111,6 +111,7 @@ set(APP_SOURCES
     Src/sysmem.c
     Src/qspi_init.c
     Src/can_init.c
+    Src/lvgl_mem_pool.c
     Src/startup_stm32h750xbhx.s
 )
 
@@ -129,6 +130,7 @@ set(APP_C_SOURCES
     Src/sysmem.c
     Src/qspi_init.c
     Src/can_init.c
+    Src/lvgl_mem_pool.c
 )
 
 add_executable(${PROJECT_NAME}.elf

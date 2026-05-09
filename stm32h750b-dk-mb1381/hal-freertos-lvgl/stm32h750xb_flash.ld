@@ -145,6 +145,15 @@ SECTIONS
     . = ALIGN(32);
   } >AXISRAM
 
+  /* LVGL heap pool in SRAM1 — separate from FreeRTOS heap, DMA2D-accessible */
+  .lvgl_heap (NOLOAD) :
+  {
+    . = ALIGN(32);
+    _lvgl_heap_start = .;
+    . = . + 128K;
+    _lvgl_heap_end = .;
+  } >SRAM1
+
   /* External QSPI flash: tagged assets plus LVGL rodata/strings. */
   .extflash :
   {
