@@ -6,6 +6,7 @@
 
 #include "main.h"
 #include "log_uart.h"
+#include "stm32h7xx.h"  /* DWT->CYCCNT, CoreDebug */
 
 #define APP_LOG_LINE_MAX      160U
 #define APP_LOG_QUEUE_DEPTH    24U
@@ -64,7 +65,7 @@ void AppLog_StartTask(UBaseType_t priority, uint16_t stack_words)
 void AppLog_Write(char level, const char *module, const char *fmt, ...)
 {
     AppLogLine_t line;
-    TickType_t ts;
+    uint32_t ts;
     const char *task_name = "BOOT";
     int pos = 0;
     va_list ap;
@@ -73,14 +74,14 @@ void AppLog_Write(char level, const char *module, const char *fmt, ...)
         module = "GEN";
     }
 
+    /* Raw DWT cycle count — 400 MHz, 32-bit, ~10.7 s wrap.  No division,
+     * no truncation: highest resolution with zero runtime cost. */
+    ts = DWT->CYCCNT;
     if ((xPortIsInsideInterrupt() == pdFALSE) && (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)) {
-        ts = xTaskGetTickCount();
         task_name = pcTaskGetName(NULL);
-    } else {
-        ts = HAL_GetTick();
     }
 
-    pos = snprintf(line.text, sizeof(line.text), "[%c][%8lu][%s][%s] ",
+    pos = snprintf(line.text, sizeof(line.text), "[%c][%lu][%s][%s] ",
                    level, (unsigned long)ts, task_name, module);
     if (pos < 0) {
         return;

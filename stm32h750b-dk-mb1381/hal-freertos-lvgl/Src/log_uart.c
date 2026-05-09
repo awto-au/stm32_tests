@@ -18,7 +18,7 @@ void LogUart_Init(void)
     HAL_GPIO_Init(LOG_UART_GPIO_PORT, &gpio);
 
     hlog_uart.Instance = LOG_UART_INSTANCE;
-    hlog_uart.Init.BaudRate = 115200;
+    hlog_uart.Init.BaudRate = LOG_UART_BAUDRATE;
     hlog_uart.Init.WordLength = UART_WORDLENGTH_8B;
     hlog_uart.Init.StopBits = UART_STOPBITS_1;
     hlog_uart.Init.Parity = UART_PARITY_NONE;

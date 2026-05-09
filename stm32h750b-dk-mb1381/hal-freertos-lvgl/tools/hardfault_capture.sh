@@ -8,7 +8,7 @@ set -euo pipefail
 #   tools/hardfault_capture.sh --no-reset
 
 PORT="/dev/ttyACM5"
-BAUD="115200"
+BAUD="2000000"
 SECONDS_CAPTURE="10"
 DO_RESET="1"
 LOG_DIR="${HOME}/logs"
@@ -23,7 +23,7 @@ Capture UART boot logs and decode HardFault/BusFault details.
 
 Options:
   --port <device>      Serial device (default: /dev/ttyACM5)
-  --baud <rate>        Baud rate (default: 115200)
+  --baud <rate>        Baud rate (default: 2000000)
   --seconds <n>        Capture duration after reset (default: 10)
   --log-dir <dir>      Output log directory (default: ~/logs)
   --reset-cmd <cmd>    Command used to reset target before capture
