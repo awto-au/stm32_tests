@@ -1,19 +1,19 @@
 /*
-** Linker script for STM32H750XBHx — LVGL + QSPI XIP
+** Linker script for STM32H750XBHx — LVGL + QSPI assets
 **
 ** Memory map:
-**   FLASH    (128K @ 0x08000000) — boot stub: startup, HAL, QSPI init, FreeRTOS, LTDC
-**   EXTFLASH ( 64M @ 0x90000000) — XIP: LVGL library code + rodata
+**   FLASH    (128K @ 0x08000000) — startup + core app code
+**   EXTFLASH ( 64M @ 0x90000000) — tagged assets + LVGL code/rodata
 **   DTCM     (128K @ 0x20000000) — stack, heap, FreeRTOS TCBs, .data
 **   AXISRAM  (512K @ 0x24000000) — framebuffers (DMA-accessible)
 **
-** QSPI_MemoryMapped_Init() runs from internal flash and enables XIP before
-** any LVGL symbol at 0x90000000 is touched.
+** QSPI_MemoryMapped_Init() runs from internal flash before any .extflash asset
+** is accessed.
 **
 ** Flashing:
-**   Internal flash only (no external loader needed for the stub):
+**   Internal flash only:
 **     STM32_Programmer_CLI -c port=SWD -w firmware.elf -v -rst
-**   With LVGL in external flash (needs external loader):
+**   With .extflash assets in external flash (needs external loader):
 **     STM32_Programmer_CLI -c port=SWD \
 **       -el MT25TL01G_STM32H750B-DISCO.stldr \
 **       -w firmware.elf -v -rst
@@ -44,22 +44,22 @@ SECTIONS
     . = ALIGN(4);
   } >FLASH
 
-  /* Code in FLASH: everything except the LVGL library */
+  /* Code in FLASH (exclude LVGL archive code; it runs from EXTFLASH after QSPI init) */
   .text :
   {
     . = ALIGN(4);
     *(EXCLUDE_FILE(@LVGL_ARCHIVE@) .text)
     *(EXCLUDE_FILE(@LVGL_ARCHIVE@) .text*)
-    *(.glue_7)
-    *(.glue_7t)
-    *(.eh_frame)
+    *(EXCLUDE_FILE(@LVGL_ARCHIVE@) .glue_7)
+    *(EXCLUDE_FILE(@LVGL_ARCHIVE@) .glue_7t)
+    *(EXCLUDE_FILE(@LVGL_ARCHIVE@) .eh_frame)
     KEEP(*(.init))
     KEEP(*(.fini))
     . = ALIGN(4);
     _etext = .;
   } >FLASH
 
-  /* Read-only data in FLASH: everything except the LVGL library */
+  /* Read-only data in FLASH: keep LVGL rodata out of internal flash */
   .rodata :
   {
     . = ALIGN(4);
@@ -167,18 +167,14 @@ SECTIONS
     . = ALIGN(32);
   } >SRAM1
 
-  /*
-   * External QSPI flash — LVGL library code + rodata, plus any object tagged
-   * __attribute__((section(".extflash"))).
-   * VMA = LMA = 0x90000000: true XIP, programmer writes directly here using
-   * the MT25TL01G_STM32H750B-DISCO.stldr external loader.
-   */
+  /* External QSPI flash: tagged assets plus LVGL code/rodata. */
   .extflash :
   {
     . = ALIGN(4);
     *(.extflash)
     *(.extflash*)
     @LVGL_ARCHIVE@:*(.text .text*)
+    @LVGL_ARCHIVE@:*(.glue_7 .glue_7t .eh_frame)
     @LVGL_ARCHIVE@:*(.rodata .rodata*)
     . = ALIGN(4);
   } >EXTFLASH

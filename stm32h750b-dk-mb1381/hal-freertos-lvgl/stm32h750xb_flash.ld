@@ -49,8 +49,8 @@ SECTIONS
   .rodata :
   {
     . = ALIGN(4);
-    *(.rodata)
-    *(.rodata*)
+    *(EXCLUDE_FILE(lvgl/lib/liblvgl.a) .rodata)
+    *(EXCLUDE_FILE(lvgl/lib/liblvgl.a) .rodata*)
     . = ALIGN(4);
   } >FLASH
 
@@ -145,22 +145,12 @@ SECTIONS
     . = ALIGN(32);
   } >AXISRAM
 
-  /*
-   * External QSPI flash window — read-only data/code placed here via
-   *   __attribute__((section(".extflash")))
-   * or via linker wildcard below.
-   * QSPI_MemoryMapped_Init() must be called from internal flash before any
-   * symbol in this region is accessed.
-   *
-   * LVGL font bitmaps are the dominant rodata consumer — keep them in EXTFLASH
-   * from the start so internal flash stays free for code.
-   */
+  /* External QSPI flash: tagged assets plus LVGL rodata/strings. */
   .extflash :
   {
     . = ALIGN(4);
     *(.extflash)
     *(.extflash*)
-    /* LVGL library rodata — fonts, image tables, etc. */
     *liblvgl.a:(.rodata .rodata*)
     . = ALIGN(4);
   } >EXTFLASH
