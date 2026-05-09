@@ -5,7 +5,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-void Error_Handler(void);
+__attribute__((noreturn)) void Error_Handler(void);
 
 /* ---- Board LEDs -----------------------------------------------------------*/
 /* LED1 (Green) = PJ2 */
@@ -26,6 +26,7 @@ void Error_Handler(void);
 #define LOG_UART_TX_PIN            GPIO_PIN_10
 #define LOG_UART_RX_PIN            GPIO_PIN_11
 #define LOG_UART_GPIO_AF           GPIO_AF7_USART3
+#define LOG_UART_BAUDRATE          2000000U
 
 /* ---- LCD ------------------------------------------------------------------*/
 /* 480x272 RGB565 via LTDC */
@@ -42,7 +43,17 @@ void Error_Handler(void);
 /* Two RGB565 framebuffers: 480*272*2 = 261,120 bytes each, total ~510 KB */
 #define FB_SIZE  (LCD_WIDTH * LCD_HEIGHT * 2U)
 
-extern uint8_t  lcd_fb[2][FB_SIZE];
+/* Debug boot mode: skip UI construction to rule out asset/font pressure. */
+#ifndef BOOT_SKIP_UI_ASSETS
+#define BOOT_SKIP_UI_ASSETS 0
+#endif
+
+/* Debug boot mode: skip LVGL init to isolate QSPI/LTDC/RTOS bring-up. */
+#ifndef BOOT_SKIP_LVGL_INIT
+#define BOOT_SKIP_LVGL_INIT 0
+#endif
+
+extern uint16_t lcd_fb[2][LCD_WIDTH * LCD_HEIGHT];
 extern LTDC_HandleTypeDef hltdc;
 
 #endif /* __MAIN_H */

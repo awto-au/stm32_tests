@@ -14,26 +14,45 @@
 #include "lvgl_port.h"
 #include "ui.h"
 #include "qspi_init.h"
+#include "can_init.h"
 #include "app_log.h"
+
+#define XIP_ASM_RETURN_MAGIC 0x2AU
 
 /* ---- Framebuffers in AXI SRAM (DMA-accessible, linker section) ------------*/
 __attribute__((section(".framebuffers"), aligned(32)))
-uint8_t lcd_fb[2][FB_SIZE];
+uint16_t lcd_fb[2][LCD_WIDTH * LCD_HEIGHT];
 
-#define RUN_PRELVGL_SMOKE_TEST 0
+#define RUN_PRELVGL_SMOKE_TEST 1
 
 /* ---- Private prototypes ---------------------------------------------------*/
 static void SystemClock_Config(void);
+static void FPU_EnableEarly(void);
 static void CPU_CACHE_Enable(void);
 static void LED_Init(void);
 static void EarlyAliveBlink(void);
 static void HeartbeatTask(void *arg);
 static void StartupTask(void *arg);
+
+__attribute__((naked, noinline, section(".extflash.text")))
+static uint32_t XipAsmReturnMagic(void)
+{
+    __asm volatile (
+        "movs r0, %0\n"
+        "bx lr\n"
+        :
+        : "I" (XIP_ASM_RETURN_MAGIC)
+        : "r0"
+    );
+}
+
+#if RUN_PRELVGL_SMOKE_TEST
 static void PreLvgl_SmokeTest(uint16_t *fb);
 static void FB_Fill(uint16_t *fb, uint16_t color);
 static void FB_DrawPixel(uint16_t *fb, int x, int y, uint16_t color);
 static void FB_DrawLine(uint16_t *fb, int x0, int y0, int x1, int y1, uint16_t color);
 static void FB_DrawRect(uint16_t *fb, int x, int y, int w, int h, uint16_t color);
+#endif
 
 /* ---- FreeRTOS hooks -------------------------------------------------------*/
 void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
@@ -50,6 +69,15 @@ void vApplicationMallocFailedHook(void)
 /* ---- Main -----------------------------------------------------------------*/
 int main(void)
 {
+    FPU_EnableEarly();
+
+    /* Enable DWT cycle counter — used for µs-resolution log timestamps.
+     * Must be done before AppLog_Init so pre-scheduler messages get
+     * meaningful timestamps.  Counter is 32-bit @ 400 MHz (~10.7 s wrap). */
+    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    DWT->CYCCNT       = 0U;
+    DWT->CTRL        |= DWT_CTRL_CYCCNTENA_Msk;
+
     CPU_CACHE_Enable();
 
     HAL_Init();
@@ -131,6 +159,21 @@ static void CPU_CACHE_Enable(void)
     SCB_EnableDCache();
 }
 
+static void FPU_EnableEarly(void)
+{
+    /* Force-enable CP10/CP11 for all privilege levels.
+     * This guards against NOCP faults if CMSIS __FPU_USED gating is not active
+     * in SystemInit for this build configuration. */
+    SCB->CPACR |= (0xFUL << 20);
+    __DSB();
+    __ISB();
+
+    /* Enable automatic/lazy FP context save for RTOS task switches. */
+    FPU->FPCCR |= (FPU_FPCCR_ASPEN_Msk | FPU_FPCCR_LSPEN_Msk);
+    __DSB();
+    __ISB();
+}
+
 static void LED_Init(void)
 {
     GPIO_InitTypeDef g = {0};
@@ -149,7 +192,7 @@ static void LED_Init(void)
     HAL_GPIO_WritePin(LED2_GPIO_PORT, LED2_PIN, GPIO_PIN_RESET);
 }
 
-void Error_Handler(void)
+__attribute__((noreturn)) void Error_Handler(void)
 {
     /* Light red LED, halt */
     AppLog_Panic("Error_Handler entered");
@@ -177,7 +220,42 @@ static void StartupTask(void *arg)
 
     APP_LOGI("QSPI", "init start");
     QSPI_MemoryMapped_Init();
-    APP_LOGI("QSPI", "init done");
+    APP_LOGI("QSPI", "init done (caches should be OFF for this proof)");
+
+    /* XIP gate test per doc section C - call tiny function from 0x90000000 */
+    APP_LOGI("XIP", "--- XIP gate test ---");
+    APP_LOGI("XIP", "calling asm fn @0x%08lx (Thumb, bit 0 set)",
+             (unsigned long)((uint32_t)XipAsmReturnMagic | 1U));
+    
+    uint32_t xip_ret = XipAsmReturnMagic();
+    
+    APP_LOGI("XIP", "XIP call returned 0x%08lx", (unsigned long)xip_ret);
+    if (xip_ret != XIP_ASM_RETURN_MAGIC) {
+        APP_LOGI("XIP", "FAIL: expected 0x%02lx got 0x%08lx", (unsigned long)XIP_ASM_RETURN_MAGIC, (unsigned long)xip_ret);
+        Error_Handler();
+    } else {
+        APP_LOGI("XIP", "SUCCESS: tiny XIP function worked!");
+    }
+
+    APP_LOGI("QBENCH", "running aggressive pre-LVGL benchmark");
+    QSPI_RunAggressiveBenchmark();
+    APP_LOGI("QBENCH", "benchmark complete, proceeding to LTDC/LVGL");
+
+    if (!CAN_BringupAndSelfTest()) {
+        APP_LOGE("CAN", "bring-up failed");
+        Error_Handler();
+    }
+
+    /* LVGL does unaligned accesses in some fast paths; don't trap them in bring-up. */
+    SCB->CCR &= ~SCB_CCR_UNALIGN_TRP_Msk;
+    __DSB();
+    __ISB();
+
+    /* XIP+LVGL is much more practical with instruction cache enabled. */
+    SCB_EnableICache();
+    __DSB();
+    __ISB();
+    APP_LOGI("BOOT", "pre-LVGL core cfg: icache=ON unalign-trap=OFF");
 
     LTDC_Init((uint32_t)lcd_fb[0]);
     APP_LOGI("LTDC", "init done, fb0=0x%08lx", (unsigned long)(uint32_t)lcd_fb[0]);
@@ -188,15 +266,24 @@ static void StartupTask(void *arg)
     APP_LOGI("SMOKE", "pre-LVGL direct draw test done");
 #endif
 
+#if BOOT_SKIP_LVGL_INIT
+    APP_LOGI("LVGL", "lvgl_port_init skipped (BOOT_SKIP_LVGL_INIT=1)");
+    APP_LOGI("UI", "ui_init skipped (BOOT_SKIP_LVGL_INIT=1)");
+#else
     APP_LOGI("BOOT", "before lvgl_port_init");
     lvgl_port_init();
     APP_LOGI("BOOT", "after lvgl_port_init");
     APP_LOGI("LVGL", "port init done");
 
     APP_LOGI("BOOT", "before ui_init");
+#if BOOT_SKIP_UI_ASSETS
+    APP_LOGI("UI", "ui_init skipped (BOOT_SKIP_UI_ASSETS=1)");
+#else
     ui_init();
     APP_LOGI("BOOT", "after ui_init");
     APP_LOGI("UI", "ui init done");
+#endif
+#endif
 
     APP_LOGI("BOOT", "startup task complete");
     vTaskDelete(NULL);
@@ -218,6 +305,8 @@ static void EarlyAliveBlink(void)
 
 /* ---- Pre-LVGL direct framebuffer smoke test ------------------------------ */
 #define RGB565(r, g, b) (uint16_t)((((r) & 0x1FU) << 11) | (((g) & 0x3FU) << 5) | ((b) & 0x1FU))
+
+#if RUN_PRELVGL_SMOKE_TEST
 
 static void FB_Fill(uint16_t *fb, uint16_t color)
 {
@@ -281,7 +370,7 @@ static void PreLvgl_SmokeTest(uint16_t *fb)
     const uint16_t cyan  = RGB565(0, 63, 31);
     const uint16_t yellow= RGB565(31, 63, 0);
 
-    /* Phase 1: static geometry and color bars (2 seconds) */
+    /* Quick static sanity frame (no blocking hold). */
     FB_Fill(fb, black);
     FB_DrawRect(fb, 0, 0, LCD_WIDTH, LCD_HEIGHT, white);
     FB_DrawLine(fb, 0, 0, LCD_WIDTH - 1, LCD_HEIGHT - 1, red);
@@ -294,12 +383,10 @@ static void PreLvgl_SmokeTest(uint16_t *fb)
         for (int x = 220; x < 320; x++) fb[(y * (int)LCD_WIDTH) + x] = blue;
         for (int x = 320; x < 420; x++) fb[(y * (int)LCD_WIDTH) + x] = white;
     }
-
     SCB_CleanDCache();
-    HAL_Delay(2000);
 
-    /* Phase 2: animated vertical bar + frame/crosshair (8 seconds) */
-    for (uint32_t frame = 0; frame < 200; frame++) {
+    /* Keep animated phase brief so total smoke test is about one second. */
+    for (uint32_t frame = 0; frame < 16; frame++) {
         int bar_x = (int)(frame % LCD_WIDTH);
 
         FB_Fill(fb, black);
@@ -314,6 +401,8 @@ static void PreLvgl_SmokeTest(uint16_t *fb)
         }
 
         SCB_CleanDCache();
-        HAL_Delay(40);
+        HAL_Delay(10);
     }
 }
+
+#endif
