@@ -34,12 +34,14 @@ LTDC_HandleTypeDef hltdc;
 
 static void LCD_GPIO_Init(void);
 static void LCD_ClockConfig(void);
+static void LCD_ResetPulse(void);
 
 void LTDC_Init(uint32_t fb_addr)
 {
     LTDC_LayerCfgTypeDef layer = {0};
 
     LCD_GPIO_Init();
+    LCD_ResetPulse();
     LCD_ClockConfig();
 
     /* --- LTDC base ------------------------------------------------------- */
@@ -95,6 +97,18 @@ void LTDC_Init(uint32_t fb_addr)
     /* Turn on display and backlight */
     HAL_GPIO_WritePin(LCD_DISP_PORT, LCD_DISP_PIN, GPIO_PIN_SET);
     HAL_GPIO_WritePin(LCD_BL_PORT,   LCD_BL_PIN,   GPIO_PIN_SET);
+}
+
+static void LCD_ResetPulse(void)
+{
+    /* Use DISP as a hard panel gate to force a known startup state. */
+    HAL_GPIO_WritePin(LCD_BL_PORT, LCD_BL_PIN, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(LCD_DISP_PORT, LCD_DISP_PIN, GPIO_PIN_RESET);
+    HAL_Delay(20U);
+    HAL_GPIO_WritePin(LCD_DISP_PORT, LCD_DISP_PIN, GPIO_PIN_SET);
+    HAL_Delay(20U);
+    HAL_GPIO_WritePin(LCD_DISP_PORT, LCD_DISP_PIN, GPIO_PIN_RESET);
+    HAL_Delay(5U);
 }
 
 static void LCD_GPIO_Init(void)
