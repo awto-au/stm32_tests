@@ -23,6 +23,16 @@ extern "C" {
  */
 void QSPI_MemoryMapped_Init(void);
 
+/**
+ * Run aggressive QSPI stress + throughput benchmarks.
+ *
+ * This is intended to remain in the codebase as a bring-up confidence gate
+ * before graphics stack startup. It performs destructive write/read/verify
+ * loops in the dedicated self-test area and then measures memory-mapped read
+ * throughput over a larger window.
+ */
+void QSPI_RunAggressiveBenchmark(void);
+
 #ifdef __cplusplus
 }
 #endif
