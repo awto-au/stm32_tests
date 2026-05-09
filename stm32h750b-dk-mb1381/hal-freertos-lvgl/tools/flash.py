@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Flash STM32H750B-DK via SWD and capture boot log on /dev/ttyACM7."""
+"""Flash STM32H750B-DK via SWD and capture boot log on /dev/ttyACM4."""
 
 import argparse
 import subprocess
@@ -16,7 +16,7 @@ EXTLOADER = (
 )
 BOARD_SN   = "003400223137510E33333639"
 HEX_PATH   = "build/Debug/stm32h750_lvgl.hex"
-SERIAL_DEV = "/dev/ttyACM7"
+SERIAL_DEV = "/dev/ttyACM4"
 BAUD       = 2_000_000
 LOG_FILE   = "boot.tmp"
 
@@ -82,24 +82,32 @@ def main() -> None:
     args = parser.parse_args()
 
     lines: list[str] = []
+    log_thread = None
+    lines_ref = lines
 
-    # Start log capture thread before reset so we don't miss early boot lines
     try:
         import serial as _  # noqa: F401
-        lines_ref, log_thread = capture_log(args.log_seconds)
-        # give thread 100ms to open the port before triggering reset
-        time.sleep(0.1)
+        has_serial = True
     except ImportError:
-        log_thread = None
-        lines_ref = lines
+        has_serial = False
+        print("pyserial not available, skipping log capture", file=sys.stderr)
 
     if args.no_flash:
+        # Start capture before reset so we catch early boot lines
+        if has_serial:
+            lines_ref, log_thread = capture_log(args.log_seconds)
+            time.sleep(0.1)
         reset_only()
     else:
         ok = flash(args.hex)
         if not ok:
             sys.exit("Flash failed")
         print("Flash OK", flush=True)
+        # Open port first, then reset — same pattern as --no-flash so we don't miss boot
+        if has_serial:
+            lines_ref, log_thread = capture_log(args.log_seconds)
+            time.sleep(0.1)
+        reset_only()
 
     if log_thread is not None:
         log_thread.join()
