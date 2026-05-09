@@ -482,7 +482,7 @@ static void QSPI_InitPeripheral(const QSPI_TuneConfig *cfg)
 {
     hqspi.Instance                = QUADSPI;
     hqspi.Init.ClockPrescaler     = cfg->prescaler;
-    hqspi.Init.FifoThreshold      = 1U;
+    hqspi.Init.FifoThreshold      = 4U;
     hqspi.Init.SampleShifting     = cfg->sample_shifting;
     hqspi.Init.FlashSize          = MT25_FLASH_SIZE_FIELD_DUAL;
     hqspi.Init.ChipSelectHighTime = cfg->cs_high_time;
@@ -600,14 +600,16 @@ static void QSPI_ReadData(uint32_t address, uint8_t *data, uint32_t len)
 {
     QSPI_CommandTypeDef cmd = {0};
 
+    /* Use 0x6B (Quad Output Fast Read) with 8 dummy cycles — same command as MM mode.
+     * Single-line 0x03 would give artificially low indirect BW in the benchmark. */
     cmd.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
-    cmd.Instruction       = MT25_READ_DATA_CMD;
+    cmd.Instruction       = MT25_QUAD_OUT_FAST_READ;
     cmd.AddressMode       = QSPI_ADDRESS_1_LINE;
     cmd.AddressSize       = QSPI_ADDRESS_32_BITS;
     cmd.Address           = address;
     cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
-    cmd.DataMode          = QSPI_DATA_1_LINE;
-    cmd.DummyCycles       = 0;
+    cmd.DataMode          = QSPI_DATA_4_LINES;
+    cmd.DummyCycles       = MT25_DUMMY_CYCLES;
     cmd.NbData            = len;
     cmd.DdrMode           = QSPI_DDR_MODE_DISABLE;
     cmd.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;
@@ -657,8 +659,12 @@ static int QSPI_RunSelfTestAtCurrentSpeed(uint8_t dummy_cycles, uint32_t *write_
 
     t0 = DWT->CYCCNT;
     QSPI_EnableMemoryMappedRead(dummy_cycles);
-    for (i = 0; i < QSPI_SELFTEST_SIZE; i++) {
-        rx[i] = *(__IO uint8_t *)(0x90000000U + QSPI_SELFTEST_ADDR + i);
+    {
+        volatile uint32_t *mm = (volatile uint32_t *)(0x90000000U + QSPI_SELFTEST_ADDR);
+        volatile uint32_t *dst = (volatile uint32_t *)(void *)rx;
+        for (i = 0; i < QSPI_SELFTEST_SIZE / 4U; i++) {
+            dst[i] = mm[i];
+        }
     }
     mm_read_cycles = DWT->CYCCNT - t0;
     QSPI_DisableMemoryMappedRead();
@@ -1037,13 +1043,15 @@ static void MPU_ConfigQSPI(void)
     r.Enable           = MPU_REGION_ENABLE;
     r.Number           = MPU_REGION_NUMBER0;
     r.BaseAddress      = 0x90000000U;
-    r.Size             = MPU_REGION_SIZE_64MB;
+    r.Size             = MPU_REGION_SIZE_256MB;   /* cover full AXI QSPI window */
     r.SubRegionDisable = 0x00U;
-    r.TypeExtField     = MPU_TEX_LEVEL0;          /* Normal memory            */
-    r.AccessPermission = MPU_REGION_FULL_ACCESS;
-    r.DisableExec      = MPU_INSTRUCTION_ACCESS_ENABLE; /* allow XIP          */
+    /* Normal memory, WT/no-WA (TEX=0 C=1 B=0): I/D cache both active for XIP.
+     * Read-only NOR flash — write-back unnecessary, WT avoids coherency risk. */
+    r.TypeExtField     = MPU_TEX_LEVEL0;
+    r.AccessPermission = MPU_REGION_PRIV_RO_URO;  /* read-only: no accidental write */
+    r.DisableExec      = MPU_INSTRUCTION_ACCESS_ENABLE;
     r.IsShareable      = MPU_ACCESS_NOT_SHAREABLE;
-    r.IsCacheable      = MPU_ACCESS_NOT_CACHEABLE;
+    r.IsCacheable      = MPU_ACCESS_CACHEABLE;
     r.IsBufferable     = MPU_ACCESS_NOT_BUFFERABLE;
     HAL_MPU_ConfigRegion(&r);
 
