@@ -4,10 +4,38 @@ project(stm32h750_lvgl C ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
+option(ENABLE_STRICT_WARNINGS "Enable stricter warnings for app sources" ON)
+option(ENABLE_GCC_ANALYZER "Enable GCC static analyzer (-fanalyzer) for app sources" OFF)
+option(ENABLE_UBSAN "Enable UBSan runtime checks (trap on error)" OFF)
+
 # ---- External library paths -------------------------------------------------
-set(H7_ROOT    "$ENV{HOME}/STM32Cube/Repository/STM32Cube_FW_H7")
-set(LVGL_DIR   "$ENV{HOME}/Downloads/git/lvgl")
-set(RTOS_DIR   "$ENV{HOME}/Downloads/git/FreeRTOS-Kernel")
+set(H7_ROOT    "${CMAKE_SOURCE_DIR}/deps/STM32Cube_FW_H7")
+set(LVGL_DIR   "${CMAKE_SOURCE_DIR}/lvgl")
+set(RTOS_DIR   "${CMAKE_SOURCE_DIR}/deps/FreeRTOS-Kernel")
+
+if(NOT EXISTS "${H7_ROOT}/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c")
+    set(H7_ROOT "$ENV{HOME}/STM32Cube/Repository/STM32Cube_FW_H7")
+endif()
+
+if(NOT EXISTS "${RTOS_DIR}/tasks.c")
+    set(RTOS_DIR "$ENV{HOME}/Downloads/git/FreeRTOS-Kernel")
+endif()
+
+if(NOT EXISTS "${LVGL_DIR}/CMakeLists.txt")
+    set(LVGL_DIR "$ENV{HOME}/Downloads/git/lvgl")
+endif()
+
+if(NOT EXISTS "${LVGL_DIR}/CMakeLists.txt")
+    message(FATAL_ERROR "LVGL source not found. Expected '${CMAKE_SOURCE_DIR}/lvgl' or '$ENV{HOME}/Downloads/git/lvgl'.")
+endif()
+
+if(NOT EXISTS "${H7_ROOT}/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c")
+    message(FATAL_ERROR "STM32CubeH7 source not found. Expected '${CMAKE_SOURCE_DIR}/deps/STM32Cube_FW_H7' or '$ENV{HOME}/STM32Cube/Repository/STM32Cube_FW_H7'.")
+endif()
+
+if(NOT EXISTS "${RTOS_DIR}/tasks.c")
+    message(FATAL_ERROR "FreeRTOS-Kernel source not found. Expected '${CMAKE_SOURCE_DIR}/deps/FreeRTOS-Kernel' or '$ENV{HOME}/Downloads/git/FreeRTOS-Kernel'.")
+endif()
 
 set(HAL_DRV    "${H7_ROOT}/Drivers/STM32H7xx_HAL_Driver")
 set(CMSIS_DEV  "${H7_ROOT}/Drivers/CMSIS/Device/ST/STM32H7xx")
@@ -50,6 +78,7 @@ set(HAL_SOURCES
     ${HAL_DRV}/Src/stm32h7xx_hal_ltdc_ex.c
     ${HAL_DRV}/Src/stm32h7xx_hal_dsi.c
     ${HAL_DRV}/Src/stm32h7xx_hal_qspi.c
+    ${HAL_DRV}/Src/stm32h7xx_hal_fdcan.c
     ${HAL_DRV}/Src/stm32h7xx_hal_uart.c
     ${HAL_DRV}/Src/stm32h7xx_hal_uart_ex.c
 )
@@ -81,7 +110,25 @@ set(APP_SOURCES
     Src/syscalls.c
     Src/sysmem.c
     Src/qspi_init.c
+    Src/can_init.c
     Src/startup_stm32h750xbhx.s
+)
+
+set(APP_C_SOURCES
+    Src/main.c
+    Src/app_log.c
+    Src/log_uart.c
+    Src/freertos_static_alloc.c
+    Src/stm32h7xx_it.c
+    Src/stm32h7xx_hal_timebase_tim.c
+    Src/system_stm32h7xx.c
+    Src/ltdc_init.c
+    Src/lvgl_port.c
+    Src/ui.c
+    Src/syscalls.c
+    Src/sysmem.c
+    Src/qspi_init.c
+    Src/can_init.c
 )
 
 add_executable(${PROJECT_NAME}.elf
@@ -94,6 +141,9 @@ add_executable(${PROJECT_NAME}.elf
 target_include_directories(${PROJECT_NAME}.elf PRIVATE
     Inc
     ${CMAKE_SOURCE_DIR}              # lv_conf.h lives here
+)
+
+target_include_directories(${PROJECT_NAME}.elf SYSTEM PRIVATE
     ${HAL_DRV}/Inc
     ${HAL_DRV}/Inc/Legacy
     ${CMSIS_DEV}/Include
@@ -121,6 +171,45 @@ target_compile_options(${PROJECT_NAME}.elf PRIVATE
     $<$<CONFIG:Release>:-Os>
 )
 
+# ---- Strict warnings for our application code only -------------------------
+set(APP_STRICT_WARNING_FLAGS
+    -Wextra
+    -Wundef
+    -Wshadow
+    -Wformat=2
+    -Wstrict-prototypes
+    -Werror=implicit-function-declaration
+)
+
+if(ENABLE_STRICT_WARNINGS)
+    list(APPEND APP_STRICT_WARNING_FLAGS
+        -Wconversion
+        -Wcast-align
+        -Wdouble-promotion
+    )
+endif()
+
+if(ENABLE_GCC_ANALYZER)
+    list(APPEND APP_STRICT_WARNING_FLAGS -fanalyzer)
+endif()
+
+set_source_files_properties(${APP_C_SOURCES} PROPERTIES COMPILE_OPTIONS "${APP_STRICT_WARNING_FLAGS}")
+
+set(APP_RUNTIME_CHECK_FLAGS)
+if(ENABLE_UBSAN)
+    set(APP_RUNTIME_CHECK_FLAGS
+        -fsanitize=undefined
+        -fno-sanitize-recover=all
+        -fsanitize-undefined-trap-on-error
+    )
+
+    set_source_files_properties(${APP_C_SOURCES} PROPERTIES COMPILE_OPTIONS
+        "${APP_STRICT_WARNING_FLAGS};${APP_RUNTIME_CHECK_FLAGS}")
+    target_compile_options(lvgl PRIVATE ${APP_RUNTIME_CHECK_FLAGS})
+    target_link_options(${PROJECT_NAME}.elf PRIVATE ${APP_RUNTIME_CHECK_FLAGS})
+    message(STATUS "UBSan enabled with trap-on-error flags")
+endif()
+
 # ---- LVGL needs same CPU flags ----------------------------------------------
 target_compile_definitions(lvgl PRIVATE
     USE_HAL_DRIVER
@@ -128,9 +217,12 @@ target_compile_definitions(lvgl PRIVATE
     LV_DISABLE_API_MAPPING
 )
 target_compile_options(lvgl PRIVATE ${CPU_FLAGS})
+target_compile_options(lvgl PRIVATE -mno-unaligned-access)
 target_include_directories(lvgl PRIVATE
     ${CMAKE_SOURCE_DIR}/Inc
     ${CMAKE_SOURCE_DIR}
+)
+target_include_directories(lvgl SYSTEM PRIVATE
     ${HAL_DRV}/Inc
     ${HAL_DRV}/Inc/Legacy
     ${CMSIS_DEV}/Include
