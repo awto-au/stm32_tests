@@ -41,7 +41,7 @@ char **environ = __env;
 
 
 /* Functions */
-void initialise_monitor_handles()
+void initialise_monitor_handles(void)
 {
 }
 
@@ -58,10 +58,10 @@ int _kill(int pid, int sig)
   return -1;
 }
 
-void _exit (int status)
+__attribute__((noreturn)) void _exit (int status)
 {
   _kill(status, -1);
-  while (1) {}    /* Make sure we hang here */
+  __builtin_trap();
 }
 
 __attribute__((weak)) int _read(int file, char *ptr, int len)
@@ -71,7 +71,7 @@ __attribute__((weak)) int _read(int file, char *ptr, int len)
 
   for (DataIdx = 0; DataIdx < len; DataIdx++)
   {
-    *ptr++ = __io_getchar();
+    *ptr++ = (char)__io_getchar();
   }
 
   return len;

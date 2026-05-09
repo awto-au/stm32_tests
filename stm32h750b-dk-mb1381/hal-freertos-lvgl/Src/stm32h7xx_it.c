@@ -10,12 +10,15 @@
  *   SysTick_Handler → xPortSysTickHandler
  * so we must NOT define them here. HAL timebase runs from TIM6 instead. */
 
-void NMI_Handler(void) { while(1){} }
+void NMI_Handler(void)
+{
+    Error_Handler();
+}
 
-static const char kHardFaultName[] = "HardFault";
-static const char kMemManageName[] = "MemManage";
-static const char kBusFaultName[] = "BusFault";
-static const char kUsageFaultName[] = "UsageFault";
+static const char kHardFaultName[] __attribute__((used)) = "HardFault";
+static const char kMemManageName[] __attribute__((used)) = "MemManage";
+static const char kBusFaultName[] __attribute__((used)) = "BusFault";
+static const char kUsageFaultName[] __attribute__((used)) = "UsageFault";
 
 /* HardFault: capture stacked context so a debugger can inspect it.
  * If a debugger is not attached the variables are visible in a watch window
@@ -72,7 +75,7 @@ void UsageFault_Handler(void)
     );
 }
 
-void __attribute__((used)) Fault_Decode_Common(uint32_t *stack, uint32_t exc_lr, const char *fault_name)
+void __attribute__((used, noreturn)) Fault_Decode_Common(uint32_t *stack, uint32_t exc_lr, const char *fault_name)
 {
     volatile uint32_t hf_r0   = stack[0];
     volatile uint32_t hf_r1   = stack[1];
@@ -171,7 +174,7 @@ void __attribute__((used)) Fault_Decode_Common(uint32_t *stack, uint32_t exc_lr,
     (void)hf_cfsr; (void)hf_hfsr; (void)hf_dfsr; (void)hf_afsr;
     (void)hf_mmar; (void)hf_bfar; (void)hf_shcsr; (void)hf_icsr; (void)exc_lr; (void)fault_name;
     __BKPT(0);   /* break into debugger if attached */
-    while(1){}
+    Error_Handler();
 }
 
 /* LTDC line interrupt — forwarded to HAL for LVGL frame sync */
