@@ -251,11 +251,18 @@ static void StartupTask(void *arg)
     __DSB();
     __ISB();
 
-    /* XIP+LVGL is much more practical with instruction cache enabled. */
+    /* Re-enable caches disabled by QSPI proof phase.  Both must be on:
+     * I-cache for XIP instruction fetch, D-cache for XIP rodata + AXI SRAM.
+     * The QSPI MPU region is cacheable+WT so reads are served from cache after
+     * the first miss — otherwise every LDR to 0x90000000 is a QSPI transaction. */
     SCB_EnableICache();
+    SCB_EnableDCache();
     __DSB();
     __ISB();
-    APP_LOGI("BOOT", "pre-LVGL core cfg: icache=ON unalign-trap=OFF");
+    APP_LOGI("BOOT", "pre-LVGL core cfg: icache=ON dcache=ON unalign-trap=OFF");
+
+    /* Measure cached XIP throughput now that both caches are hot. */
+    QSPI_BenchmarkCachedRead();
 
     LTDC_Init((uint32_t)lcd_fb[0]);
     APP_LOGI("LTDC", "init done, fb0=0x%08lx", (unsigned long)(uint32_t)lcd_fb[0]);

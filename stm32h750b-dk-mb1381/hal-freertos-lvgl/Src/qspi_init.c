@@ -1220,3 +1220,21 @@ void QSPI_RunAggressiveBenchmark(void)
     APP_LOGI("QBENCH", "aggressive benchmark PASS");
 }
 
+void QSPI_BenchmarkCachedRead(void)
+{
+    uint32_t mm64k_x100;
+    uint32_t mm1m_x100;
+
+    /* Must be called while QSPI is in memory-mapped mode and caches are ON. */
+    __DSB();
+    __ISB();
+    mm64k_x100 = QSPI_BenchmarkMmRead_x100(64U * 1024U, 32U);
+    mm1m_x100  = QSPI_BenchmarkMmRead_x100(1024U * 1024U, 8U);
+
+    APP_LOGI("QBENCH", "cached mm-64k=%lu.%02lu MB/s mm-1m=%lu.%02lu MB/s",
+             (unsigned long)(mm64k_x100 / 100U),
+             (unsigned long)(mm64k_x100 % 100U),
+             (unsigned long)(mm1m_x100 / 100U),
+             (unsigned long)(mm1m_x100 % 100U));
+}
+
