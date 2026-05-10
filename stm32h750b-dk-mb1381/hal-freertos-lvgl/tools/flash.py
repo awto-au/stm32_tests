@@ -14,7 +14,7 @@ EXTLOADER = (
     "/home/dan/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/"
     "ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr"
 )
-BOARD_SN   = "003400223137510E33333639"
+BOARD_SN   = "0043002C3133510A36303739"
 HEX_PATH   = "build/Debug/stm32h750_lvgl.hex"
 SERIAL_DEV = "/dev/ttyACM4"
 BAUD       = 2_000_000

@@ -158,6 +158,7 @@ target_include_directories(${PROJECT_NAME}.elf SYSTEM PRIVATE
 target_compile_definitions(${PROJECT_NAME}.elf PRIVATE
     USE_HAL_DRIVER
     STM32H750xx
+    STM32H7
     LV_DISABLE_API_MAPPING
 )
 
@@ -216,6 +217,7 @@ endif()
 target_compile_definitions(lvgl PRIVATE
     USE_HAL_DRIVER
     STM32H750xx
+    STM32H7
     LV_DISABLE_API_MAPPING
 )
 target_compile_options(lvgl PRIVATE ${CPU_FLAGS})

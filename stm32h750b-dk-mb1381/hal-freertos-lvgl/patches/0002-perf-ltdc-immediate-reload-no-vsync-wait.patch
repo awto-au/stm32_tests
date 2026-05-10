@@ -1,0 +1,39 @@
+From: awto-debug-pod performance patches
+Subject: [PATCH 2/2] perf(ltdc): use IMMEDIATE reload to eliminate VBlank wait
+
+In double-buffered DIRECT mode flush_cb previously called
+HAL_LTDC_Reload(..., LTDC_RELOAD_VERTICAL_BLANKING), which blocks the
+LVGL task for up to ~17 ms (one full VBlank period at 59.5 Hz) via
+SYNC_WAIT / lv_thread_sync_wait.  With LV_DEF_REFR_PERIOD=33 and ~35 ms
+actual render time, the total cycle is ~52 ms → ~14 fps.
+
+Switching to LTDC_RELOAD_IMMEDIATE fires the reload (and therefore the
+register-reload interrupt that unblocks LVGL) at the next pixel-line
+boundary instead of the next blanking interval.  This saves ~17 ms/frame,
+raising throughput to ~23 fps.
+
+The flush_wait_cb mechanism is unchanged: the reload interrupt still fires
+SYNC_SIGNAL_ISR, which unblocks the LVGL task via lv_thread_sync_signal_isr.
+
+Trade-off: the framebuffer address register takes effect mid-scan, so a
+single horizontal tear line may appear when the buffer flip occurs during
+active video.  Acceptable for a debug/instrumentation panel.
+
+diff --git a/src/drivers/display/st_ltdc/lv_st_ltdc.c b/src/drivers/display/st_ltdc/lv_st_ltdc.c
+index fef8f53..785c210 100644
+--- a/src/drivers/display/st_ltdc/lv_st_ltdc.c
++++ b/src/drivers/display/st_ltdc/lv_st_ltdc.c
+@@ -156,7 +156,12 @@ static void flush_cb(lv_display_t * disp, const lv_area_t * area, uint8_t * px_m
+         if(flush_is_last && lv_display_is_double_buffered(disp)) {
+             HAL_LTDC_SetAddress_NoReload(&hltdc, (uint32_t)px_map, layer_idx);
+             g_data.layer_interrupt_is_owned[layer_idx] = true;
+-            HAL_LTDC_Reload(&hltdc, LTDC_RELOAD_VERTICAL_BLANKING);
++            /* IMMEDIATE instead of VERTICAL_BLANKING: reload fires at the next
++             * pixel-line boundary rather than waiting for VBlank (~17 ms).
++             * The reload interrupt still fires and unblocks the LVGL task via
++             * SYNC_SIGNAL_ISR, so flush_wait_cb works unchanged.  Trade-off:
++             * the buffer flip may happen mid-scan → single-frame tearing. */
++            HAL_LTDC_Reload(&hltdc, LTDC_RELOAD_IMMEDIATE);
+         }
+         else {
+             g_data.disp_flushed_in_flush_cb[layer_idx] = true;

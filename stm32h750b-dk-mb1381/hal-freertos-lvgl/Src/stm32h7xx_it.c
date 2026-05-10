@@ -2,6 +2,8 @@
 #include "stm32h7xx_hal.h"
 #include "main.h"
 #include "app_log.h"
+#include "lvgl.h"
+#include "src/draw/dma2d/lv_draw_dma2d.h"
 #include <stdint.h>
 
 /* FreeRTOS exception handlers are mapped via FreeRTOSConfig.h macros:
@@ -181,4 +183,11 @@ void __attribute__((used, noreturn)) Fault_Decode_Common(uint32_t *stack, uint32
 void LTDC_IRQHandler(void)
 {
     HAL_LTDC_IRQHandler(&hltdc);
+}
+
+/* DMA2D transfer-complete — signals LVGL draw unit to resume */
+void DMA2D_IRQHandler(void)
+{
+    DMA2D->IFCR = DMA2D_IFCR_CTCIF;  /* clear TC flag before signalling */
+    lv_draw_dma2d_transfer_complete_interrupt_handler();
 }

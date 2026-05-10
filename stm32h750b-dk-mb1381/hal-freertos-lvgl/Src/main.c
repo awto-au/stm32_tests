@@ -29,6 +29,7 @@ uint16_t lcd_fb[2][LCD_WIDTH * LCD_HEIGHT];
 static void SystemClock_Config(void);
 static void FPU_EnableEarly(void);
 static void CPU_CACHE_Enable(void);
+static void MPU_ConfigFramebuffer(void);
 static void LED_Init(void);
 static void EarlyAliveBlink(void);
 static void HeartbeatTask(void *arg);
@@ -159,6 +160,34 @@ static void CPU_CACHE_Enable(void)
     SCB_EnableDCache();
 }
 
+static void MPU_ConfigFramebuffer(void)
+{
+    MPU_Region_InitTypeDef r = {0};
+
+    HAL_MPU_Disable();
+
+    /* Region 1: AXISRAM framebuffer window (0x24000000, 512 KB).
+     * Write-Through, no write-allocate (TEX=0, C=1, B=0):
+     * CPU stores always go to physical SRAM, so DMA2D always sees current
+     * pixel data.  DMA2D writes are still not in the CPU's cache lines, so
+     * LVGL's lv_draw_dma2d_invalidate_cache() call after each transfer
+     * flushes any stale lines before the CPU reads the result. */
+    r.Enable           = MPU_REGION_ENABLE;
+    r.Number           = MPU_REGION_NUMBER1;
+    r.BaseAddress      = 0x24000000U;
+    r.Size             = MPU_REGION_SIZE_512KB;
+    r.SubRegionDisable = 0x00U;
+    r.TypeExtField     = MPU_TEX_LEVEL0;
+    r.AccessPermission = MPU_REGION_FULL_ACCESS;
+    r.DisableExec      = MPU_INSTRUCTION_ACCESS_DISABLE;
+    r.IsShareable      = MPU_ACCESS_NOT_SHAREABLE;
+    r.IsCacheable      = MPU_ACCESS_CACHEABLE;
+    r.IsBufferable     = MPU_ACCESS_NOT_BUFFERABLE;
+    HAL_MPU_ConfigRegion(&r);
+
+    HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+}
+
 static void FPU_EnableEarly(void)
 {
     /* Force-enable CP10/CP11 for all privilege levels.
@@ -264,6 +293,13 @@ static void StartupTask(void *arg)
     /* Measure cached XIP throughput now that both caches are hot. */
     QSPI_BenchmarkCachedRead();
 
+    /* Framebuffers at 0x24000000 are shared between CPU and DMA2D.  Configure
+     * the MPU region as Write-Through so CPU stores are immediately visible
+     * in SRAM — DMA2D bypasses the cache and reads/writes physical memory
+     * directly, so WT avoids incoherency without the overhead of non-cacheable. */
+    MPU_ConfigFramebuffer();
+    APP_LOGI("BOOT", "mpu framebuffer region configured (WT)");
+
     LTDC_Init((uint32_t)lcd_fb[0]);
     APP_LOGI("LTDC", "init done, fb0=0x%08lx", (unsigned long)(uint32_t)lcd_fb[0]);
 
@@ -279,7 +315,6 @@ static void StartupTask(void *arg)
 #else
     APP_LOGI("BOOT", "before lvgl_port_init");
     lvgl_port_init();
-    APP_LOGI("BOOT", "after lvgl_port_init");
     APP_LOGI("LVGL", "port init done");
 
     APP_LOGI("BOOT", "before ui_init");
@@ -287,9 +322,13 @@ static void StartupTask(void *arg)
     APP_LOGI("UI", "ui_init skipped (BOOT_SKIP_UI_ASSETS=1)");
 #else
     ui_init();
-    APP_LOGI("BOOT", "after ui_init");
     APP_LOGI("UI", "ui init done");
 #endif
+
+    /* Start LVGL task only after ui_init() — DMA2D async mode lets the LVGL task
+     * preempt StartupTask mid-render, which races with ui_init() LVGL calls. */
+    lvgl_port_start();
+    APP_LOGI("BOOT", "lvgl task started");
 #endif
 
     APP_LOGI("BOOT", "startup task complete");

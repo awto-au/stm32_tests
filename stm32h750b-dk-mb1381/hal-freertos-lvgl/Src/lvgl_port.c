@@ -106,6 +106,7 @@ static void lvgl_task(void *arg)
 {
     (void)arg;
     TickType_t last_ticks = xTaskGetTickCount();
+    uint32_t frame_count = 0U;
     APP_LOGI("LVGL", "task started");
     while (1) {
         TickType_t now_ticks = xTaskGetTickCount();
@@ -115,15 +116,33 @@ static void lvgl_task(void *arg)
             last_ticks = now_ticks;
         }
 
+        uint32_t t0 = DWT->CYCCNT;
         uint32_t sleep_ms = lv_timer_handler();
+        uint32_t render_cyc = DWT->CYCCNT - t0;
+
+        frame_count++;
+        if ((frame_count % 60U) == 0U) {
+            APP_LOGI("LVGL", "render_ms=%lu sleep_ms=%lu",
+                     (unsigned long)(render_cyc / 400000UL),
+                     (unsigned long)sleep_ms);
+        }
+
         ui_stress_tick();
-        if (sleep_ms > 10) sleep_ms = 10;
-        vTaskDelay(pdMS_TO_TICKS(sleep_ms));
+        /* Yield briefly to peer-priority tasks (AppLog).  Don't sleep
+         * longer than 5 ms — the vsync reload is the real pacing mechanism. */
+        if (sleep_ms > 5U) sleep_ms = 5U;
+        if (sleep_ms > 0U) vTaskDelay(pdMS_TO_TICKS(sleep_ms));
     }
 }
 
 void lvgl_port_init(void)
 {
+    /* Enable DMA2D clock and set IRQ priority before lv_init() initializes
+     * the DMA2D draw unit.  LVGL enables the IRQ but does not set priority,
+     * so priority must be set first to avoid FreeRTOS assertion. */
+    __HAL_RCC_DMA2D_CLK_ENABLE();
+    HAL_NVIC_SetPriority(DMA2D_IRQn, 5, 0);
+
     lv_init();
     APP_LOGI("LVGL", "lv_init done");
 
@@ -145,7 +164,10 @@ void lvgl_port_init(void)
     lv_display_set_resolution(disp, LCD_WIDTH, LCD_HEIGHT);
     APP_LOGI("LVGL", "display configured %ux%u", (unsigned)LCD_WIDTH, (unsigned)LCD_HEIGHT);
 
-    /* Start LVGL task */
+}
+
+void lvgl_port_start(void)
+{
     if (xTaskCreate(lvgl_task, "LVGL", LVGL_TASK_STACK_WORDS, NULL,
                     LVGL_TASK_PRIORITY, &lvgl_task_handle) != pdPASS) {
         APP_LOGE("LVGL", "task create failed");
