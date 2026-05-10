@@ -7,12 +7,12 @@ set -euo pipefail
 #   tools/hardfault_capture.sh --port /dev/ttyACM8 --seconds 12
 #   tools/hardfault_capture.sh --no-reset
 
-PORT="/dev/ttyACM5"
+PORT="/dev/ttyACM4"
 BAUD="2000000"
 SECONDS_CAPTURE="10"
 DO_RESET="1"
 LOG_DIR="${HOME}/logs"
-RESET_CMD_DEFAULT='PROG=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI; EL=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr; "$PROG" -c port=SWD sn=003400223137510E33333639 -el "$EL" -rst'
+RESET_CMD_DEFAULT='PROG=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI; EL=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr; "$PROG" -c port=SWD sn=0043002C3133510A36303739 -el "$EL" -rst'
 RESET_CMD="$RESET_CMD_DEFAULT"
 
 usage() {
@@ -22,7 +22,7 @@ hardfault_capture.sh
 Capture UART boot logs and decode HardFault/BusFault details.
 
 Options:
-  --port <device>      Serial device (default: /dev/ttyACM5)
+  --port <device>      Serial device (default: /dev/ttyACM4)
   --baud <rate>        Baud rate (default: 2000000)
   --seconds <n>        Capture duration after reset (default: 10)
   --log-dir <dir>      Output log directory (default: ~/logs)

@@ -34,7 +34,7 @@ After the full LVGL restore the sizes are:
 ### How QSPI XIP works
 
 1. `QSPI_MemoryMapped_Init()` runs in `main()` before the scheduler, immediately after the clock is up.
-2. It resets the MT25TL01G, switches to 4-byte address mode, then puts the QUADSPI peripheral into memory-mapped mode using **Quad-Output Fast Read (opcode 0x6B)** at 100 MHz (AHB3 200 MHz ÷ 2).
+2. It resets the MT25TL01G, switches to 4-byte address mode, then puts the QUADSPI peripheral into memory-mapped mode using **Quad IO Fast Read (opcode 0xEB)** at 100 MHz (AHB3 200 MHz ÷ 2) for 6× small-read throughput vs legacy 0x6B mode.
 3. The MPU is configured with a 64 MB Normal-memory, cacheable, write-through region at `0x90000000` so the I-cache and D-cache work correctly.
 4. From that point on, the CPU fetches LVGL instructions transparently from QSPI as if it were internal flash — no software copy step.
 
