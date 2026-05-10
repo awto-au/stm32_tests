@@ -2,23 +2,59 @@
 """Flash STM32H750B-DK via SWD and capture boot log on /dev/ttyACM4."""
 
 import argparse
+import os
 import subprocess
 import sys
 import threading
 import time
+from pathlib import Path
 
-PROGRAMMER = (
-    "/home/dan/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI"
-)
-EXTLOADER = (
-    "/home/dan/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/"
-    "ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr"
-)
 BOARD_SN   = "0043002C3133510A36303739"
 HEX_PATH   = "build/Debug/stm32h750_lvgl.hex"
 SERIAL_DEV = "/dev/ttyACM4"
 BAUD       = 2_000_000
 LOG_FILE   = "boot.tmp"
+
+
+def find_stm32_programmer() -> str:
+    """Find STM32_Programmer_CLI in CubeIDE or standalone installation."""
+    candidates = [
+        # CubeIDE embedded version (most common paths)
+        Path.home() / "STMicroelectronics/STM32CubeIDE/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI",
+        Path.home() / ".local/opt/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI",
+        Path("/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI"),
+        # Fallback: standalone installation
+        Path.home() / "STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI",
+    ]
+    
+    for prog in candidates:
+        if prog.exists():
+            return str(prog)
+    
+    # If still not found, show error with search paths
+    sys.exit(f"STM32_Programmer_CLI not found. Checked:\n" + 
+             "\n".join(f"  {p}" for p in candidates))
+
+
+def find_extloader() -> str:
+    """Find MT25TL01G external loader."""
+    candidates = [
+        Path.home() / "STMicroelectronics/STM32CubeIDE/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr",
+        Path.home() / ".local/opt/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr",
+        Path("/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr"),
+        Path.home() / "STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr",
+    ]
+    
+    for loader in candidates:
+        if loader.exists():
+            return str(loader)
+    
+    sys.exit(f"MT25TL01G_STM32H750B-DISCO.stldr not found. Checked:\n" +
+             "\n".join(f"  {p}" for p in candidates))
+
+
+PROGRAMMER = find_stm32_programmer()
+EXTLOADER = find_extloader()
 
 
 def flash(hex_path: str) -> bool:
