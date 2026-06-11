@@ -1,0 +1,4646 @@
+﻿[Design]
+Version=1.0
+HierarchyMode=0
+ChannelRoomNamingStyle=0
+ReleasesFolder=
+ChannelDesignatorFormatString=$Component_$RoomName
+ChannelRoomLevelSeperator=_
+OpenOutputs=1
+ArchiveProject=0
+TimestampOutput=0
+SeparateFolders=0
+TemplateLocationPath=
+PinSwapBy_Netlabel=1
+PinSwapBy_Pin=1
+AllowPortNetNames=0
+AllowSheetEntryNetNames=1
+AppendSheetNumberToLocalNets=0
+NetlistSinglePinNets=0
+DefaultConfiguration=Default Configuration
+UserID=0xFFFFFFFF
+DefaultPcbProtel=1
+DefaultPcbPcad=0
+ReorderDocumentsOnCompile=1
+NameNetsHierarchically=0
+PowerPortNamesTakePriority=0
+AutoSheetNumbering=0
+AutoCrossReferences=0
+NewIndexingOfSheetSymbols=0
+PushECOToAnnotationFile=1
+DItemRevisionGUID=
+ReportSuppressedErrorsInMessages=0
+FSMCodingStyle=eFMSDropDownList_OneProcess
+FSMEncodingStyle=eFMSDropDownList_OneHot
+IsProjectConflictPreventionWarningsEnabled=1
+IsVirtualBomDocumentRemoved=0
+OutputPath=Project Outputs for PCB_Project_Template
+LogFolderPath=
+ManagedProjectGUID=
+IncludeDesignInRelease=0
+CrossRefSheetStyle=1
+CrossRefLocationStyle=1
+CrossRefPorts=3
+CrossRefCrossSheets=1
+CrossRefSheetEntries=0
+CrossRefFollowFromMainSettings=1
+
+[Preferences]
+PrefsVaultGUID=
+PrefsRevisionGUID=
+
+[Document1]
+DocumentPath=STM32_microcontroller_IOs.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=26
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=MMIAYHDU
+
+[Document2]
+DocumentPath=STM32_microcontroller_Power.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=27
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=VVGJDBGY
+
+[Document3]
+DocumentPath=Ethernet.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=4
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=QUGSCAUB
+
+[Document4]
+DocumentPath=USB_OTG_FS.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=29
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=WLRGPOHQ
+
+[Document5]
+DocumentPath=FDCAN.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=5
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=DUCOXRUU
+
+[Document6]
+DocumentPath=SDRAM.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=12
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RTGDTNWQ
+
+[Document7]
+DocumentPath=eMMC.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=3
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=CDIAIPAU
+
+[Document8]
+DocumentPath=QSPI.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=11
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=IHKFJYKF
+
+[Document9]
+DocumentPath=LCD4.3.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=24
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=SPGKLQDC
+
+[Document10]
+DocumentPath=Audio.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=HSUPGMLR
+
+[Document11]
+DocumentPath=STMod+.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=16
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=CNFKYPMC
+
+[Document12]
+DocumentPath=TAG.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=23
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=VBLRODGN
+
+[Document13]
+DocumentPath=Arduino_Connector.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=0
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=IPEQTTRQ
+
+[Document14]
+DocumentPath=STlink_V3E_Module.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=13
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=HQQRMHJP
+
+[Document15]
+DocumentPath=STlink_V3E_PWR.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=14
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=MRCNNCLO
+
+[Document16]
+DocumentPath=PoE.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=8
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=TPCJRYNG
+
+[Document17]
+DocumentPath=HW_Mechanical_Parts.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=20
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=LRFHTNBJ
+
+[Document18]
+DocumentPath=Arduino_Connector.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document19]
+DocumentPath=STMod+.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document20]
+DocumentPath=eMMC.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document21]
+DocumentPath=SDRAM.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document22]
+DocumentPath=Audio.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document23]
+DocumentPath=Project_overview.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=25
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=SXAOXJER
+
+[Document24]
+DocumentPath=MB1381.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=LPELNQEB
+
+[Document25]
+DocumentPath=TOP.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=28
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=BFREBMIC
+
+[Document26]
+DocumentPath=STM32_microcontroller_IOs.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document27]
+DocumentPath=LCD4.3.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document28]
+DocumentPath=QSPI.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document29]
+DocumentPath=MB1381.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[ProjectVariant1]
+UniqueID=C1FFB6AB-B489-46C2-85DC-8FBDF2D01DBC
+Description=H745XI
+AllowFabrication=0
+ParameterCount=0
+VariationCount=43
+Variation1=Designator=R144|UniqueId=\PUETYIQX\MQHKFLUC\TYJHWSGW|Kind=1|AlternatePart= 
+Variation2=Designator=R103|UniqueId=\PUETYIQX\MQHKFLUC\VKVJGSGT|Kind=1|AlternatePart= 
+Variation3=Designator=C182|UniqueId=\PUETYIQX\MQHKFLUC\BITMTOAX|Kind=1|AlternatePart= 
+Variation4=Designator=C79|UniqueId=\PUETYIQX\DQTTLOKG\UCBBUHOE|Kind=1|AlternatePart= 
+Variation5=Designator=U3|UniqueId=\PUETYIQX\DQTTLOKG\NIUOVAXN|Kind=1|AlternatePart= 
+Variation6=Designator=R29|UniqueId=\PUETYIQX\DQTTLOKG\RDXHNOKN|Kind=1|AlternatePart= 
+Variation7=Designator=C24|UniqueId=\PUETYIQX\DQTTLOKG\HPGQLSQQ|Kind=1|AlternatePart= 
+Variation8=Designator=C25|UniqueId=\PUETYIQX\DQTTLOKG\GIRTPKAM|Kind=1|AlternatePart= 
+Variation9=Designator=R123|UniqueId=\PUETYIQX\AJAGXGCK\TWQQNPSK|Kind=1|AlternatePart= 
+Variation10=Designator=R170|UniqueId=\PUETYIQX\AJAGXGCK\UOXDSWDD|Kind=1|AlternatePart= 
+Variation11=Designator=R168|UniqueId=\PUETYIQX\AJAGXGCK\AWBALMTQ|Kind=1|AlternatePart= 
+Variation12=Designator=R167|UniqueId=\PUETYIQX\AJAGXGCK\EFCLUPCA|Kind=1|AlternatePart= 
+Variation13=Designator=R166|UniqueId=\PUETYIQX\AJAGXGCK\SRMKBYPT|Kind=1|AlternatePart= 
+Variation14=Designator=R119|UniqueId=\PUETYIQX\AJAGXGCK\YIOVPPLH|Kind=1|AlternatePart= 
+Variation15=Designator=C14|UniqueId=\PUETYIQX\AJAGXGCK\EHGFHJCC\UUQSATJU|Kind=1|AlternatePart= 
+Variation16=Designator=R6|UniqueId=\PUETYIQX\AJAGXGCK\EHGFHJCC\WVAQWSTH|Kind=1|AlternatePart= 
+Variation17=Designator=C133|UniqueId=\PUETYIQX\ADEPODLC\SUXIJPCT|Kind=0|AlternatePart= 
+Variation18=Designator=C131|UniqueId=\PUETYIQX\ADEPODLC\KFEMUHOU|Kind=0|AlternatePart= 
+Variation19=Designator=CN16|UniqueId=\PUETYIQX\URJSUBNL\CPPTNJDJ|Kind=1|AlternatePart= 
+Variation20=Designator=C80|UniqueId=\PUETYIQX\APTISRRX\CNHJLNXS|Kind=1|AlternatePart= 
+Variation21=Designator=CN5|UniqueId=\PUETYIQX\FEWNKIVA\YCYNSFTW|Kind=1|AlternatePart= 
+Variation22=Designator=C119|UniqueId=\PUETYIQX\FEWNKIVA\WNQJELOX|Kind=1|AlternatePart= 
+Variation23=Designator=JP2|UniqueId=\PUETYIQX\FEWNKIVA\WFEBWQAU|Kind=1|AlternatePart= 
+Variation24=Designator=R193|UniqueId=\PUETYIQX\AOARXPKF\XYFTLFOL|Kind=1|AlternatePart= 
+Variation25=Designator=T1|UniqueId=\PUETYIQX\AJAGXGCK\EHGFHJCC\WFNVGPTE|Kind=1|AlternatePart= 
+Variation26=Designator=C78|UniqueId=\PUETYIQX\DQTTLOKG\NKHSEUBU|Kind=1|AlternatePart= 
+Variation27=Designator=C186|UniqueId=\PUETYIQX\DQTTLOKG\MBVEUQXK|Kind=1|AlternatePart= 
+Variation28=Designator=C187|UniqueId=\PUETYIQX\DQTTLOKG\KPVWVAVQ|Kind=1|AlternatePart= 
+Variation29=Designator=R62|UniqueId=\PUETYIQX\TORMEJDJ\THMCPLYV|Kind=1|AlternatePart= 
+Variation30=Designator=R60|UniqueId=\PUETYIQX\TORMEJDJ\UJAGHESH|Kind=1|AlternatePart= 
+Variation31=Designator=R56|UniqueId=\PUETYIQX\TORMEJDJ\FAQQVCVK|Kind=1|AlternatePart= 
+Variation32=Designator=R54|UniqueId=\PUETYIQX\TORMEJDJ\IOHMHSKJ|Kind=1|AlternatePart= 
+Variation33=Designator=R53|UniqueId=\PUETYIQX\TORMEJDJ\OEHTKTBG|Kind=1|AlternatePart= 
+Variation34=Designator=SB6|UniqueId=\PUETYIQX\DQTTLOKG\YVUXVHGX|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation1=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator1=SB6
+ParamVariation2=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator2=SB6
+ParamVariation3=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator3=SB6
+ParamVariation4=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator4=SB6
+ParamVariation5=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator5=SB6
+ParamVariation6=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator6=SB6
+ParamVariation7=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator7=SB6
+ParamVariation8=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator8=SB6
+ParamVariation9=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator9=SB6
+ParamVariation10=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator10=SB6
+ParamVariation11=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator11=SB6
+ParamVariation12=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator12=SB6
+ParamVariation13=ParameterName=Package|VariantValue=0603
+ParamDesignator13=SB6
+ParamVariation14=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator14=SB6
+ParamVariation15=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator15=SB6
+ParamVariation16=ParameterName=PCB3D|VariantValue= 
+ParamDesignator16=SB6
+ParamVariation17=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator17=SB6
+ParamVariation18=ParameterName=Simulation|VariantValue= 
+ParamDesignator18=SB6
+ParamVariation19=ParameterName=Status|VariantValue=Released
+ParamDesignator19=SB6
+ParamVariation20=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator20=SB6
+ParamVariation21=ParameterName=ID|VariantValue=2520
+ParamDesignator21=SB6
+ParamVariation22=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator22=SB6
+ParamVariation23=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator23=SB6
+ParamVariation24=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator24=SB6
+ParamVariation25=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator25=SB6
+ParamVariation26=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator26=SB6
+ParamVariation27=ParameterName=Value|VariantValue=0R
+ParamDesignator27=SB6
+ParamVariation28=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator28=SB6
+ParamVariation29=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator29=SB6
+ParamVariation30=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator30=SB6
+ParamVariation31=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator31=SB6
+Variation35=Designator=SB17|UniqueId=\PUETYIQX\DQTTLOKG\JFLDNPPQ|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation32=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator32=SB17
+ParamVariation33=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator33=SB17
+ParamVariation34=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator34=SB17
+ParamVariation35=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator35=SB17
+ParamVariation36=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator36=SB17
+ParamVariation37=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator37=SB17
+ParamVariation38=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator38=SB17
+ParamVariation39=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator39=SB17
+ParamVariation40=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator40=SB17
+ParamVariation41=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator41=SB17
+ParamVariation42=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator42=SB17
+ParamVariation43=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator43=SB17
+ParamVariation44=ParameterName=Package|VariantValue=0603
+ParamDesignator44=SB17
+ParamVariation45=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator45=SB17
+ParamVariation46=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator46=SB17
+ParamVariation47=ParameterName=PCB3D|VariantValue= 
+ParamDesignator47=SB17
+ParamVariation48=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator48=SB17
+ParamVariation49=ParameterName=Simulation|VariantValue= 
+ParamDesignator49=SB17
+ParamVariation50=ParameterName=Status|VariantValue=Released
+ParamDesignator50=SB17
+ParamVariation51=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator51=SB17
+ParamVariation52=ParameterName=ID|VariantValue=2520
+ParamDesignator52=SB17
+ParamVariation53=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator53=SB17
+ParamVariation54=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator54=SB17
+ParamVariation55=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator55=SB17
+ParamVariation56=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator56=SB17
+ParamVariation57=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator57=SB17
+ParamVariation58=ParameterName=Value|VariantValue=0R
+ParamDesignator58=SB17
+ParamVariation59=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator59=SB17
+ParamVariation60=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator60=SB17
+ParamVariation61=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator61=SB17
+ParamVariation62=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator62=SB17
+Variation36=Designator=SB45|UniqueId=\PUETYIQX\DQTTLOKG\UUAEDMHN|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation63=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator63=SB45
+ParamVariation64=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator64=SB45
+ParamVariation65=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator65=SB45
+ParamVariation66=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator66=SB45
+ParamVariation67=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator67=SB45
+ParamVariation68=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator68=SB45
+ParamVariation69=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator69=SB45
+ParamVariation70=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator70=SB45
+ParamVariation71=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator71=SB45
+ParamVariation72=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator72=SB45
+ParamVariation73=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator73=SB45
+ParamVariation74=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator74=SB45
+ParamVariation75=ParameterName=Package|VariantValue=0603
+ParamDesignator75=SB45
+ParamVariation76=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator76=SB45
+ParamVariation77=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator77=SB45
+ParamVariation78=ParameterName=PCB3D|VariantValue= 
+ParamDesignator78=SB45
+ParamVariation79=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator79=SB45
+ParamVariation80=ParameterName=Simulation|VariantValue= 
+ParamDesignator80=SB45
+ParamVariation81=ParameterName=Status|VariantValue=Released
+ParamDesignator81=SB45
+ParamVariation82=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator82=SB45
+ParamVariation83=ParameterName=ID|VariantValue=2520
+ParamDesignator83=SB45
+ParamVariation84=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator84=SB45
+ParamVariation85=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator85=SB45
+ParamVariation86=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator86=SB45
+ParamVariation87=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator87=SB45
+ParamVariation88=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator88=SB45
+ParamVariation89=ParameterName=Value|VariantValue=0R
+ParamDesignator89=SB45
+ParamVariation90=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator90=SB45
+ParamVariation91=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator91=SB45
+ParamVariation92=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator92=SB45
+ParamVariation93=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator93=SB45
+Variation37=Designator=SB5|UniqueId=\PUETYIQX\DQTTLOKG\QOPKWBCR|Kind=2|AlternatePart=SB_ON|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00071|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation94=ParameterName=Comment|VariantValue=SB_ON
+ParamDesignator94=SB5
+ParamVariation95=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator95=SB5
+ParamVariation96=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator96=SB5
+ParamVariation97=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator97=SB5
+ParamVariation98=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator98=SB5
+ParamVariation99=ParameterName=Description|VariantValue=Solder Bridge ON
+ParamDesignator99=SB5
+ParamVariation100=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator100=SB5
+ParamVariation101=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator101=SB5
+ParamVariation102=ParameterName=Internal_Part_Number|VariantValue=MCD-00071
+ParamDesignator102=SB5
+ParamVariation103=ParameterName=Library Reference|VariantValue=MCD-00071
+ParamDesignator103=SB5
+ParamVariation104=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator104=SB5
+ParamVariation105=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator105=SB5
+ParamVariation106=ParameterName=Package|VariantValue=0603
+ParamDesignator106=SB5
+ParamVariation107=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator107=SB5
+ParamVariation108=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator108=SB5
+ParamVariation109=ParameterName=PCB3D|VariantValue= 
+ParamDesignator109=SB5
+ParamVariation110=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator110=SB5
+ParamVariation111=ParameterName=Simulation|VariantValue= 
+ParamDesignator111=SB5
+ParamVariation112=ParameterName=Status|VariantValue=Released
+ParamDesignator112=SB5
+ParamVariation113=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator113=SB5
+ParamVariation114=ParameterName=ID|VariantValue=2521
+ParamDesignator114=SB5
+ParamVariation115=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator115=SB5
+ParamVariation116=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator116=SB5
+ParamVariation117=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator117=SB5
+ParamVariation118=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator118=SB5
+ParamVariation119=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator119=SB5
+ParamVariation120=ParameterName=Value|VariantValue=0R
+ParamDesignator120=SB5
+ParamVariation121=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator121=SB5
+ParamVariation122=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator122=SB5
+ParamVariation123=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator123=SB5
+ParamVariation124=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator124=SB5
+Variation38=Designator=SB18|UniqueId=\PUETYIQX\DQTTLOKG\UEATOIOT|Kind=2|AlternatePart=SB_ON|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00071|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation125=ParameterName=Comment|VariantValue=SB_ON
+ParamDesignator125=SB18
+ParamVariation126=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator126=SB18
+ParamVariation127=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator127=SB18
+ParamVariation128=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator128=SB18
+ParamVariation129=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator129=SB18
+ParamVariation130=ParameterName=Description|VariantValue=Solder Bridge ON
+ParamDesignator130=SB18
+ParamVariation131=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator131=SB18
+ParamVariation132=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator132=SB18
+ParamVariation133=ParameterName=Internal_Part_Number|VariantValue=MCD-00071
+ParamDesignator133=SB18
+ParamVariation134=ParameterName=Library Reference|VariantValue=MCD-00071
+ParamDesignator134=SB18
+ParamVariation135=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator135=SB18
+ParamVariation136=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator136=SB18
+ParamVariation137=ParameterName=Package|VariantValue=0603
+ParamDesignator137=SB18
+ParamVariation138=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator138=SB18
+ParamVariation139=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator139=SB18
+ParamVariation140=ParameterName=PCB3D|VariantValue= 
+ParamDesignator140=SB18
+ParamVariation141=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator141=SB18
+ParamVariation142=ParameterName=Simulation|VariantValue= 
+ParamDesignator142=SB18
+ParamVariation143=ParameterName=Status|VariantValue=Released
+ParamDesignator143=SB18
+ParamVariation144=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator144=SB18
+ParamVariation145=ParameterName=ID|VariantValue=2521
+ParamDesignator145=SB18
+ParamVariation146=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator146=SB18
+ParamVariation147=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator147=SB18
+ParamVariation148=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator148=SB18
+ParamVariation149=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator149=SB18
+ParamVariation150=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator150=SB18
+ParamVariation151=ParameterName=Value|VariantValue=0R
+ParamDesignator151=SB18
+ParamVariation152=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator152=SB18
+ParamVariation153=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator153=SB18
+ParamVariation154=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator154=SB18
+ParamVariation155=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator155=SB18
+Variation39=Designator=SB26|UniqueId=\PUETYIQX\DQTTLOKG\IDJFOXRA|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation156=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator156=SB26
+ParamVariation157=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator157=SB26
+ParamVariation158=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator158=SB26
+ParamVariation159=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator159=SB26
+ParamVariation160=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator160=SB26
+ParamVariation161=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator161=SB26
+ParamVariation162=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator162=SB26
+ParamVariation163=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator163=SB26
+ParamVariation164=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator164=SB26
+ParamVariation165=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator165=SB26
+ParamVariation166=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator166=SB26
+ParamVariation167=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator167=SB26
+ParamVariation168=ParameterName=Package|VariantValue=0603
+ParamDesignator168=SB26
+ParamVariation169=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator169=SB26
+ParamVariation170=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator170=SB26
+ParamVariation171=ParameterName=PCB3D|VariantValue= 
+ParamDesignator171=SB26
+ParamVariation172=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator172=SB26
+ParamVariation173=ParameterName=Simulation|VariantValue= 
+ParamDesignator173=SB26
+ParamVariation174=ParameterName=Status|VariantValue=Released
+ParamDesignator174=SB26
+ParamVariation175=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator175=SB26
+ParamVariation176=ParameterName=ID|VariantValue=2520
+ParamDesignator176=SB26
+ParamVariation177=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator177=SB26
+ParamVariation178=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator178=SB26
+ParamVariation179=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator179=SB26
+ParamVariation180=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator180=SB26
+ParamVariation181=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator181=SB26
+ParamVariation182=ParameterName=Value|VariantValue=0R
+ParamDesignator182=SB26
+ParamVariation183=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator183=SB26
+ParamVariation184=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator184=SB26
+ParamVariation185=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator185=SB26
+ParamVariation186=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator186=SB26
+ParamVariation187=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator187=SB26
+ParamVariation188=ParameterName=ID|VariantValue=2520
+ParamDesignator188=SB26
+ParamVariation189=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator189=SB26
+ParamVariation190=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator190=SB26
+ParamVariation191=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator191=SB26
+ParamVariation192=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator192=SB26
+ParamVariation193=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator193=SB26
+ParamVariation194=ParameterName=Value|VariantValue=0R
+ParamDesignator194=SB26
+Variation40=Designator=SB27|UniqueId=\PUETYIQX\DQTTLOKG\SSMEXLTA|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation195=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator195=SB27
+ParamVariation196=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator196=SB27
+ParamVariation197=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator197=SB27
+ParamVariation198=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator198=SB27
+ParamVariation199=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator199=SB27
+ParamVariation200=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator200=SB27
+ParamVariation201=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator201=SB27
+ParamVariation202=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator202=SB27
+ParamVariation203=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator203=SB27
+ParamVariation204=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator204=SB27
+ParamVariation205=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator205=SB27
+ParamVariation206=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator206=SB27
+ParamVariation207=ParameterName=Package|VariantValue=0603
+ParamDesignator207=SB27
+ParamVariation208=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator208=SB27
+ParamVariation209=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator209=SB27
+ParamVariation210=ParameterName=PCB3D|VariantValue= 
+ParamDesignator210=SB27
+ParamVariation211=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator211=SB27
+ParamVariation212=ParameterName=Simulation|VariantValue= 
+ParamDesignator212=SB27
+ParamVariation213=ParameterName=Status|VariantValue=Released
+ParamDesignator213=SB27
+ParamVariation214=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator214=SB27
+ParamVariation215=ParameterName=ID|VariantValue=2520
+ParamDesignator215=SB27
+ParamVariation216=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator216=SB27
+ParamVariation217=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator217=SB27
+ParamVariation218=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator218=SB27
+ParamVariation219=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator219=SB27
+ParamVariation220=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator220=SB27
+ParamVariation221=ParameterName=Value|VariantValue=0R
+ParamDesignator221=SB27
+ParamVariation222=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator222=SB27
+ParamVariation223=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator223=SB27
+ParamVariation224=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator224=SB27
+ParamVariation225=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator225=SB27
+ParamVariation226=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator226=SB27
+ParamVariation227=ParameterName=ID|VariantValue=2520
+ParamDesignator227=SB27
+ParamVariation228=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator228=SB27
+ParamVariation229=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator229=SB27
+ParamVariation230=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator230=SB27
+ParamVariation231=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator231=SB27
+ParamVariation232=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator232=SB27
+ParamVariation233=ParameterName=Value|VariantValue=0R
+ParamDesignator233=SB27
+Variation41=Designator=SB44|UniqueId=\PUETYIQX\DQTTLOKG\QEXMKBGD|Kind=2|AlternatePart=SB_ON|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00071|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation234=ParameterName=Comment|VariantValue=SB_ON
+ParamDesignator234=SB44
+ParamVariation235=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator235=SB44
+ParamVariation236=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator236=SB44
+ParamVariation237=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator237=SB44
+ParamVariation238=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator238=SB44
+ParamVariation239=ParameterName=Description|VariantValue=Solder Bridge ON
+ParamDesignator239=SB44
+ParamVariation240=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator240=SB44
+ParamVariation241=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator241=SB44
+ParamVariation242=ParameterName=Internal_Part_Number|VariantValue=MCD-00071
+ParamDesignator242=SB44
+ParamVariation243=ParameterName=Library Reference|VariantValue=MCD-00071
+ParamDesignator243=SB44
+ParamVariation244=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator244=SB44
+ParamVariation245=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator245=SB44
+ParamVariation246=ParameterName=Package|VariantValue=0603
+ParamDesignator246=SB44
+ParamVariation247=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator247=SB44
+ParamVariation248=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator248=SB44
+ParamVariation249=ParameterName=PCB3D|VariantValue= 
+ParamDesignator249=SB44
+ParamVariation250=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator250=SB44
+ParamVariation251=ParameterName=Simulation|VariantValue= 
+ParamDesignator251=SB44
+ParamVariation252=ParameterName=Status|VariantValue=Released
+ParamDesignator252=SB44
+ParamVariation253=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator253=SB44
+ParamVariation254=ParameterName=ID|VariantValue=2521
+ParamDesignator254=SB44
+ParamVariation255=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator255=SB44
+ParamVariation256=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator256=SB44
+ParamVariation257=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator257=SB44
+ParamVariation258=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator258=SB44
+ParamVariation259=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator259=SB44
+ParamVariation260=ParameterName=Value|VariantValue=0R
+ParamDesignator260=SB44
+ParamVariation261=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator261=SB44
+ParamVariation262=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator262=SB44
+ParamVariation263=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator263=SB44
+ParamVariation264=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator264=SB44
+Variation42=Designator=SB46|UniqueId=\PUETYIQX\DQTTLOKG\MLQHLBXI|Kind=2|AlternatePart=SB_ON|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00071|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation265=ParameterName=Comment|VariantValue=SB_ON
+ParamDesignator265=SB46
+ParamVariation266=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator266=SB46
+ParamVariation267=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator267=SB46
+ParamVariation268=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator268=SB46
+ParamVariation269=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator269=SB46
+ParamVariation270=ParameterName=Description|VariantValue=Solder Bridge ON
+ParamDesignator270=SB46
+ParamVariation271=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator271=SB46
+ParamVariation272=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator272=SB46
+ParamVariation273=ParameterName=Internal_Part_Number|VariantValue=MCD-00071
+ParamDesignator273=SB46
+ParamVariation274=ParameterName=Library Reference|VariantValue=MCD-00071
+ParamDesignator274=SB46
+ParamVariation275=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator275=SB46
+ParamVariation276=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator276=SB46
+ParamVariation277=ParameterName=Package|VariantValue=0603
+ParamDesignator277=SB46
+ParamVariation278=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator278=SB46
+ParamVariation279=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator279=SB46
+ParamVariation280=ParameterName=PCB3D|VariantValue= 
+ParamDesignator280=SB46
+ParamVariation281=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator281=SB46
+ParamVariation282=ParameterName=Simulation|VariantValue= 
+ParamDesignator282=SB46
+ParamVariation283=ParameterName=Status|VariantValue=Released
+ParamDesignator283=SB46
+ParamVariation284=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator284=SB46
+ParamVariation285=ParameterName=ID|VariantValue=2521
+ParamDesignator285=SB46
+ParamVariation286=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator286=SB46
+ParamVariation287=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator287=SB46
+ParamVariation288=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator288=SB46
+ParamVariation289=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator289=SB46
+ParamVariation290=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator290=SB46
+ParamVariation291=ParameterName=Value|VariantValue=0R
+ParamDesignator291=SB46
+ParamVariation292=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator292=SB46
+ParamVariation293=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator293=SB46
+ParamVariation294=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator294=SB46
+ParamVariation295=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator295=SB46
+Variation43=Designator=U6|UniqueId=\PUETYIQX\MQHKFLUC\FMLJTRKR|Kind=2|AlternatePart=STM32H745XIH6U|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Subversion\Altium_Designer_Library\Trunk\MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=MCD-01085|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=ICC_TFBGA240+25_14X14_STM32H745H6U_P080|AltLibLink_IsSameFootprint=True
+ParamVariation296=ParameterName=Comment|VariantValue=STM32H745XIH6U
+ParamDesignator296=U6
+ParamVariation297=ParameterName=BMS_Part_Number|VariantValue=9175307
+ParamDesignator297=U6
+ParamVariation298=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator298=U6
+ParamVariation299=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/IC/STMICROELECTRONICS_STM32H745x
+ParamDesignator299=U6
+ParamVariation300=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator300=U6
+ParamVariation301=ParameterName=Description|VariantValue=32bit MCU TFBGA240+25
+ParamDesignator301=U6
+ParamVariation302=ParameterName=Footprint|VariantValue=ICC_TFBGA240+25_14X14_STM32H745H6U_P080
+ParamDesignator302=U6
+ParamVariation303=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator303=U6
+ParamVariation304=ParameterName=Internal_Part_Number|VariantValue=MCD-01085
+ParamDesignator304=U6
+ParamVariation305=ParameterName=Library Reference|VariantValue=MCD-01085
+ParamDesignator305=U6
+ParamVariation306=ParameterName=Manufacturer|VariantValue=STMICROELECTRONICS
+ParamDesignator306=U6
+ParamVariation307=ParameterName=Manufacturer_HQ_COO|VariantValue=EU
+ParamDesignator307=U6
+ParamVariation308=ParameterName=Manufacturer_Part_Number|VariantValue=STM32H745XIH6
+ParamDesignator308=U6
+ParamVariation309=ParameterName=Order_Code_Digikey|VariantValue=497-19502-ND
+ParamDesignator309=U6
+ParamVariation310=ParameterName=Order_Code_Farnell|VariantValue=3365366
+ParamDesignator310=U6
+ParamVariation311=ParameterName=Order_Code_RS|VariantValue=N/A
+ParamDesignator311=U6
+ParamVariation312=ParameterName=Package|VariantValue=TFBGA-265
+ParamDesignator312=U6
+ParamVariation313=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator313=U6
+ParamVariation314=ParameterName=Part_Type|VariantValue=IC
+ParamDesignator314=U6
+ParamVariation315=ParameterName=PCB3D|VariantValue= 
+ParamDesignator315=U6
+ParamVariation316=ParameterName=Pin Info|VariantValue= 
+ParamDesignator316=U6
+ParamVariation317=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator317=U6
+ParamVariation318=ParameterName=Simulation|VariantValue= 
+ParamDesignator318=U6
+ParamVariation319=ParameterName=Status|VariantValue=Checked
+ParamDesignator319=U6
+ParamVariation320=ParameterName=Value|VariantValue=STM32H745XIH6
+ParamDesignator320=U6
+ParamVariation321=ParameterName=Component_Country_Of_Origin|VariantValue=Philippines
+ParamDesignator321=U6
+ParamVariation322=ParameterName=ID|VariantValue=3408
+ParamDesignator322=U6
+ParamVariation323=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator323=U6
+ParamVariation324=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator324=U6
+ParamVariation325=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator325=U6
+ParamVariation326=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator326=U6
+ParamVariationCount=326
+
+[ProjectVariant2]
+UniqueID=6A19C742-54DF-4BFF-8F5E-E15534C9054B
+Description=H750XB
+AllowFabrication=0
+ParameterCount=0
+VariationCount=43
+Variation1=Designator=C182|UniqueId=\PUETYIQX\MQHKFLUC\BITMTOAX|Kind=1|AlternatePart= 
+Variation2=Designator=R144|UniqueId=\PUETYIQX\MQHKFLUC\TYJHWSGW|Kind=1|AlternatePart= 
+Variation3=Designator=R103|UniqueId=\PUETYIQX\MQHKFLUC\VKVJGSGT|Kind=1|AlternatePart= 
+Variation4=Designator=C78|UniqueId=\PUETYIQX\DQTTLOKG\NKHSEUBU|Kind=1|AlternatePart= 
+Variation5=Designator=C79|UniqueId=\PUETYIQX\DQTTLOKG\UCBBUHOE|Kind=1|AlternatePart= 
+Variation6=Designator=C186|UniqueId=\PUETYIQX\DQTTLOKG\MBVEUQXK|Kind=1|AlternatePart= 
+Variation7=Designator=C187|UniqueId=\PUETYIQX\DQTTLOKG\KPVWVAVQ|Kind=1|AlternatePart= 
+Variation8=Designator=C24|UniqueId=\PUETYIQX\DQTTLOKG\HPGQLSQQ|Kind=1|AlternatePart= 
+Variation9=Designator=R29|UniqueId=\PUETYIQX\DQTTLOKG\RDXHNOKN|Kind=1|AlternatePart= 
+Variation10=Designator=U3|UniqueId=\PUETYIQX\DQTTLOKG\NIUOVAXN|Kind=1|AlternatePart= 
+Variation11=Designator=C25|UniqueId=\PUETYIQX\DQTTLOKG\GIRTPKAM|Kind=1|AlternatePart= 
+Variation12=Designator=R166|UniqueId=\PUETYIQX\AJAGXGCK\SRMKBYPT|Kind=1|AlternatePart= 
+Variation13=Designator=R170|UniqueId=\PUETYIQX\AJAGXGCK\UOXDSWDD|Kind=1|AlternatePart= 
+Variation14=Designator=R168|UniqueId=\PUETYIQX\AJAGXGCK\AWBALMTQ|Kind=1|AlternatePart= 
+Variation15=Designator=R167|UniqueId=\PUETYIQX\AJAGXGCK\EFCLUPCA|Kind=1|AlternatePart= 
+Variation16=Designator=R123|UniqueId=\PUETYIQX\AJAGXGCK\TWQQNPSK|Kind=1|AlternatePart= 
+Variation17=Designator=R193|UniqueId=\PUETYIQX\AOARXPKF\XYFTLFOL|Kind=1|AlternatePart= 
+Variation18=Designator=R60|UniqueId=\PUETYIQX\TORMEJDJ\UJAGHESH|Kind=1|AlternatePart= 
+Variation19=Designator=R56|UniqueId=\PUETYIQX\TORMEJDJ\FAQQVCVK|Kind=1|AlternatePart= 
+Variation20=Designator=R53|UniqueId=\PUETYIQX\TORMEJDJ\OEHTKTBG|Kind=1|AlternatePart= 
+Variation21=Designator=R62|UniqueId=\PUETYIQX\TORMEJDJ\THMCPLYV|Kind=1|AlternatePart= 
+Variation22=Designator=R54|UniqueId=\PUETYIQX\TORMEJDJ\IOHMHSKJ|Kind=1|AlternatePart= 
+Variation23=Designator=C133|UniqueId=\PUETYIQX\ADEPODLC\SUXIJPCT|Kind=0|AlternatePart= 
+Variation24=Designator=C131|UniqueId=\PUETYIQX\ADEPODLC\KFEMUHOU|Kind=0|AlternatePart= 
+Variation25=Designator=C14|UniqueId=\PUETYIQX\AJAGXGCK\EHGFHJCC\UUQSATJU|Kind=1|AlternatePart= 
+Variation26=Designator=R6|UniqueId=\PUETYIQX\AJAGXGCK\EHGFHJCC\WVAQWSTH|Kind=1|AlternatePart= 
+Variation27=Designator=T1|UniqueId=\PUETYIQX\AJAGXGCK\EHGFHJCC\WFNVGPTE|Kind=1|AlternatePart= 
+Variation28=Designator=CN16|UniqueId=\PUETYIQX\URJSUBNL\CPPTNJDJ|Kind=1|AlternatePart= 
+Variation29=Designator=C80|UniqueId=\PUETYIQX\APTISRRX\CNHJLNXS|Kind=1|AlternatePart= 
+Variation30=Designator=JP2|UniqueId=\PUETYIQX\FEWNKIVA\WFEBWQAU|Kind=1|AlternatePart= 
+Variation31=Designator=C119|UniqueId=\PUETYIQX\FEWNKIVA\WNQJELOX|Kind=1|AlternatePart= 
+Variation32=Designator=CN5|UniqueId=\PUETYIQX\FEWNKIVA\YCYNSFTW|Kind=1|AlternatePart= 
+Variation33=Designator=L4|UniqueId=\PUETYIQX\DQTTLOKG\YHQONVJQ|Kind=1|AlternatePart= 
+Variation34=Designator=U6|UniqueId=\PUETYIQX\MQHKFLUC\FMLJTRKR|Kind=2|AlternatePart=STM32H750XBH6U|AltLibLink_LibIdentifierKind=Library Full Path|AltLibLink_LibraryIdentifier=C:\Subversion\Altium_Designer_Library\Trunk\MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference= |AltLibLink_DesignItemID=MCD-02325|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=ICC_TFBGA240+25_14X14_STM32H745H6U_P080|AltLibLink_IsSameFootprint=True
+ParamVariation1=ParameterName=Comment|VariantValue=STM32H750XBH6U
+ParamDesignator1=U6
+ParamVariation2=ParameterName=Alternate_Manufacturer|VariantValue=N/A
+ParamDesignator2=U6
+ParamVariation3=ParameterName=Alternate_Manufacturer_Part_Number|VariantValue=N/A
+ParamDesignator3=U6
+ParamVariation4=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator4=U6
+ParamVariation5=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/IC/STMICROELECTRONICS_STM32H750XBH6
+ParamDesignator5=U6
+ParamVariation6=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator6=U6
+ParamVariation7=ParameterName=Description|VariantValue=MCU, 32-bit Arm® Cortex®-M7 480MHz MCUs, 128 Kbyte Flash, 1 Mbyte RAM, TFBGA240+25
+ParamDesignator7=U6
+ParamVariation8=ParameterName=Footprint|VariantValue=ICC_TFBGA240+25_14X14_STM32H745H6U_P080
+ParamDesignator8=U6
+ParamVariation9=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator9=U6
+ParamVariation10=ParameterName=Internal_Part_Number|VariantValue=MCD-02325
+ParamDesignator10=U6
+ParamVariation11=ParameterName=Library Reference|VariantValue=MCD-02325
+ParamDesignator11=U6
+ParamVariation12=ParameterName=Manufacturer|VariantValue=STMICROELECTRONICS
+ParamDesignator12=U6
+ParamVariation13=ParameterName=Manufacturer_Part_Number|VariantValue=STM32H750XBH6
+ParamDesignator13=U6
+ParamVariation14=ParameterName=Package|VariantValue=TFBGA-240+25
+ParamDesignator14=U6
+ParamVariation15=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator15=U6
+ParamVariation16=ParameterName=Part_Type|VariantValue=IC
+ParamDesignator16=U6
+ParamVariation17=ParameterName=PCB3D|VariantValue= 
+ParamDesignator17=U6
+ParamVariation18=ParameterName=Pin Info|VariantValue= 
+ParamDesignator18=U6
+ParamVariation19=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator19=U6
+ParamVariation20=ParameterName=Simulation|VariantValue= 
+ParamDesignator20=U6
+ParamVariation21=ParameterName=Status|VariantValue=Released
+ParamDesignator21=U6
+ParamVariation22=ParameterName=Value|VariantValue=STM32H750XBH6
+ParamDesignator22=U6
+ParamVariation23=ParameterName=Component_Country_Of_Origin|VariantValue=Philippines
+ParamDesignator23=U6
+ParamVariation24=ParameterName=ID|VariantValue=4431
+ParamDesignator24=U6
+ParamVariation25=ParameterName=Order_Code_Digikey|VariantValue=497-18111-ND
+ParamDesignator25=U6
+ParamVariation26=ParameterName=Order_Code_Farnell|VariantValue=2980957
+ParamDesignator26=U6
+ParamVariation27=ParameterName=Order_Code_RS|VariantValue=N/A
+ParamDesignator27=U6
+ParamVariation28=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator28=U6
+ParamVariation29=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator29=U6
+ParamVariation30=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator30=U6
+ParamVariation31=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator31=U6
+ParamVariation32=ParameterName=Manufacturer_HQ_COO|VariantValue= 
+ParamDesignator32=U6
+ParamVariation33=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator33=U6
+Variation35=Designator=SB6|UniqueId=\PUETYIQX\DQTTLOKG\YVUXVHGX|Kind=2|AlternatePart=SB_ON|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00071|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation34=ParameterName=Comment|VariantValue=SB_ON
+ParamDesignator34=SB6
+ParamVariation35=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator35=SB6
+ParamVariation36=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator36=SB6
+ParamVariation37=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator37=SB6
+ParamVariation38=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator38=SB6
+ParamVariation39=ParameterName=Description|VariantValue=Solder Bridge ON
+ParamDesignator39=SB6
+ParamVariation40=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator40=SB6
+ParamVariation41=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator41=SB6
+ParamVariation42=ParameterName=Internal_Part_Number|VariantValue=MCD-00071
+ParamDesignator42=SB6
+ParamVariation43=ParameterName=Library Reference|VariantValue=MCD-00071
+ParamDesignator43=SB6
+ParamVariation44=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator44=SB6
+ParamVariation45=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator45=SB6
+ParamVariation46=ParameterName=Package|VariantValue=0603
+ParamDesignator46=SB6
+ParamVariation47=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator47=SB6
+ParamVariation48=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator48=SB6
+ParamVariation49=ParameterName=PCB3D|VariantValue= 
+ParamDesignator49=SB6
+ParamVariation50=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator50=SB6
+ParamVariation51=ParameterName=Simulation|VariantValue= 
+ParamDesignator51=SB6
+ParamVariation52=ParameterName=Status|VariantValue=Released
+ParamDesignator52=SB6
+ParamVariation53=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator53=SB6
+ParamVariation54=ParameterName=ID|VariantValue=2521
+ParamDesignator54=SB6
+ParamVariation55=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator55=SB6
+ParamVariation56=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator56=SB6
+ParamVariation57=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator57=SB6
+ParamVariation58=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator58=SB6
+ParamVariation59=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator59=SB6
+ParamVariation60=ParameterName=Value|VariantValue=0R
+ParamDesignator60=SB6
+ParamVariation61=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator61=SB6
+ParamVariation62=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator62=SB6
+ParamVariation63=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator63=SB6
+ParamVariation64=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator64=SB6
+Variation36=Designator=SB17|UniqueId=\PUETYIQX\DQTTLOKG\JFLDNPPQ|Kind=2|AlternatePart=SB_ON|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00071|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation65=ParameterName=Comment|VariantValue=SB_ON
+ParamDesignator65=SB17
+ParamVariation66=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator66=SB17
+ParamVariation67=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator67=SB17
+ParamVariation68=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator68=SB17
+ParamVariation69=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator69=SB17
+ParamVariation70=ParameterName=Description|VariantValue=Solder Bridge ON
+ParamDesignator70=SB17
+ParamVariation71=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator71=SB17
+ParamVariation72=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator72=SB17
+ParamVariation73=ParameterName=Internal_Part_Number|VariantValue=MCD-00071
+ParamDesignator73=SB17
+ParamVariation74=ParameterName=Library Reference|VariantValue=MCD-00071
+ParamDesignator74=SB17
+ParamVariation75=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator75=SB17
+ParamVariation76=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator76=SB17
+ParamVariation77=ParameterName=Package|VariantValue=0603
+ParamDesignator77=SB17
+ParamVariation78=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator78=SB17
+ParamVariation79=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator79=SB17
+ParamVariation80=ParameterName=PCB3D|VariantValue= 
+ParamDesignator80=SB17
+ParamVariation81=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator81=SB17
+ParamVariation82=ParameterName=Simulation|VariantValue= 
+ParamDesignator82=SB17
+ParamVariation83=ParameterName=Status|VariantValue=Released
+ParamDesignator83=SB17
+ParamVariation84=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator84=SB17
+ParamVariation85=ParameterName=ID|VariantValue=2521
+ParamDesignator85=SB17
+ParamVariation86=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator86=SB17
+ParamVariation87=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator87=SB17
+ParamVariation88=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator88=SB17
+ParamVariation89=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator89=SB17
+ParamVariation90=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator90=SB17
+ParamVariation91=ParameterName=Value|VariantValue=0R
+ParamDesignator91=SB17
+ParamVariation92=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator92=SB17
+ParamVariation93=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator93=SB17
+ParamVariation94=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator94=SB17
+ParamVariation95=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator95=SB17
+Variation37=Designator=SB45|UniqueId=\PUETYIQX\DQTTLOKG\UUAEDMHN|Kind=2|AlternatePart=SB_ON|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00071|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation96=ParameterName=Comment|VariantValue=SB_ON
+ParamDesignator96=SB45
+ParamVariation97=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator97=SB45
+ParamVariation98=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator98=SB45
+ParamVariation99=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator99=SB45
+ParamVariation100=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator100=SB45
+ParamVariation101=ParameterName=Description|VariantValue=Solder Bridge ON
+ParamDesignator101=SB45
+ParamVariation102=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator102=SB45
+ParamVariation103=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator103=SB45
+ParamVariation104=ParameterName=Internal_Part_Number|VariantValue=MCD-00071
+ParamDesignator104=SB45
+ParamVariation105=ParameterName=Library Reference|VariantValue=MCD-00071
+ParamDesignator105=SB45
+ParamVariation106=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator106=SB45
+ParamVariation107=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator107=SB45
+ParamVariation108=ParameterName=Package|VariantValue=0603
+ParamDesignator108=SB45
+ParamVariation109=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator109=SB45
+ParamVariation110=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator110=SB45
+ParamVariation111=ParameterName=PCB3D|VariantValue= 
+ParamDesignator111=SB45
+ParamVariation112=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator112=SB45
+ParamVariation113=ParameterName=Simulation|VariantValue= 
+ParamDesignator113=SB45
+ParamVariation114=ParameterName=Status|VariantValue=Released
+ParamDesignator114=SB45
+ParamVariation115=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator115=SB45
+ParamVariation116=ParameterName=ID|VariantValue=2521
+ParamDesignator116=SB45
+ParamVariation117=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator117=SB45
+ParamVariation118=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator118=SB45
+ParamVariation119=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator119=SB45
+ParamVariation120=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator120=SB45
+ParamVariation121=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator121=SB45
+ParamVariation122=ParameterName=Value|VariantValue=0R
+ParamDesignator122=SB45
+ParamVariation123=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator123=SB45
+ParamVariation124=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator124=SB45
+ParamVariation125=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator125=SB45
+ParamVariation126=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator126=SB45
+Variation38=Designator=SB5|UniqueId=\PUETYIQX\DQTTLOKG\QOPKWBCR|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation127=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator127=SB5
+ParamVariation128=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator128=SB5
+ParamVariation129=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator129=SB5
+ParamVariation130=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator130=SB5
+ParamVariation131=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator131=SB5
+ParamVariation132=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator132=SB5
+ParamVariation133=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator133=SB5
+ParamVariation134=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator134=SB5
+ParamVariation135=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator135=SB5
+ParamVariation136=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator136=SB5
+ParamVariation137=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator137=SB5
+ParamVariation138=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator138=SB5
+ParamVariation139=ParameterName=Package|VariantValue=0603
+ParamDesignator139=SB5
+ParamVariation140=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator140=SB5
+ParamVariation141=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator141=SB5
+ParamVariation142=ParameterName=PCB3D|VariantValue= 
+ParamDesignator142=SB5
+ParamVariation143=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator143=SB5
+ParamVariation144=ParameterName=Simulation|VariantValue= 
+ParamDesignator144=SB5
+ParamVariation145=ParameterName=Status|VariantValue=Released
+ParamDesignator145=SB5
+ParamVariation146=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator146=SB5
+ParamVariation147=ParameterName=ID|VariantValue=2520
+ParamDesignator147=SB5
+ParamVariation148=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator148=SB5
+ParamVariation149=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator149=SB5
+ParamVariation150=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator150=SB5
+ParamVariation151=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator151=SB5
+ParamVariation152=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator152=SB5
+ParamVariation153=ParameterName=Value|VariantValue=0R
+ParamDesignator153=SB5
+ParamVariation154=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator154=SB5
+ParamVariation155=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator155=SB5
+ParamVariation156=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator156=SB5
+ParamVariation157=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator157=SB5
+Variation39=Designator=SB18|UniqueId=\PUETYIQX\DQTTLOKG\UEATOIOT|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation158=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator158=SB18
+ParamVariation159=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator159=SB18
+ParamVariation160=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator160=SB18
+ParamVariation161=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator161=SB18
+ParamVariation162=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator162=SB18
+ParamVariation163=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator163=SB18
+ParamVariation164=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator164=SB18
+ParamVariation165=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator165=SB18
+ParamVariation166=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator166=SB18
+ParamVariation167=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator167=SB18
+ParamVariation168=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator168=SB18
+ParamVariation169=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator169=SB18
+ParamVariation170=ParameterName=Package|VariantValue=0603
+ParamDesignator170=SB18
+ParamVariation171=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator171=SB18
+ParamVariation172=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator172=SB18
+ParamVariation173=ParameterName=PCB3D|VariantValue= 
+ParamDesignator173=SB18
+ParamVariation174=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator174=SB18
+ParamVariation175=ParameterName=Simulation|VariantValue= 
+ParamDesignator175=SB18
+ParamVariation176=ParameterName=Status|VariantValue=Released
+ParamDesignator176=SB18
+ParamVariation177=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator177=SB18
+ParamVariation178=ParameterName=ID|VariantValue=2520
+ParamDesignator178=SB18
+ParamVariation179=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator179=SB18
+ParamVariation180=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator180=SB18
+ParamVariation181=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator181=SB18
+ParamVariation182=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator182=SB18
+ParamVariation183=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator183=SB18
+ParamVariation184=ParameterName=Value|VariantValue=0R
+ParamDesignator184=SB18
+ParamVariation185=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator185=SB18
+ParamVariation186=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator186=SB18
+ParamVariation187=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator187=SB18
+ParamVariation188=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator188=SB18
+Variation40=Designator=SB26|UniqueId=\PUETYIQX\DQTTLOKG\IDJFOXRA|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation189=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator189=SB26
+ParamVariation190=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator190=SB26
+ParamVariation191=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator191=SB26
+ParamVariation192=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Datasheet_Library/Trunk/Resistors/Yageo_Resistor_RC0603-series
+ParamDesignator192=SB26
+ParamVariation193=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator193=SB26
+ParamVariation194=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator194=SB26
+ParamVariation195=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator195=SB26
+ParamVariation196=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator196=SB26
+ParamVariation197=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator197=SB26
+ParamVariation198=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator198=SB26
+ParamVariation199=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator199=SB26
+ParamVariation200=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator200=SB26
+ParamVariation201=ParameterName=Package|VariantValue=SB0603
+ParamDesignator201=SB26
+ParamVariation202=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator202=SB26
+ParamVariation203=ParameterName=Part_Type|VariantValue=Misc
+ParamDesignator203=SB26
+ParamVariation204=ParameterName=PCB3D|VariantValue= 
+ParamDesignator204=SB26
+ParamVariation205=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator205=SB26
+ParamVariation206=ParameterName=Simulation|VariantValue= 
+ParamDesignator206=SB26
+ParamVariation207=ParameterName=Status|VariantValue=Released
+ParamDesignator207=SB26
+Variation41=Designator=SB27|UniqueId=\PUETYIQX\DQTTLOKG\SSMEXLTA|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_OFF|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation208=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator208=SB27
+ParamVariation209=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator209=SB27
+ParamVariation210=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator210=SB27
+ParamVariation211=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Datasheet_Library/Trunk/Resistors/Yageo_Resistor_RC0603-series
+ParamDesignator211=SB27
+ParamVariation212=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator212=SB27
+ParamVariation213=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator213=SB27
+ParamVariation214=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator214=SB27
+ParamVariation215=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator215=SB27
+ParamVariation216=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator216=SB27
+ParamVariation217=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator217=SB27
+ParamVariation218=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator218=SB27
+ParamVariation219=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator219=SB27
+ParamVariation220=ParameterName=Package|VariantValue=SB0603
+ParamDesignator220=SB27
+ParamVariation221=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator221=SB27
+ParamVariation222=ParameterName=Part_Type|VariantValue=Misc
+ParamDesignator222=SB27
+ParamVariation223=ParameterName=PCB3D|VariantValue= 
+ParamDesignator223=SB27
+ParamVariation224=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator224=SB27
+ParamVariation225=ParameterName=Simulation|VariantValue= 
+ParamDesignator225=SB27
+ParamVariation226=ParameterName=Status|VariantValue=Released
+ParamDesignator226=SB27
+Variation42=Designator=SB44|UniqueId=\PUETYIQX\DQTTLOKG\QEXMKBGD|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation227=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator227=SB44
+ParamVariation228=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator228=SB44
+ParamVariation229=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator229=SB44
+ParamVariation230=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator230=SB44
+ParamVariation231=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator231=SB44
+ParamVariation232=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator232=SB44
+ParamVariation233=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator233=SB44
+ParamVariation234=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator234=SB44
+ParamVariation235=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator235=SB44
+ParamVariation236=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator236=SB44
+ParamVariation237=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator237=SB44
+ParamVariation238=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator238=SB44
+ParamVariation239=ParameterName=Package|VariantValue=0603
+ParamDesignator239=SB44
+ParamVariation240=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator240=SB44
+ParamVariation241=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator241=SB44
+ParamVariation242=ParameterName=PCB3D|VariantValue= 
+ParamDesignator242=SB44
+ParamVariation243=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator243=SB44
+ParamVariation244=ParameterName=Simulation|VariantValue= 
+ParamDesignator244=SB44
+ParamVariation245=ParameterName=Status|VariantValue=Released
+ParamDesignator245=SB44
+ParamVariation246=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator246=SB44
+ParamVariation247=ParameterName=ID|VariantValue=2520
+ParamDesignator247=SB44
+ParamVariation248=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator248=SB44
+ParamVariation249=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator249=SB44
+ParamVariation250=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator250=SB44
+ParamVariation251=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator251=SB44
+ParamVariation252=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator252=SB44
+ParamVariation253=ParameterName=Value|VariantValue=0R
+ParamDesignator253=SB44
+ParamVariation254=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator254=SB44
+ParamVariation255=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator255=SB44
+ParamVariation256=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator256=SB44
+ParamVariation257=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator257=SB44
+Variation43=Designator=SB46|UniqueId=\PUETYIQX\DQTTLOKG\MLQHLBXI|Kind=2|AlternatePart=SB_OFF|AltLibLink_LibIdentifierKind=Library Name And Type|AltLibLink_LibraryIdentifier=MCD_PARTS_database.DbLib/MCD_PARTS$|AltLibLink_SymbolReference=SB_ON|AltLibLink_DesignItemID=MCD-00072|AltLibLink_UseLibraryName=True|AltLibLink_SourceLibraryName=MCD_PARTS_database.DbLib|AltLibLink_UseDBTableName=True|AltLibLink_DatabaseTableName=MCD_PARTS$|AltLibLink_VaultGUID= |AltLibLink_ItemGUID= |AltLibLink_RevisionGUID= |AltLibLink_Footprint=SOLDER-BRIDGE_R0603-0R|AltLibLink_IsSameFootprint=True
+ParamVariation258=ParameterName=Comment|VariantValue=SB_OFF
+ParamDesignator258=SB46
+ParamVariation259=ParameterName=Component Kind|VariantValue=Standard
+ParamDesignator259=SB46
+ParamVariation260=ParameterName=ComponentLink1Description|VariantValue=Datasheet
+ParamDesignator260=SB46
+ParamVariation261=ParameterName=ComponentLink1URL|VariantValue=http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Resistor/YAGEO_RC_Series
+ParamDesignator261=SB46
+ParamVariation262=ParameterName=Database Table Name|VariantValue=MCD_PARTS$
+ParamDesignator262=SB46
+ParamVariation263=ParameterName=Description|VariantValue=Solder Bridge OFF
+ParamDesignator263=SB46
+ParamVariation264=ParameterName=Footprint|VariantValue=SOLDER-BRIDGE_R0603-0R
+ParamDesignator264=SB46
+ParamVariation265=ParameterName=Ibis Model|VariantValue= 
+ParamDesignator265=SB46
+ParamVariation266=ParameterName=Internal_Part_Number|VariantValue=MCD-00072
+ParamDesignator266=SB46
+ParamVariation267=ParameterName=Library Reference|VariantValue=MCD-00072
+ParamDesignator267=SB46
+ParamVariation268=ParameterName=Manufacturer|VariantValue=YAGEO
+ParamDesignator268=SB46
+ParamVariation269=ParameterName=Manufacturer_Part_Number|VariantValue=RC0603JR-070RL
+ParamDesignator269=SB46
+ParamVariation270=ParameterName=Package|VariantValue=0603
+ParamDesignator270=SB46
+ParamVariation271=ParameterName=Part_Preference|VariantValue=Recommended
+ParamDesignator271=SB46
+ParamVariation272=ParameterName=Part_Type|VariantValue=Resistor
+ParamDesignator272=SB46
+ParamVariation273=ParameterName=PCB3D|VariantValue= 
+ParamDesignator273=SB46
+ParamVariation274=ParameterName=Signal Integrity|VariantValue= 
+ParamDesignator274=SB46
+ParamVariation275=ParameterName=Simulation|VariantValue= 
+ParamDesignator275=SB46
+ParamVariation276=ParameterName=Status|VariantValue=Released
+ParamDesignator276=SB46
+ParamVariation277=ParameterName=Component_Country_Of_Origin|VariantValue=China
+ParamDesignator277=SB46
+ParamVariation278=ParameterName=ID|VariantValue=2520
+ParamDesignator278=SB46
+ParamVariation279=ParameterName=Manufacturer_HQ_COO|VariantValue=Unknown
+ParamDesignator279=SB46
+ParamVariation280=ParameterName=Order_Code_Digikey|VariantValue=311-0.0GRTR-ND
+ParamDesignator280=SB46
+ParamVariation281=ParameterName=Order_Code_Farnell|VariantValue=2421846
+ParamDesignator281=SB46
+ParamVariation282=ParameterName=Order_Code_RS|VariantValue=199-5647
+ParamDesignator282=SB46
+ParamVariation283=ParameterName=ShowFields|VariantValue=YES
+ParamDesignator283=SB46
+ParamVariation284=ParameterName=Value|VariantValue=0R
+ParamDesignator284=SB46
+ParamVariation285=ParameterName=Alternate_EMS|VariantValue= 
+ParamDesignator285=SB46
+ParamVariation286=ParameterName=BMS_Part_Number|VariantValue= 
+ParamDesignator286=SB46
+ParamVariation287=ParameterName=Full_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator287=SB46
+ParamVariation288=ParameterName=Partial_Alternate_Internal_Part_Number|VariantValue= 
+ParamDesignator288=SB46
+ParamVariationCount=288
+
+[Parameter1]
+Name=Board_Assembly_Revision
+Value=04
+
+[Parameter2]
+Name=Board_Document_Date
+Value=27-Sep-2024
+
+[Parameter3]
+Name=Board_Name
+Value=STM32H7xxx-Disco
+
+[Parameter4]
+Name=Board_PCB_Revision
+Value=B
+
+[Parameter5]
+Name=Board_Reference
+Value=MB1381
+
+[Configuration1]
+Name=Default Configuration
+ParameterCount=0
+ConstraintFileCount=0
+ReleaseItemId=
+Variant=[No Variations]
+OutputJobsCount=0
+ContentTypeGUID=
+ConfigurationType=
+
+[Configuration2]
+Name=Default Configuration
+ParameterCount=0
+ConstraintFileCount=0
+ReleaseItemId=
+Variant=[No Variations]
+OutputJobsCount=0
+ContentTypeGUID=
+ConfigurationType=
+
+[Generic_SmartPDF]
+AutoOpenFile=-1
+AutoOpenOutJob=-1
+
+[Generic_SmartPDFSettings]
+ProjectMode=-1
+ZoomPrecision=50
+AddNetsInformation=-1
+AddNetPins=-1
+AddNetNetLabels=-1
+AddNetPorts=-1
+ShowComponentParameters=-1
+GlobalBookmarks=0
+ExportBOM=0
+TemplateFilename=BOM_Internal.xltx
+TemplateStoreRelative=-1
+PCB_PrintColor=1
+SCH_PrintColor=0
+PrintQuality=-3
+SCH_ShowNoErc=-1
+SCH_ShowParameter=-1
+SCH_ShowProbes=-1
+SCH_ShowBlankets=-1
+SCH_NoERCSymbolsToShow="Thin Cross","Thick Cross","Small Cross",Checkbox,Triangle
+SCH_ShowNote=-1
+SCH_ShowNoteCollapsed=-1
+SCH_ExpandLogicalToPhysical=0
+SCH_VariantName=H750XB
+SCH_ExpandComponentDesignators=-1
+SCH_ExpandNetlabels=0
+SCH_ExpandPorts=0
+SCH_ExpandSheetNumber=0
+SCH_ExpandDocumentNumber=0
+SCH_HasExpandLogicalToPhysicalSheets=-1
+SaveSettingsToOutJob=0
+
+[Generic_EDE]
+OutputDir=Project Outputs for PCB_Project_Template
+
+[OutputGroup1]
+Name=Netlist Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=PCADNetlist
+OutputName1=PCAD Netlist
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+OutputType2=XSpiceNetlist
+OutputName2=Mixed Sim Netlist
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=CadnetixNetlist
+OutputName3=Cadnetix Netlist
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+OutputType4=CalayNetlist
+OutputName4=Calay Netlist
+OutputDocumentPath4=
+OutputVariantName4=
+OutputDefault4=0
+OutputType5=EDIF
+OutputName5=EDIF for PCB
+OutputDocumentPath5=
+OutputVariantName5=
+OutputDefault5=0
+OutputType6=EESofNetlist
+OutputName6=EESof Netlist
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+OutputType7=IntergraphNetlist
+OutputName7=Intergraph Netlist
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+OutputType8=MentorBoardStationNetlist
+OutputName8=Mentor BoardStation Netlist
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+OutputType9=MultiWire
+OutputName9=MultiWire
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+OutputType10=OrCadPCB2Netlist
+OutputName10=Orcad/PCB2 Netlist
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+OutputType11=PADSNetlist
+OutputName11=PADS ASCII Netlist
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+OutputType12=Pcad
+OutputName12=Pcad for PCB
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+OutputType13=PCADnltNetlist
+OutputName13=PCADnlt Netlist
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+OutputType14=Protel2Netlist
+OutputName14=Protel2 Netlist
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+OutputType15=ProtelNetlist
+OutputName15=Protel
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+OutputType16=RacalNetlist
+OutputName16=Racal Netlist
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+OutputType17=RINFNetlist
+OutputName17=RINF Netlist
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+OutputType18=SciCardsNetlist
+OutputName18=SciCards Netlist
+OutputDocumentPath18=
+OutputVariantName18=
+OutputDefault18=0
+OutputType19=TangoNetlist
+OutputName19=Tango Netlist
+OutputDocumentPath19=
+OutputVariantName19=
+OutputDefault19=0
+OutputType20=TelesisNetlist
+OutputName20=Telesis Netlist
+OutputDocumentPath20=
+OutputVariantName20=
+OutputDefault20=0
+OutputType21=WireListNetlist
+OutputName21=WireList Netlist
+OutputDocumentPath21=
+OutputVariantName21=
+OutputDefault21=0
+
+[OutputGroup2]
+Name=Simulator Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=AdvSimNetlist
+OutputName1=Mixed Sim
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+
+[OutputGroup3]
+Name=Documentation Outputs
+Description=
+TargetPrinter=Virtual Printer
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Composite
+OutputName1=Composite Drawing
+OutputDocumentPath1=
+OutputVariantName1=[No Variations]
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType2=PCB 3D Print
+OutputName2=PCB 3D Print
+OutputDocumentPath2=
+OutputVariantName2=[No Variations]
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType3=PCB 3D Video
+OutputName3=PCB 3D Video
+OutputDocumentPath3=
+OutputVariantName3=[No Variations]
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType4=PCB Print
+OutputName4=PCB Prints
+OutputDocumentPath4=
+OutputVariantName4=[No Variations]
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType5=PCBLIB Print
+OutputName5=PCBLIB Prints
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType6=Report Print
+OutputName6=Report Prints
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType7=Schematic Print
+OutputName7=Schematic Prints
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType8=SimView Print
+OutputName8=SimView Prints
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType9=PDF3D
+OutputName9=PDF3D
+OutputDocumentPath9=
+OutputVariantName9=[No Variations]
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType10=PCBDrawing
+OutputName10=Draftsman
+OutputDocumentPath10=
+OutputVariantName10=[No Variations]
+OutputDefault10=0
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType11=PDF3D MBA
+OutputName11=PDF3D MBA
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType12=Harness Layout Drawing Print
+OutputName12=Harness Layout Drawing Prints
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+PageOptions12=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType13=Harness Wiring Diagram Print
+OutputName13=Harness Wiring Diagram Prints
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+
+[OutputGroup4]
+Name=Assembly Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Assembly
+OutputName1=Assembly Drawings
+OutputDocumentPath1=
+OutputVariantName1=[No Variations]
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType2=Pick Place
+OutputName2=Generates pick and place files
+OutputDocumentPath2=
+OutputVariantName2=[No Variations]
+OutputDefault2=0
+OutputType3=Test Points For Assembly
+OutputName3=Test Point Report
+OutputDocumentPath3=
+OutputVariantName3=[No Variations]
+OutputDefault3=0
+
+[OutputGroup5]
+Name=Fabrication Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=CompositeDrill
+OutputName1=Composite Drill Drawing
+OutputDocumentPath1=
+OutputVariantName1=[No Variations]
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType2=Drill
+OutputName2=Drill Drawing/Guides
+OutputDocumentPath2=
+OutputVariantName2=[No Variations]
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType3=Final
+OutputName3=Final Artwork Prints
+OutputDocumentPath3=
+OutputVariantName3=[No Variations]
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType4=Gerber
+OutputName4=Gerber Files
+OutputDocumentPath4=
+OutputVariantName4=[No Variations]
+OutputDefault4=0
+OutputType5=Mask
+OutputName5=Solder/Paste Mask Prints
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType6=NC Drill
+OutputName6=NC Drill Files
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+OutputType7=ODB
+OutputName7=ODB++ Files
+OutputDocumentPath7=
+OutputVariantName7=[No Variations]
+OutputDefault7=0
+OutputType8=Plane
+OutputName8=Power-Plane Prints
+OutputDocumentPath8=
+OutputVariantName8=[No Variations]
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType9=Test Points
+OutputName9=Test Point Report
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+OutputType10=Board Stack Report
+OutputName10=Report Board Stack
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType11=Gerber X2
+OutputName11=Gerber X2 Files
+OutputDocumentPath11=
+OutputVariantName11=[No Variations]
+OutputDefault11=0
+OutputType12=IPC2581
+OutputName12=IPC-2581 Files
+OutputDocumentPath12=
+OutputVariantName12=[No Variations]
+OutputDefault12=0
+
+[OutputGroup6]
+Name=Report Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Script
+OutputName1=Script Output
+OutputDocumentPath1=
+OutputVariantName1=[No Variations]
+OutputDefault1=0
+OutputType2=SimpleBOM
+OutputName2=Simple BOM
+OutputDocumentPath2=
+OutputVariantName2=[No Variations]
+OutputDefault2=0
+OutputType3=SinglePinNetReporter
+OutputName3=Report Single Pin Nets
+OutputDocumentPath3=
+OutputVariantName3=[No Variations]
+OutputDefault3=0
+OutputType4=BOM_PartType
+OutputName4=Bill of Materials
+OutputDocumentPath4=
+OutputVariantName4=[No Variations]
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+Configuration4_Name1=ColumnNameFormat
+Configuration4_Item1=CaptionAsName
+Configuration4_Name2=Filter
+Configuration4_Item2=545046300E5446696C74657257726170706572000D46696C7465722E416374697665090F46696C7465722E43726974657269610A04000000000000000000
+Configuration4_Name3=General
+Configuration4_Item3=OpenExported=True|AddToProject=True|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePCBData=False|IncludeVaultData=False|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=BOM_Internal.xltx|BatchMode=5|FormWidth=950|FormHeight=660|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=<none>
+Configuration4_Name4=GroupOrder
+Configuration4_Item4=Comment=True|Footprint=True
+Configuration4_Name5=SortOrder
+Configuration4_Item5=Designator=Up|Comment=Up|Footprint=Up
+Configuration4_Name6=VisibleOrder
+Configuration4_Item6=Description=100|Designator=100|Package=100|Quantity=100|Comment=100|Manufacturer=100|Manufacturer_Part_Number=100
+OutputType5=ComponentCrossReference
+OutputName5=Component Cross Reference Report
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+OutputType6=ReportHierarchy
+OutputName6=Report Project Hierarchy
+OutputDocumentPath6=
+OutputVariantName6=[No Variations]
+OutputDefault6=0
+OutputType7=BOM_ReportCompare
+OutputName7=BOM Compare
+OutputDocumentPath7=
+OutputVariantName7=[No Variations]
+OutputDefault7=0
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType8=Export Comments
+OutputName8=Export Comments
+OutputDocumentPath8=
+OutputVariantName8=[No Variations]
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+
+[OutputGroup7]
+Name=Other Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Text Print
+OutputName1=Text Print
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType2=Text Print
+OutputName2=Text Print
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType3=Text Print
+OutputName3=Text Print
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType4=Text Print
+OutputName4=Text Print
+OutputDocumentPath4=
+OutputVariantName4=
+OutputDefault4=0
+PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType5=Text Print
+OutputName5=Text Print
+OutputDocumentPath5=
+OutputVariantName5=
+OutputDefault5=0
+PageOptions5=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType6=Text Print
+OutputName6=Text Print
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+PageOptions6=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType7=Text Print
+OutputName7=Text Print
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType8=Text Print
+OutputName8=Text Print
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType9=Text Print
+OutputName9=Text Print
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType10=Text Print
+OutputName10=Text Print
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType11=Text Print
+OutputName11=Text Print
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType12=Text Print
+OutputName12=Text Print
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+PageOptions12=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType13=Text Print
+OutputName13=Text Print
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+PageOptions13=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType14=Text Print
+OutputName14=Text Print
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+PageOptions14=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType15=Text Print
+OutputName15=Text Print
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+PageOptions15=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType16=Text Print
+OutputName16=Text Print
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+PageOptions16=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType17=Text Print
+OutputName17=Text Print
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+PageOptions17=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+
+[OutputGroup8]
+Name=Validation Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Design Rules Check
+OutputName1=Design Rules Check
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType2=Differences Report
+OutputName2=Differences Report
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType3=Electrical Rules Check
+OutputName3=Electrical Rules Check
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+OutputType4=Footprint Comparison Report
+OutputName4=Footprint Comparison Report
+OutputDocumentPath4=
+OutputVariantName4=
+OutputDefault4=0
+OutputType5=Component states check
+OutputName5=Vault's components states check
+OutputDocumentPath5=
+OutputVariantName5=
+OutputDefault5=0
+OutputType6=Configuration compliance
+OutputName6=Environment configuration compliance check
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+OutputType7=BOM_Violations
+OutputName7=BOM Checks Report
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+
+[OutputGroup9]
+Name=Export Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=ExportSTEP
+OutputName1=Export STEP
+OutputDocumentPath1=
+OutputVariantName1=[No Variations]
+OutputDefault1=0
+OutputType2=AutoCAD dwg/dxf PCB
+OutputName2=AutoCAD dwg/dxf File PCB
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=AutoCAD dwg/dxf Schematic
+OutputName3=AutoCAD dwg/dxf File Schematic
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
+OutputType4=ExportPARASOLID
+OutputName4=Export PARASOLID
+OutputDocumentPath4=
+OutputVariantName4=[No Variations]
+OutputDefault4=0
+OutputType5=ExportVRML
+OutputName5=Export VRML
+OutputDocumentPath5=
+OutputVariantName5=[No Variations]
+OutputDefault5=0
+OutputType6=Save As/Export PCB
+OutputName6=Save As/Export PCB
+OutputDocumentPath6=
+OutputVariantName6=
+OutputDefault6=0
+OutputType7=Save As/Export Schematic
+OutputName7=Save As/Export Schematic
+OutputDocumentPath7=
+OutputVariantName7=
+OutputDefault7=0
+OutputType8=Specctra Design PCB
+OutputName8=Specctra Design PCB
+OutputDocumentPath8=
+OutputVariantName8=
+OutputDefault8=0
+OutputType9=ExportIDF
+OutputName9=Export IDF
+OutputDocumentPath9=
+OutputVariantName9=
+OutputDefault9=0
+OutputType10=MBAExportPARASOLID
+OutputName10=Export PARASOLID
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+OutputType11=MBAExportSTEP
+OutputName11=Export STEP
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+OutputType12=Web ReviewOutputName
+OutputName12=Web Review Data
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+
+[OutputGroup10]
+Name=PostProcess Outputs
+Description=
+TargetPrinter=PDFCreator
+PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=Copy Files
+OutputName1=Copy Files
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+
+[Modification Levels]
+Type1=1
+Type2=1
+Type3=1
+Type4=1
+Type5=1
+Type6=1
+Type7=1
+Type8=1
+Type9=1
+Type10=1
+Type11=1
+Type12=1
+Type13=1
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=1
+Type21=1
+Type22=1
+Type23=1
+Type24=1
+Type25=1
+Type26=1
+Type27=1
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=1
+Type33=1
+Type34=1
+Type35=1
+Type36=0
+Type37=1
+Type38=1
+Type39=1
+Type40=1
+Type41=1
+Type42=1
+Type43=1
+Type44=1
+Type45=1
+Type46=1
+Type47=1
+Type48=1
+Type49=1
+Type50=1
+Type51=1
+Type52=1
+Type53=1
+Type54=1
+Type55=1
+Type56=1
+Type57=1
+Type58=1
+Type59=1
+Type60=1
+Type61=1
+Type62=1
+Type63=1
+Type64=1
+Type65=1
+Type66=1
+Type67=1
+Type68=1
+Type69=1
+Type70=1
+Type71=1
+Type72=1
+Type73=1
+Type74=1
+Type75=1
+Type76=1
+Type77=1
+Type78=1
+Type79=1
+Type80=1
+Type81=1
+Type82=1
+Type83=1
+Type84=1
+Type85=1
+Type86=1
+Type87=1
+Type88=1
+Type89=1
+Type90=1
+Type91=1
+Type92=1
+Type93=1
+Type94=1
+Type95=1
+Type96=1
+Type97=1
+Type98=1
+Type99=1
+Type100=1
+Type101=1
+Type102=1
+Type103=1
+Type104=1
+Type105=1
+Type106=1
+Type107=1
+Type108=1
+Type109=1
+Type110=1
+Type111=1
+Type112=1
+Type113=1
+Type114=1
+Type115=1
+Type116=1
+Type117=1
+Type118=1
+Type119=1
+Type120=1
+
+[Difference Levels]
+Type1=1
+Type2=1
+Type3=1
+Type4=1
+Type5=1
+Type6=1
+Type7=1
+Type8=1
+Type9=1
+Type10=1
+Type11=1
+Type12=1
+Type13=1
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=1
+Type21=1
+Type22=1
+Type23=1
+Type24=1
+Type25=1
+Type26=1
+Type27=1
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=1
+Type33=1
+Type34=1
+Type35=1
+Type36=1
+Type37=1
+Type38=1
+Type39=1
+Type40=1
+Type41=1
+Type42=1
+Type43=1
+Type44=0
+Type45=1
+Type46=1
+Type47=1
+Type48=1
+Type49=1
+Type50=1
+Type51=1
+Type52=1
+Type53=1
+Type54=1
+Type55=1
+Type56=1
+Type57=1
+Type58=1
+Type59=1
+Type60=1
+Type61=1
+Type62=1
+Type63=1
+Type64=1
+Type65=1
+Type66=1
+Type67=1
+Type68=1
+
+[Electrical Rules Check]
+Type1=1
+Type2=1
+Type3=2
+Type4=1
+Type5=2
+Type6=2
+Type7=0
+Type8=1
+Type9=1
+Type10=1
+Type11=2
+Type12=0
+Type13=0
+Type14=1
+Type15=1
+Type16=1
+Type17=1
+Type18=1
+Type19=1
+Type20=0
+Type21=0
+Type22=0
+Type23=0
+Type24=1
+Type25=2
+Type26=0
+Type27=2
+Type28=1
+Type29=1
+Type30=1
+Type31=1
+Type32=2
+Type33=0
+Type34=2
+Type35=1
+Type36=2
+Type37=1
+Type38=2
+Type39=2
+Type40=2
+Type41=0
+Type42=2
+Type43=1
+Type44=0
+Type45=0
+Type46=0
+Type47=0
+Type48=0
+Type49=0
+Type50=2
+Type51=0
+Type52=0
+Type53=1
+Type54=1
+Type55=1
+Type56=2
+Type57=1
+Type58=1
+Type59=1
+Type60=0
+Type61=0
+Type62=0
+Type63=0
+Type64=0
+Type65=2
+Type66=3
+Type67=2
+Type68=2
+Type69=2
+Type70=2
+Type71=2
+Type72=2
+Type73=2
+Type74=1
+Type75=2
+Type76=1
+Type77=1
+Type78=1
+Type79=1
+Type80=2
+Type81=3
+Type82=3
+Type83=3
+Type84=3
+Type85=3
+Type86=2
+Type87=2
+Type88=2
+Type89=1
+Type90=1
+Type91=3
+Type92=3
+Type93=2
+Type94=2
+Type95=2
+Type96=2
+Type97=2
+Type98=0
+Type99=1
+Type100=2
+Type101=0
+Type102=2
+Type103=2
+Type104=1
+Type105=2
+Type106=2
+Type107=2
+Type108=2
+Type109=1
+Type110=1
+Type111=1
+Type112=1
+Type113=1
+Type114=2
+Type115=2
+Type116=2
+Type117=3
+Type118=3
+Type119=3
+AlternateItemFail=3
+Type122=2
+Type123=1
+Type124=1
+Type125=1
+Type126=1
+Type127=1
+
+[ERC Connection Matrix]
+L1=NNNNNNNNNNNNNNNNE
+L2=NNNNNNNNNNNNNNNNE
+L3=NNNNNNNNNNNNNNNNE
+L4=NNNNNNNNNNNNNNNNE
+L5=NNNNNNNNNNNNNNNNE
+L6=NNNNNNNNNNNNNNNNE
+L7=NNNNNNNNNNNNNNNNE
+L8=NNNNNNNNNNNNNNNNE
+L9=NNNNNNNNNNNNNNNNE
+L10=NNNNNNNNNNNNNNNNE
+L11=NNNNNNNNNNNNNNNNE
+L12=NNNNNNNNNNNNNNNNE
+L13=NNNNNNNNNNNNNNNNE
+L14=NNNNNNNNNNNNNNNNE
+L15=NNNNNNNNNNNNNNNNE
+L16=NNNNNNNNNNNNNNNNE
+L17=EEEEEEEEEEEEEEEEE
+
+[Annotate]
+SortOrder=3
+SortLocation=0
+ReplaceSubparts=0
+MatchParameter1=Comment
+MatchStrictly1=1
+MatchParameter2=Library Reference
+MatchStrictly2=1
+PhysicalNamingFormat=$Component_$RoomName
+GlobalIndexSortOrder=3
+GlobalIndexSortLocation=0
+UniqueIDPath0=\PUETYIQX\APTISRRX
+DocumentName0=Arduino Connector.SchDoc
+IsEnabled0=1
+SelectionScope0=All
+Order0=5
+IndexEnabled0=0
+IndexStartValue0=1
+Suffix0=
+UniqueIDPath1=\PUETYIQX\AOARXPKF
+DocumentName1=Audio.SchDoc
+IsEnabled1=1
+SelectionScope1=All
+Order1=6
+IndexEnabled1=0
+IndexStartValue1=1
+Suffix1=
+UniqueIDPath2=\PUETYIQX\URJSUBNL
+DocumentName2=DEBUG.SchDoc
+IsEnabled2=1
+SelectionScope2=All
+Order2=7
+IndexEnabled2=0
+IndexStartValue2=1
+Suffix2=
+UniqueIDPath3=\PUETYIQX\ADEPODLC
+DocumentName3=eMMC.SchDoc
+IsEnabled3=1
+SelectionScope3=All
+Order3=8
+IndexEnabled3=0
+IndexStartValue3=1
+Suffix3=
+UniqueIDPath4=\PUETYIQX\AJAGXGCK
+DocumentName4=Ethernet.SchDoc
+IsEnabled4=1
+SelectionScope4=All
+Order4=9
+IndexEnabled4=0
+IndexStartValue4=1
+Suffix4=
+UniqueIDPath5=\PUETYIQX\VLBAXBEG
+DocumentName5=FDCAN.SchDoc
+IsEnabled5=1
+SelectionScope5=All
+Order5=10
+IndexEnabled5=0
+IndexStartValue5=1
+Suffix5=
+UniqueIDPath6=\PUETYIQX\NHYODYGS
+DocumentName6=LCD_4.3.SchDoc
+IsEnabled6=1
+SelectionScope6=All
+Order6=11
+IndexEnabled6=0
+IndexStartValue6=1
+Suffix6=
+UniqueIDPath7=\PUETYIQX
+DocumentName7=MB1381_TOP.SchDoc
+IsEnabled7=1
+SelectionScope7=All
+Order7=12
+IndexEnabled7=0
+IndexStartValue7=1
+Suffix7=
+UniqueIDPath8=\PUETYIQX\MQHKFLUC
+DocumentName8=MCU.SchDoc
+IsEnabled8=1
+SelectionScope8=All
+Order8=13
+IndexEnabled8=0
+IndexStartValue8=1
+Suffix8=
+UniqueIDPath9=\PUETYIQX\AJAGXGCK\EHGFHJCC
+DocumentName9=PoE.SchDoc
+IsEnabled9=1
+SelectionScope9=All
+Order9=14
+IndexEnabled9=0
+IndexStartValue9=1
+Suffix9=
+UniqueIDPath10=\PUETYIQX\DQTTLOKG
+DocumentName10=Power.SchDoc
+IsEnabled10=1
+SelectionScope10=All
+Order10=15
+IndexEnabled10=0
+IndexStartValue10=1
+Suffix10=
+UniqueIDPath11=
+DocumentName11=Project_overview.SchDoc
+IsEnabled11=1
+SelectionScope11=All
+Order11=4
+IndexEnabled11=0
+IndexStartValue11=1
+Suffix11=
+UniqueIDPath12=\PUETYIQX\TORMEJDJ
+DocumentName12=QSPI.SchDoc
+IsEnabled12=1
+SelectionScope12=All
+Order12=16
+IndexEnabled12=0
+IndexStartValue12=1
+Suffix12=
+UniqueIDPath13=\PUETYIQX\KQCCEHNY
+DocumentName13=SDRAM.SchDoc
+IsEnabled13=1
+SelectionScope13=All
+Order13=17
+IndexEnabled13=0
+IndexStartValue13=1
+Suffix13=
+UniqueIDPath14=\PUETYIQX\FEWNKIVA
+DocumentName14=STlink_V3E_Module.SchDoc
+IsEnabled14=1
+SelectionScope14=All
+Order14=18
+IndexEnabled14=0
+IndexStartValue14=1
+Suffix14=
+UniqueIDPath15=\PUETYIQX\YBEWQAVL
+DocumentName15=STlink_V3E_PWR.SchDoc
+IsEnabled15=1
+SelectionScope15=All
+Order15=19
+IndexEnabled15=0
+IndexStartValue15=1
+Suffix15=
+UniqueIDPath16=\PUETYIQX\RKJCCYKY
+DocumentName16=STMod+.SchDoc
+IsEnabled16=1
+SelectionScope16=All
+Order16=20
+IndexEnabled16=0
+IndexStartValue16=1
+Suffix16=
+UniqueIDPath17=\PUETYIQX\RWUKQVIO
+DocumentName17=USB_OTG_FS.SchDoc
+IsEnabled17=1
+SelectionScope17=All
+Order17=21
+IndexEnabled17=0
+IndexStartValue17=1
+Suffix17=
+
+[PrjClassGen]
+CompClassManualEnabled=0
+CompClassManualRoomEnabled=0
+NetClassAutoBusEnabled=1
+NetClassAutoCompEnabled=0
+NetClassAutoNamedHarnessEnabled=0
+NetClassManualEnabled=1
+NetClassSeparateForBusSections=0
+
+[LibraryUpdateOptions]
+SelectedOnly=0
+UpdateVariants=1
+UpdateToLatestRevision=1
+PartTypes=0
+ComponentLibIdentifierKind0=Library Name And Type
+ComponentLibraryIdentifier0=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID0=MCD-00009
+ComponentSymbolReference0=Capacitor
+ComponentUpdate0=1
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID1=MCD-00010
+ComponentSymbolReference1=Capacitor
+ComponentUpdate1=1
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID2=MCD-00014
+ComponentSymbolReference2=Capacitor
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Name And Type
+ComponentLibraryIdentifier3=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID3=MCD-00017
+ComponentSymbolReference3=Capacitor
+ComponentUpdate3=1
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID4=MCD-00028
+ComponentSymbolReference4=USB_uB_105017.0001
+ComponentUpdate4=1
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID5=MCD-00034
+ComponentSymbolReference5=BAT60JFILM
+ComponentUpdate5=1
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID6=MCD-00043
+ComponentSymbolReference6=Shunt 2.54mm
+ComponentUpdate6=1
+ComponentIsDeviceSheet6=0
+ComponentLibIdentifierKind7=Library Name And Type
+ComponentLibraryIdentifier7=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID7=MCD-00045
+ComponentSymbolReference7=Jumper Header 2x1
+ComponentUpdate7=1
+ComponentIsDeviceSheet7=0
+ComponentLibIdentifierKind8=Library Name And Type
+ComponentLibraryIdentifier8=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID8=MCD-00047
+ComponentSymbolReference8=BEAD
+ComponentUpdate8=1
+ComponentIsDeviceSheet8=0
+ComponentLibIdentifierKind9=Library Name And Type
+ComponentLibraryIdentifier9=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID9=MCD-00049
+ComponentSymbolReference9=LED_red
+ComponentUpdate9=1
+ComponentIsDeviceSheet9=0
+ComponentLibIdentifierKind10=Library Name And Type
+ComponentLibraryIdentifier10=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID10=MCD-00050
+ComponentSymbolReference10=LED_green
+ComponentUpdate10=1
+ComponentIsDeviceSheet10=0
+ComponentLibIdentifierKind11=Library Name And Type
+ComponentLibraryIdentifier11=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID11=MCD-00066
+ComponentSymbolReference11=Resistor
+ComponentUpdate11=1
+ComponentIsDeviceSheet11=0
+ComponentLibIdentifierKind12=Library Name And Type
+ComponentLibraryIdentifier12=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID12=MCD-00070
+ComponentSymbolReference12=Resistor
+ComponentUpdate12=1
+ComponentIsDeviceSheet12=0
+ComponentLibIdentifierKind13=Library Name And Type
+ComponentLibraryIdentifier13=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID13=MCD-00071
+ComponentSymbolReference13=SB_ON
+ComponentUpdate13=1
+ComponentIsDeviceSheet13=0
+ComponentLibIdentifierKind14=Library Name And Type
+ComponentLibraryIdentifier14=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID14=MCD-00073
+ComponentSymbolReference14=9013-SOT23
+ComponentUpdate14=1
+ComponentIsDeviceSheet14=0
+ComponentLibIdentifierKind15=Library Name And Type
+ComponentLibraryIdentifier15=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID15=MCD-00085
+ComponentSymbolReference15=STM32F103CBT6
+ComponentUpdate15=1
+ComponentIsDeviceSheet15=0
+ComponentLibIdentifierKind16=Library Name And Type
+ComponentLibraryIdentifier16=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID16=MCD-00087
+ComponentSymbolReference16=ST890CDR
+ComponentUpdate16=1
+ComponentIsDeviceSheet16=0
+ComponentLibIdentifierKind17=Library Name And Type
+ComponentLibraryIdentifier17=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID17=MCD-00088
+ComponentSymbolReference17=LD1117S50TR
+ComponentUpdate17=1
+ComponentIsDeviceSheet17=0
+ComponentLibIdentifierKind18=Library Name And Type
+ComponentLibraryIdentifier18=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID18=MCD-00091
+ComponentSymbolReference18=XTAL_32K_NX3215SA
+ComponentUpdate18=1
+ComponentIsDeviceSheet18=0
+ComponentLibIdentifierKind19=Library Name And Type
+ComponentLibraryIdentifier19=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID19=MCD-00092
+ComponentSymbolReference19=XTAL_8M_NX3225GD
+ComponentUpdate19=1
+ComponentIsDeviceSheet19=0
+ComponentLibIdentifierKind20=Library Name And Type
+ComponentLibraryIdentifier20=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID20=MCD-00111
+ComponentSymbolReference20=Jumper_Header 3x1
+ComponentUpdate20=1
+ComponentIsDeviceSheet20=0
+ComponentLibIdentifierKind21=Library Name And Type
+ComponentLibraryIdentifier21=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID21=MCD-00151
+ComponentSymbolReference21=BSN20
+ComponentUpdate21=1
+ComponentIsDeviceSheet21=0
+ComponentLibIdentifierKind22=Library Name And Type
+ComponentLibraryIdentifier22=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID22=MCD-00163
+ComponentSymbolReference22=USBLC6-2SC6
+ComponentUpdate22=1
+ComponentIsDeviceSheet22=0
+ComponentLibIdentifierKind23=Library Name And Type
+ComponentLibraryIdentifier23=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID23=MCD-00181
+ComponentSymbolReference23=Resistor
+ComponentUpdate23=1
+ComponentIsDeviceSheet23=0
+ComponentLibIdentifierKind24=Library Name And Type
+ComponentLibraryIdentifier24=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID24=MCD-00211
+ComponentSymbolReference24=Capacitor
+ComponentUpdate24=1
+ComponentIsDeviceSheet24=0
+ComponentLibIdentifierKind25=Library Name And Type
+ComponentLibraryIdentifier25=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID25=MCD-00213
+ComponentSymbolReference25=Header 19x2
+ComponentUpdate25=1
+ComponentIsDeviceSheet25=0
+ComponentLibIdentifierKind26=Library Name And Type
+ComponentLibraryIdentifier26=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID26=MCD-00216
+ComponentSymbolReference26=PCB
+ComponentUpdate26=1
+ComponentIsDeviceSheet26=0
+ComponentLibIdentifierKind27=Library Name And Type
+ComponentLibraryIdentifier27=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID27=MCD-00217
+ComponentSymbolReference27=Resistor
+ComponentUpdate27=1
+ComponentIsDeviceSheet27=0
+ComponentLibIdentifierKind28=Library Name And Type
+ComponentLibraryIdentifier28=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID28=MCD-00218
+ComponentSymbolReference28=Resistor
+ComponentUpdate28=1
+ComponentIsDeviceSheet28=0
+ComponentLibIdentifierKind29=Library Name And Type
+ComponentLibraryIdentifier29=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID29=MCD-00219
+ComponentSymbolReference29=Resistor
+ComponentUpdate29=1
+ComponentIsDeviceSheet29=0
+ComponentLibIdentifierKind30=Library Name And Type
+ComponentLibraryIdentifier30=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID30=MCD-00220
+ComponentSymbolReference30=Resistor
+ComponentUpdate30=1
+ComponentIsDeviceSheet30=0
+ComponentLibIdentifierKind31=Library Name And Type
+ComponentLibraryIdentifier31=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID31=MCD-00221
+ComponentSymbolReference31=Resistor
+ComponentUpdate31=1
+ComponentIsDeviceSheet31=0
+ComponentLibIdentifierKind32=Library Name And Type
+ComponentLibraryIdentifier32=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID32=MCD-00223
+ComponentSymbolReference32=Resistor
+ComponentUpdate32=1
+ComponentIsDeviceSheet32=0
+ComponentLibIdentifierKind33=Library Name And Type
+ComponentLibraryIdentifier33=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID33=MCD-00224
+ComponentSymbolReference33=Resistor
+ComponentUpdate33=1
+ComponentIsDeviceSheet33=0
+ComponentLibIdentifierKind34=Library Name And Type
+ComponentLibraryIdentifier34=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID34=MCD-00225
+ComponentSymbolReference34=Resistor
+ComponentUpdate34=1
+ComponentIsDeviceSheet34=0
+ComponentLibIdentifierKind35=Library Name And Type
+ComponentLibraryIdentifier35=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID35=MCD-00235
+ComponentSymbolReference35=STICKER_BOARD_REF
+ComponentUpdate35=1
+ComponentIsDeviceSheet35=0
+ComponentLibIdentifierKind36=Library Name And Type
+ComponentLibraryIdentifier36=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID36=MCD-00238
+ComponentSymbolReference36=Capacitor
+ComponentUpdate36=1
+ComponentIsDeviceSheet36=0
+ComponentLibIdentifierKind37=Library Name And Type
+ComponentLibraryIdentifier37=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID37=MCD-00257
+ComponentSymbolReference37=Resistor
+ComponentUpdate37=1
+ComponentIsDeviceSheet37=0
+ComponentLibIdentifierKind38=Library Name And Type
+ComponentLibraryIdentifier38=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID38=MCD-00261
+ComponentSymbolReference38=Socket 8x1
+ComponentUpdate38=1
+ComponentIsDeviceSheet38=0
+ComponentLibIdentifierKind39=Library Name And Type
+ComponentLibraryIdentifier39=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID39=MCD-00262
+ComponentSymbolReference39=Socket 10x1
+ComponentUpdate39=1
+ComponentIsDeviceSheet39=0
+ComponentLibIdentifierKind40=Library Name And Type
+ComponentLibraryIdentifier40=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID40=MCD-00313
+ComponentSymbolReference40=Header 4x1
+ComponentUpdate40=1
+ComponentIsDeviceSheet40=0
+ComponentLibIdentifierKind41=Library Name And Type
+ComponentLibraryIdentifier41=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID41=MCD-00316
+ComponentSymbolReference41=Header 6x1
+ComponentUpdate41=1
+ComponentIsDeviceSheet41=0
+ComponentLibIdentifierKind42=Library Name And Type
+ComponentLibraryIdentifier42=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID42=MCD-00349
+ComponentSymbolReference42=Resistor
+ComponentUpdate42=1
+ComponentIsDeviceSheet42=0
+ComponentLibIdentifierKind43=Library Name And Type
+ComponentLibraryIdentifier43=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID43=MCD-00549
+ComponentSymbolReference43=STICKER_BOARD_CPN
+ComponentUpdate43=1
+ComponentIsDeviceSheet43=0
+ComponentLibIdentifierKind44=Library Name And Type
+ComponentLibraryIdentifier44=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID44=MCD-00637
+ComponentSymbolReference44=Capacitor
+ComponentUpdate44=1
+ComponentIsDeviceSheet44=0
+ComponentLibIdentifierKind45=Library Name And Type
+ComponentLibraryIdentifier45=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID45=MCD-00638
+ComponentSymbolReference45=Capacitor
+ComponentUpdate45=1
+ComponentIsDeviceSheet45=0
+ComponentLibIdentifierKind46=Library Name And Type
+ComponentLibraryIdentifier46=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID46=MCD-00662
+ComponentSymbolReference46=STM32G071RBT6
+ComponentUpdate46=1
+ComponentIsDeviceSheet46=0
+ComponentLibIdentifierKind47=Library Name And Type
+ComponentLibraryIdentifier47=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID47=MCD-00663
+ComponentSymbolReference47=LDK120M33R
+ComponentUpdate47=1
+ComponentIsDeviceSheet47=0
+ComponentLibIdentifierKind48=Library Name And Type
+ComponentLibraryIdentifier48=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID48=MCD-00664
+ComponentSymbolReference48=LDL112PV33R
+ComponentUpdate48=1
+ComponentIsDeviceSheet48=0
+ComponentLibIdentifierKind49=Library Name And Type
+ComponentLibraryIdentifier49=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID49=MCD-00665
+ComponentSymbolReference49=Capacitor
+ComponentUpdate49=1
+ComponentIsDeviceSheet49=0
+ComponentLibIdentifierKind50=Library Name And Type
+ComponentLibraryIdentifier50=MCD_PARTS_database.DbLib
+ComponentDesignItemID50=MCD-00001
+ComponentSymbolReference50=SW-PUSH-CMS_BLACK
+ComponentUpdate50=1
+ComponentIsDeviceSheet50=0
+ComponentLibIdentifierKind51=Library Name And Type
+ComponentLibraryIdentifier51=MCD_PARTS_database.DbLib
+ComponentDesignItemID51=MCD-00002
+ComponentSymbolReference51=SW-PUSH-CMS_BLUE
+ComponentUpdate51=1
+ComponentIsDeviceSheet51=0
+ComponentLibIdentifierKind52=Library Name And Type
+ComponentLibraryIdentifier52=MCD_PARTS_database.DbLib
+ComponentDesignItemID52=MCD-00037
+ComponentSymbolReference52=BLISTER
+ComponentUpdate52=1
+ComponentIsDeviceSheet52=0
+ComponentLibIdentifierKind53=Library Name And Type
+ComponentLibraryIdentifier53=MCD_PARTS_database.DbLib
+ComponentDesignItemID53=MCD-00038
+ComponentSymbolReference53=BLISTER CARD
+ComponentUpdate53=1
+ComponentIsDeviceSheet53=0
+ComponentLibIdentifierKind54=Library Name And Type
+ComponentLibraryIdentifier54=MCD_PARTS_database.DbLib
+ComponentDesignItemID54=MCD-00051
+ComponentSymbolReference54=LD_BICOLOR_CMS
+ComponentUpdate54=1
+ComponentIsDeviceSheet54=0
+ComponentLibIdentifierKind55=Library Name And Type
+ComponentLibraryIdentifier55=MCD_PARTS_database.DbLib
+ComponentDesignItemID55=MCD-00072
+ComponentSymbolReference55=SB_OFF
+ComponentUpdate55=1
+ComponentIsDeviceSheet55=0
+ComponentLibIdentifierKind56=Library Name And Type
+ComponentLibraryIdentifier56=MCD_PARTS_database.DbLib
+ComponentDesignItemID56=MCD-00260
+ComponentSymbolReference56=Socket 6x1
+ComponentUpdate56=1
+ComponentIsDeviceSheet56=0
+ComponentLibIdentifierKind57=Library Name And Type
+ComponentLibraryIdentifier57=MCD_PARTS_database.DbLib
+ComponentDesignItemID57=MCD-00261
+ComponentSymbolReference57=Socket 8x1
+ComponentUpdate57=1
+ComponentIsDeviceSheet57=0
+ComponentLibIdentifierKind58=Library Name And Type
+ComponentLibraryIdentifier58=MCD_PARTS_database.DbLib
+ComponentDesignItemID58=MCD-00634
+ComponentSymbolReference58=BUTTON_HAT_BLUE
+ComponentUpdate58=1
+ComponentIsDeviceSheet58=0
+ComponentLibIdentifierKind59=Library Name And Type
+ComponentLibraryIdentifier59=MCD_PARTS_database.DbLib
+ComponentDesignItemID59=MCD-00635
+ComponentSymbolReference59=BUTTON_HAT_BLACK
+ComponentUpdate59=1
+ComponentIsDeviceSheet59=0
+FullReplace=1
+UpdateDesignatorLock=1
+UpdatePartIDLock=1
+PreserveParameterLocations=1
+PreserveParameterVisibility=1
+DoGraphics=1
+DoParameters=1
+DoModels=1
+AddParameters=0
+RemoveParameters=0
+AddModels=1
+RemoveModels=1
+UpdateCurrentModels=1
+ParameterName0=Alternate_Manufacturer
+ParameterUpdate0=1
+ParameterName1=Alternate_Manufacturer_Part_Number
+ParameterUpdate1=1
+ParameterName2=Comment
+ParameterUpdate2=1
+ParameterName3=Component Kind
+ParameterUpdate3=1
+ParameterName4=ComponentLink1Description
+ParameterUpdate4=1
+ParameterName5=ComponentLink1URL
+ParameterUpdate5=1
+ParameterName6=Description
+ParameterUpdate6=1
+ParameterName7=ECCN_EU
+ParameterUpdate7=1
+ParameterName8=ECCN_US
+ParameterUpdate8=1
+ParameterName9=Initial_Board_Reference
+ParameterUpdate9=1
+ParameterName10=Internal_Part_Number
+ParameterUpdate10=1
+ParameterName11=Library Reference
+ParameterUpdate11=1
+ParameterName12=Manufacturer
+ParameterUpdate12=1
+ParameterName13=Manufacturer_Part_Number
+ParameterUpdate13=1
+ParameterName14=Order_Code_Farnell
+ParameterUpdate14=1
+ParameterName15=Package
+ParameterUpdate15=1
+ParameterName16=Part_Type
+ParameterUpdate16=1
+ParameterName17=PartType
+ParameterUpdate17=1
+ParameterName18=Provided_By
+ParameterUpdate18=1
+ParameterName19=Revision
+ParameterUpdate19=1
+ParameterName20=Status
+ParameterUpdate20=1
+ParameterName21=Value
+ParameterUpdate21=1
+ModelTypeGroup0=PCBLIB
+ModelTypeUpdate0=1
+ModelType0=PCBLIB
+ModelName0=C0603
+ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=C0805
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=CON_988-JIUBABA_PHFS25-11-04-G0B115-T-1
+ModelUpdate2=1
+ModelType3=PCBLIB
+ModelName3=CON_988-JIUBABA_PHFS25-11-06-G0B115-T-1
+ModelUpdate3=1
+ModelType4=PCBLIB
+ModelName4=CON_SAMTEC_SSW-106-03-X-S
+ModelUpdate4=1
+ModelType5=PCBLIB
+ModelName5=CON_SAMTEC_SSW-108-03-X-S
+ModelUpdate5=1
+ModelType6=PCBLIB
+ModelName6=CON_SAMTEC_SSW-110-03-X-S
+ModelUpdate6=1
+ModelType7=PCBLIB
+ModelName7=CON_SAMTEC_TSW-102-07-G-S
+ModelUpdate7=1
+ModelType8=PCBLIB
+ModelName8=CON_SAMTEC_TSW-103-07-F-S
+ModelUpdate8=1
+ModelType9=PCBLIB
+ModelName9=CON_SAMTEC_TSW-119-09-X-D
+ModelUpdate9=1
+ModelType10=PCBLIB
+ModelName10=CON_USBMICROB_MOLEX_105017-0001_H2P90
+ModelUpdate10=1
+ModelType11=PCBLIB
+ModelName11=CRY_NX3215SA_2P
+ModelUpdate11=1
+ModelType12=PCBLIB
+ModelName12=CRY_NX3225GD_2P
+ModelUpdate12=1
+ModelType13=PCBLIB
+ModelName13=DIO_SOD323
+ModelUpdate13=1
+ModelType14=PCBLIB
+ModelName14=ESD_SOT23-6L
+ModelUpdate14=1
+ModelType15=PCBLIB
+ModelName15=ICC_DFN6-EPAD_3X3_P095
+ModelUpdate15=1
+ModelType16=PCBLIB
+ModelName16=ICC_LQFP48_7X7_P050
+ModelUpdate16=1
+ModelType17=PCBLIB
+ModelName17=ICC_LQFP64_10X10_P050_SOCKET_YAMAICHI_IC149-064-069-B5
+ModelUpdate17=1
+ModelType18=PCBLIB
+ModelName18=ICC_SO8_5X4_P127
+ModelUpdate18=1
+ModelType19=PCBLIB
+ModelName19=L0603
+ModelUpdate19=1
+ModelType20=PCBLIB
+ModelName20=LED_0603_GREEN
+ModelUpdate20=1
+ModelType21=PCBLIB
+ModelName21=LED_0603_RED
+ModelUpdate21=1
+ModelType22=PCBLIB
+ModelName22=LED_BI-GR_HSMF-A201-A00J1
+ModelUpdate22=1
+ModelType23=PCBLIB
+ModelName23=MOS_SOT23
+ModelUpdate23=1
+ModelType24=PCBLIB
+ModelName24=N/A
+ModelUpdate24=1
+ModelType25=PCBLIB
+ModelName25=NPN_SOT23
+ModelUpdate25=1
+ModelType26=PCBLIB
+ModelName26=R0603
+ModelUpdate26=1
+ModelType27=PCBLIB
+ModelName27=REG_SOT223-TAB
+ModelUpdate27=1
+ModelType28=PCBLIB
+ModelName28=REG_SOT23-5L
+ModelUpdate28=1
+ModelType29=PCBLIB
+ModelName29=SOLDER-BRIDGE_R0603-0R
+ModelUpdate29=1
+ModelType30=PCBLIB
+ModelName30=SWI_WEALTHMETAL_TD-0341_4P_BLACK
+ModelUpdate30=1
+ModelType31=PCBLIB
+ModelName31=SWI_WEALTHMETAL_TD-0341_4P_BLUE
+ModelUpdate31=1
+
+[DatabaseUpdateOptions]
+SelectedOnly=0
+UpdateVariants=1
+UpdateToLatestRevision=1
+PartTypes=0
+ComponentLibIdentifierKind0=Library Full Path
+ComponentLibraryIdentifier0=C:\Subversion\Altium_Designer_Library\MCD_PARTS_database.DbLib
+ComponentDesignItemID0=MCD-00071
+ComponentSymbolReference0=MCD-00071
+ComponentUpdate0=1
+ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Full Path
+ComponentLibraryIdentifier1=C:\Subversion\Altium_Designer_Library\MCD_PARTS_database.DbLib
+ComponentDesignItemID1=MCD-00072
+ComponentSymbolReference1=MCD-00072
+ComponentUpdate1=1
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Full Path
+ComponentLibraryIdentifier2=C:\Subversion\Altium_Designer_Library\MCD_PARTS_database.DbLib
+ComponentDesignItemID2=MCD-01085
+ComponentSymbolReference2=MCD-01085
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Full Path
+ComponentLibraryIdentifier3=C:\Subversion\Altium_Designer_Library\MCD_PARTS_database.DbLib
+ComponentDesignItemID3=MCD-02325
+ComponentSymbolReference3=MCD-02325
+ComponentUpdate3=1
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID4=MCD-00001
+ComponentSymbolReference4=SW-PUSH-CMS_BLACK
+ComponentUpdate4=1
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID5=MCD-00002
+ComponentSymbolReference5=SW-PUSH-CMS_BLUE
+ComponentUpdate5=1
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID6=MCD-00006
+ComponentSymbolReference6=Capacitor
+ComponentUpdate6=1
+ComponentIsDeviceSheet6=0
+ComponentLibIdentifierKind7=Library Name And Type
+ComponentLibraryIdentifier7=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID7=MCD-00008
+ComponentSymbolReference7=Capacitor
+ComponentUpdate7=1
+ComponentIsDeviceSheet7=0
+ComponentLibIdentifierKind8=Library Name And Type
+ComponentLibraryIdentifier8=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID8=MCD-00009
+ComponentSymbolReference8=Capacitor
+ComponentUpdate8=1
+ComponentIsDeviceSheet8=0
+ComponentLibIdentifierKind9=Library Name And Type
+ComponentLibraryIdentifier9=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID9=MCD-00010
+ComponentSymbolReference9=Capacitor
+ComponentUpdate9=1
+ComponentIsDeviceSheet9=0
+ComponentLibIdentifierKind10=Library Name And Type
+ComponentLibraryIdentifier10=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID10=MCD-00011
+ComponentSymbolReference10=Capacitor
+ComponentUpdate10=1
+ComponentIsDeviceSheet10=0
+ComponentLibIdentifierKind11=Library Name And Type
+ComponentLibraryIdentifier11=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID11=MCD-00012
+ComponentSymbolReference11=Capacitor
+ComponentUpdate11=1
+ComponentIsDeviceSheet11=0
+ComponentLibIdentifierKind12=Library Name And Type
+ComponentLibraryIdentifier12=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID12=MCD-00013
+ComponentSymbolReference12=Capacitor
+ComponentUpdate12=1
+ComponentIsDeviceSheet12=0
+ComponentLibIdentifierKind13=Library Name And Type
+ComponentLibraryIdentifier13=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID13=MCD-00014
+ComponentSymbolReference13=Capacitor
+ComponentUpdate13=1
+ComponentIsDeviceSheet13=0
+ComponentLibIdentifierKind14=Library Name And Type
+ComponentLibraryIdentifier14=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID14=MCD-00016
+ComponentSymbolReference14=Capacitor
+ComponentUpdate14=1
+ComponentIsDeviceSheet14=0
+ComponentLibIdentifierKind15=Library Name And Type
+ComponentLibraryIdentifier15=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID15=MCD-00017
+ComponentSymbolReference15=Capacitor
+ComponentUpdate15=1
+ComponentIsDeviceSheet15=0
+ComponentLibIdentifierKind16=Library Name And Type
+ComponentLibraryIdentifier16=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID16=MCD-00018
+ComponentSymbolReference16=Jack_PJ3028B-3_3P
+ComponentUpdate16=1
+ComponentIsDeviceSheet16=0
+ComponentLibIdentifierKind17=Library Name And Type
+ComponentLibraryIdentifier17=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID17=MCD-00022
+ComponentSymbolReference17=USB_uAB_47590.0001
+ComponentUpdate17=1
+ComponentIsDeviceSheet17=0
+ComponentLibIdentifierKind18=Library Name And Type
+ComponentLibraryIdentifier18=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID18=MCD-00028
+ComponentSymbolReference18=USB_uB_105017.0001
+ComponentUpdate18=1
+ComponentIsDeviceSheet18=0
+ComponentLibIdentifierKind19=Library Name And Type
+ComponentLibraryIdentifier19=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID19=MCD-00029
+ComponentSymbolReference19=Header 4x1
+ComponentUpdate19=1
+ComponentIsDeviceSheet19=0
+ComponentLibIdentifierKind20=Library Name And Type
+ComponentLibraryIdentifier20=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID20=MCD-00031
+ComponentSymbolReference20=Tag-10-C
+ComponentUpdate20=1
+ComponentIsDeviceSheet20=0
+ComponentLibIdentifierKind21=Library Name And Type
+ComponentLibraryIdentifier21=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID21=MCD-00034
+ComponentSymbolReference21=BAT60JFILM
+ComponentUpdate21=1
+ComponentIsDeviceSheet21=0
+ComponentLibIdentifierKind22=Library Name And Type
+ComponentLibraryIdentifier22=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID22=MCD-00043
+ComponentSymbolReference22=Shunt 2.54mm
+ComponentUpdate22=1
+ComponentIsDeviceSheet22=0
+ComponentLibIdentifierKind23=Library Name And Type
+ComponentLibraryIdentifier23=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID23=MCD-00043
+ComponentSymbolReference23=Shunt Black 2.54mm
+ComponentUpdate23=1
+ComponentIsDeviceSheet23=0
+ComponentLibIdentifierKind24=Library Name And Type
+ComponentLibraryIdentifier24=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID24=MCD-00045
+ComponentSymbolReference24=Jumper Header 2x1
+ComponentUpdate24=1
+ComponentIsDeviceSheet24=0
+ComponentLibIdentifierKind25=Library Name And Type
+ComponentLibraryIdentifier25=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID25=MCD-00047
+ComponentSymbolReference25=BEAD
+ComponentUpdate25=1
+ComponentIsDeviceSheet25=0
+ComponentLibIdentifierKind26=Library Name And Type
+ComponentLibraryIdentifier26=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID26=MCD-00048
+ComponentSymbolReference26=Inductor
+ComponentUpdate26=1
+ComponentIsDeviceSheet26=0
+ComponentLibIdentifierKind27=Library Name And Type
+ComponentLibraryIdentifier27=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID27=MCD-00052
+ComponentSymbolReference27=Resistor
+ComponentUpdate27=1
+ComponentIsDeviceSheet27=0
+ComponentLibIdentifierKind28=Library Name And Type
+ComponentLibraryIdentifier28=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID28=MCD-00053
+ComponentSymbolReference28=Resistor
+ComponentUpdate28=1
+ComponentIsDeviceSheet28=0
+ComponentLibIdentifierKind29=Library Name And Type
+ComponentLibraryIdentifier29=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID29=MCD-00055
+ComponentSymbolReference29=Resistor
+ComponentUpdate29=1
+ComponentIsDeviceSheet29=0
+ComponentLibIdentifierKind30=Library Name And Type
+ComponentLibraryIdentifier30=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID30=MCD-00056
+ComponentSymbolReference30=Resistor
+ComponentUpdate30=1
+ComponentIsDeviceSheet30=0
+ComponentLibIdentifierKind31=Library Name And Type
+ComponentLibraryIdentifier31=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID31=MCD-00059
+ComponentSymbolReference31=Resistor
+ComponentUpdate31=1
+ComponentIsDeviceSheet31=0
+ComponentLibIdentifierKind32=Library Name And Type
+ComponentLibraryIdentifier32=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID32=MCD-00061
+ComponentSymbolReference32=Resistor
+ComponentUpdate32=1
+ComponentIsDeviceSheet32=0
+ComponentLibIdentifierKind33=Library Name And Type
+ComponentLibraryIdentifier33=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID33=MCD-00062
+ComponentSymbolReference33=Resistor
+ComponentUpdate33=1
+ComponentIsDeviceSheet33=0
+ComponentLibIdentifierKind34=Library Name And Type
+ComponentLibraryIdentifier34=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID34=MCD-00063
+ComponentSymbolReference34=Resistor
+ComponentUpdate34=1
+ComponentIsDeviceSheet34=0
+ComponentLibIdentifierKind35=Library Name And Type
+ComponentLibraryIdentifier35=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID35=MCD-00065
+ComponentSymbolReference35=Resistor
+ComponentUpdate35=1
+ComponentIsDeviceSheet35=0
+ComponentLibIdentifierKind36=Library Name And Type
+ComponentLibraryIdentifier36=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID36=MCD-00067
+ComponentSymbolReference36=Resistor
+ComponentUpdate36=1
+ComponentIsDeviceSheet36=0
+ComponentLibIdentifierKind37=Library Name And Type
+ComponentLibraryIdentifier37=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID37=MCD-00068
+ComponentSymbolReference37=Resistor
+ComponentUpdate37=1
+ComponentIsDeviceSheet37=0
+ComponentLibIdentifierKind38=Library Name And Type
+ComponentLibraryIdentifier38=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID38=MCD-00070
+ComponentSymbolReference38=Resistor
+ComponentUpdate38=1
+ComponentIsDeviceSheet38=0
+ComponentLibIdentifierKind39=Library Name And Type
+ComponentLibraryIdentifier39=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID39=MCD-00071
+ComponentSymbolReference39=SB_ON
+ComponentUpdate39=1
+ComponentIsDeviceSheet39=0
+ComponentLibIdentifierKind40=Library Name And Type
+ComponentLibraryIdentifier40=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID40=MCD-00072
+ComponentSymbolReference40=SB_OFF
+ComponentUpdate40=1
+ComponentIsDeviceSheet40=0
+ComponentLibIdentifierKind41=Library Name And Type
+ComponentLibraryIdentifier41=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID41=MCD-00073
+ComponentSymbolReference41=9013-SOT23
+ComponentUpdate41=1
+ComponentIsDeviceSheet41=0
+ComponentLibIdentifierKind42=Library Name And Type
+ComponentLibraryIdentifier42=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID42=MCD-00079
+ComponentSymbolReference42=WM8994ECS/R
+ComponentUpdate42=1
+ComponentIsDeviceSheet42=0
+ComponentLibIdentifierKind43=Library Name And Type
+ComponentLibraryIdentifier43=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID43=MCD-00082
+ComponentSymbolReference43=STLD40DPUR
+ComponentUpdate43=1
+ComponentIsDeviceSheet43=0
+ComponentLibIdentifierKind44=Library Name And Type
+ComponentLibraryIdentifier44=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID44=MCD-00086
+ComponentSymbolReference44=LD3985M33R
+ComponentUpdate44=1
+ComponentIsDeviceSheet44=0
+ComponentLibIdentifierKind45=Library Name And Type
+ComponentLibraryIdentifier45=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID45=MCD-00088
+ComponentSymbolReference45=LD1117S50TR
+ComponentUpdate45=1
+ComponentIsDeviceSheet45=0
+ComponentLibIdentifierKind46=Library Name And Type
+ComponentLibraryIdentifier46=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID46=MCD-00091
+ComponentSymbolReference46=XTAL_32K_NX3215SA
+ComponentUpdate46=1
+ComponentIsDeviceSheet46=0
+ComponentLibIdentifierKind47=Library Name And Type
+ComponentLibraryIdentifier47=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID47=MCD-00129
+ComponentSymbolReference47=MCP2562FD
+ComponentUpdate47=1
+ComponentIsDeviceSheet47=0
+ComponentLibIdentifierKind48=Library Name And Type
+ComponentLibraryIdentifier48=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID48=MCD-00136
+ComponentSymbolReference48=ESDALC6V1W5
+ComponentUpdate48=1
+ComponentIsDeviceSheet48=0
+ComponentLibIdentifierKind49=Library Name And Type
+ComponentLibraryIdentifier49=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID49=MCD-00164
+ComponentSymbolReference49=Resistor
+ComponentUpdate49=1
+ComponentIsDeviceSheet49=0
+ComponentLibIdentifierKind50=Library Name And Type
+ComponentLibraryIdentifier50=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID50=MCD-00166
+ComponentSymbolReference50=Resistor
+ComponentUpdate50=1
+ComponentIsDeviceSheet50=0
+ComponentLibIdentifierKind51=Library Name And Type
+ComponentLibraryIdentifier51=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID51=MCD-00179
+ComponentSymbolReference51=Resistor
+ComponentUpdate51=1
+ComponentIsDeviceSheet51=0
+ComponentLibIdentifierKind52=Library Name And Type
+ComponentLibraryIdentifier52=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID52=MCD-00181
+ComponentSymbolReference52=Resistor
+ComponentUpdate52=1
+ComponentIsDeviceSheet52=0
+ComponentLibIdentifierKind53=Library Name And Type
+ComponentLibraryIdentifier53=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID53=MCD-00185
+ComponentSymbolReference53=Resistor
+ComponentUpdate53=1
+ComponentIsDeviceSheet53=0
+ComponentLibIdentifierKind54=Library Name And Type
+ComponentLibraryIdentifier54=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID54=MCD-00189
+ComponentSymbolReference54=Resistor
+ComponentUpdate54=1
+ComponentIsDeviceSheet54=0
+ComponentLibIdentifierKind55=Library Name And Type
+ComponentLibraryIdentifier55=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID55=MCD-00194
+ComponentSymbolReference55=Resistor
+ComponentUpdate55=1
+ComponentIsDeviceSheet55=0
+ComponentLibIdentifierKind56=Library Name And Type
+ComponentLibraryIdentifier56=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID56=MCD-00197
+ComponentSymbolReference56=Resistor
+ComponentUpdate56=1
+ComponentIsDeviceSheet56=0
+ComponentLibIdentifierKind57=Library Name And Type
+ComponentLibraryIdentifier57=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID57=MCD-00204
+ComponentSymbolReference57=Capacitor
+ComponentUpdate57=1
+ComponentIsDeviceSheet57=0
+ComponentLibIdentifierKind58=Library Name And Type
+ComponentLibraryIdentifier58=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID58=MCD-00205
+ComponentSymbolReference58=Capacitor
+ComponentUpdate58=1
+ComponentIsDeviceSheet58=0
+ComponentLibIdentifierKind59=Library Name And Type
+ComponentLibraryIdentifier59=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID59=MCD-00211
+ComponentSymbolReference59=Capacitor
+ComponentUpdate59=1
+ComponentIsDeviceSheet59=0
+ComponentLibIdentifierKind60=Library Name And Type
+ComponentLibraryIdentifier60=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID60=MCD-00217
+ComponentSymbolReference60=Resistor
+ComponentUpdate60=1
+ComponentIsDeviceSheet60=0
+ComponentLibIdentifierKind61=Library Name And Type
+ComponentLibraryIdentifier61=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID61=MCD-00219
+ComponentSymbolReference61=Resistor
+ComponentUpdate61=1
+ComponentIsDeviceSheet61=0
+ComponentLibIdentifierKind62=Library Name And Type
+ComponentLibraryIdentifier62=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID62=MCD-00220
+ComponentSymbolReference62=Resistor
+ComponentUpdate62=1
+ComponentIsDeviceSheet62=0
+ComponentLibIdentifierKind63=Library Name And Type
+ComponentLibraryIdentifier63=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID63=MCD-00225
+ComponentSymbolReference63=Resistor
+ComponentUpdate63=1
+ComponentIsDeviceSheet63=0
+ComponentLibIdentifierKind64=Library Name And Type
+ComponentLibraryIdentifier64=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID64=MCD-00235
+ComponentSymbolReference64=STICKER_BOARD_REF
+ComponentUpdate64=1
+ComponentIsDeviceSheet64=0
+ComponentLibIdentifierKind65=Library Name And Type
+ComponentLibraryIdentifier65=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID65=MCD-00238
+ComponentSymbolReference65=Capacitor
+ComponentUpdate65=1
+ComponentIsDeviceSheet65=0
+ComponentLibIdentifierKind66=Library Name And Type
+ComponentLibraryIdentifier66=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID66=MCD-00247
+ComponentSymbolReference66=ESDA6V1BC6
+ComponentUpdate66=1
+ComponentIsDeviceSheet66=0
+ComponentLibIdentifierKind67=Library Name And Type
+ComponentLibraryIdentifier67=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID67=MCD-00250
+ComponentSymbolReference67=USBLC6-4SC6
+ComponentUpdate67=1
+ComponentIsDeviceSheet67=0
+ComponentLibIdentifierKind68=Library Name And Type
+ComponentLibraryIdentifier68=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID68=MCD-00251
+ComponentSymbolReference68=ESDA7P60-1U1M
+ComponentUpdate68=1
+ComponentIsDeviceSheet68=0
+ComponentLibIdentifierKind69=Library Name And Type
+ComponentLibraryIdentifier69=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID69=MCD-00257
+ComponentSymbolReference69=Resistor
+ComponentUpdate69=1
+ComponentIsDeviceSheet69=0
+ComponentLibIdentifierKind70=Library Name And Type
+ComponentLibraryIdentifier70=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID70=MCD-00299
+ComponentSymbolReference70=Socket 6x1
+ComponentUpdate70=1
+ComponentIsDeviceSheet70=0
+ComponentLibIdentifierKind71=Library Name And Type
+ComponentLibraryIdentifier71=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID71=MCD-00300
+ComponentSymbolReference71=Socket 8x1
+ComponentUpdate71=1
+ComponentIsDeviceSheet71=0
+ComponentLibIdentifierKind72=Library Name And Type
+ComponentLibraryIdentifier72=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID72=MCD-00301
+ComponentSymbolReference72=Socket 10x1
+ComponentUpdate72=1
+ComponentIsDeviceSheet72=0
+ComponentLibIdentifierKind73=Library Name And Type
+ComponentLibraryIdentifier73=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID73=MCD-00306
+ComponentSymbolReference73=BEAD
+ComponentUpdate73=1
+ComponentIsDeviceSheet73=0
+ComponentLibIdentifierKind74=Library Name And Type
+ComponentLibraryIdentifier74=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID74=MCD-00309
+ComponentSymbolReference74=Socket 10X2 STMod+
+ComponentUpdate74=1
+ComponentIsDeviceSheet74=0
+ComponentLibIdentifierKind75=Library Name And Type
+ComponentLibraryIdentifier75=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID75=MCD-00314
+ComponentSymbolReference75=Header 2x1
+ComponentUpdate75=1
+ComponentIsDeviceSheet75=0
+ComponentLibIdentifierKind76=Library Name And Type
+ComponentLibraryIdentifier76=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID76=MCD-00328
+ComponentSymbolReference76=POSITION HOLE C7D3R5
+ComponentUpdate76=1
+ComponentIsDeviceSheet76=0
+ComponentLibIdentifierKind77=Library Name And Type
+ComponentLibraryIdentifier77=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID77=MCD-00345
+ComponentSymbolReference77=Resistor
+ComponentUpdate77=1
+ComponentIsDeviceSheet77=0
+ComponentLibIdentifierKind78=Library Name And Type
+ComponentLibraryIdentifier78=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID78=MCD-00384
+ComponentSymbolReference78=Resistor
+ComponentUpdate78=1
+ComponentIsDeviceSheet78=0
+ComponentLibIdentifierKind79=Library Name And Type
+ComponentLibraryIdentifier79=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID79=MCD-00422
+ComponentSymbolReference79=Resistor
+ComponentUpdate79=1
+ComponentIsDeviceSheet79=0
+ComponentLibIdentifierKind80=Library Name And Type
+ComponentLibraryIdentifier80=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID80=MCD-00429
+ComponentSymbolReference80=Resistor
+ComponentUpdate80=1
+ComponentIsDeviceSheet80=0
+ComponentLibIdentifierKind81=Library Name And Type
+ComponentLibraryIdentifier81=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID81=MCD-00455
+ComponentSymbolReference81=Resistor
+ComponentUpdate81=1
+ComponentIsDeviceSheet81=0
+ComponentLibIdentifierKind82=Library Name And Type
+ComponentLibraryIdentifier82=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID82=MCD-00485
+ComponentSymbolReference82=Resistor
+ComponentUpdate82=1
+ComponentIsDeviceSheet82=0
+ComponentLibIdentifierKind83=Library Name And Type
+ComponentLibraryIdentifier83=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID83=MCD-00499
+ComponentSymbolReference83=Resistor
+ComponentUpdate83=1
+ComponentIsDeviceSheet83=0
+ComponentLibIdentifierKind84=Library Name And Type
+ComponentLibraryIdentifier84=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID84=MCD-00507
+ComponentSymbolReference84=Resistor
+ComponentUpdate84=1
+ComponentIsDeviceSheet84=0
+ComponentLibIdentifierKind85=Library Name And Type
+ComponentLibraryIdentifier85=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID85=MCD-00522
+ComponentSymbolReference85=Resistor
+ComponentUpdate85=1
+ComponentIsDeviceSheet85=0
+ComponentLibIdentifierKind86=Library Name And Type
+ComponentLibraryIdentifier86=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID86=MCD-00549
+ComponentSymbolReference86=STICKER_BOARD_CPN
+ComponentUpdate86=1
+ComponentIsDeviceSheet86=0
+ComponentLibIdentifierKind87=Library Name And Type
+ComponentLibraryIdentifier87=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID87=MCD-00563
+ComponentSymbolReference87=Capacitor
+ComponentUpdate87=1
+ComponentIsDeviceSheet87=0
+ComponentLibIdentifierKind88=Library Name And Type
+ComponentLibraryIdentifier88=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID88=MCD-00565
+ComponentSymbolReference88=Resistor
+ComponentUpdate88=1
+ComponentIsDeviceSheet88=0
+ComponentLibIdentifierKind89=Library Name And Type
+ComponentLibraryIdentifier89=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID89=MCD-00592
+ComponentSymbolReference89=Header 7x2
+ComponentUpdate89=1
+ComponentIsDeviceSheet89=0
+ComponentLibIdentifierKind90=Library Name And Type
+ComponentLibraryIdentifier90=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID90=MCD-00594
+ComponentSymbolReference90=Cap_POL_TANA
+ComponentUpdate90=1
+ComponentIsDeviceSheet90=0
+ComponentLibIdentifierKind91=Library Name And Type
+ComponentLibraryIdentifier91=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID91=MCD-00595
+ComponentSymbolReference91=Cap_POL_TANA
+ComponentUpdate91=1
+ComponentIsDeviceSheet91=0
+ComponentLibIdentifierKind92=Library Name And Type
+ComponentLibraryIdentifier92=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID92=MCD-00596
+ComponentSymbolReference92=ST-LINKV3E_SWD
+ComponentUpdate92=1
+ComponentIsDeviceSheet92=0
+ComponentLibIdentifierKind93=Library Name And Type
+ComponentLibraryIdentifier93=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID93=MCD-00597
+ComponentSymbolReference93=Oscillator_4pins
+ComponentUpdate93=1
+ComponentIsDeviceSheet93=0
+ComponentLibIdentifierKind94=Library Name And Type
+ComponentLibraryIdentifier94=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID94=MCD-00614
+ComponentSymbolReference94=Capacitor
+ComponentUpdate94=1
+ComponentIsDeviceSheet94=0
+ComponentLibIdentifierKind95=Library Name And Type
+ComponentLibraryIdentifier95=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID95=MCD-00625
+ComponentSymbolReference95=Logo
+ComponentUpdate95=1
+ComponentIsDeviceSheet95=0
+ComponentLibIdentifierKind96=Library Name And Type
+ComponentLibraryIdentifier96=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID96=MCD-00626
+ComponentSymbolReference96=Logo
+ComponentUpdate96=1
+ComponentIsDeviceSheet96=0
+ComponentLibIdentifierKind97=Library Name And Type
+ComponentLibraryIdentifier97=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID97=MCD-00627
+ComponentSymbolReference97=Logo
+ComponentUpdate97=1
+ComponentIsDeviceSheet97=0
+ComponentLibIdentifierKind98=Library Name And Type
+ComponentLibraryIdentifier98=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID98=MCD-00628
+ComponentSymbolReference98=Logo
+ComponentUpdate98=1
+ComponentIsDeviceSheet98=0
+ComponentLibIdentifierKind99=Library Name And Type
+ComponentLibraryIdentifier99=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID99=MCD-00629
+ComponentSymbolReference99=Logo
+ComponentUpdate99=1
+ComponentIsDeviceSheet99=0
+ComponentLibIdentifierKind100=Library Name And Type
+ComponentLibraryIdentifier100=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID100=MCD-00630
+ComponentSymbolReference100=Test Point
+ComponentUpdate100=1
+ComponentIsDeviceSheet100=0
+ComponentLibIdentifierKind101=Library Name And Type
+ComponentLibraryIdentifier101=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID101=MCD-00634
+ComponentSymbolReference101=BUTTON_HAT_BLUE
+ComponentUpdate101=1
+ComponentIsDeviceSheet101=0
+ComponentLibIdentifierKind102=Library Name And Type
+ComponentLibraryIdentifier102=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID102=MCD-00635
+ComponentSymbolReference102=BUTTON_HAT_BLACK
+ComponentUpdate102=1
+ComponentIsDeviceSheet102=0
+ComponentLibIdentifierKind103=Library Name And Type
+ComponentLibraryIdentifier103=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID103=MCD-00637
+ComponentSymbolReference103=Capacitor
+ComponentUpdate103=1
+ComponentIsDeviceSheet103=0
+ComponentLibIdentifierKind104=Library Name And Type
+ComponentLibraryIdentifier104=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID104=MCD-00649
+ComponentSymbolReference104=ECMF02-2AMX6
+ComponentUpdate104=1
+ComponentIsDeviceSheet104=0
+ComponentLibIdentifierKind105=Library Name And Type
+ComponentLibraryIdentifier105=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID105=MCD-00682
+ComponentSymbolReference105=Jack_PJ3028B-3_3P
+ComponentUpdate105=1
+ComponentIsDeviceSheet105=0
+ComponentLibIdentifierKind106=Library Name And Type
+ComponentLibraryIdentifier106=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID106=MCD-00683
+ComponentSymbolReference106=Jumper_Header 2x1 Fitted
+ComponentUpdate106=1
+ComponentIsDeviceSheet106=0
+ComponentLibIdentifierKind107=Library Name And Type
+ComponentLibraryIdentifier107=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID107=MCD-00691
+ComponentSymbolReference107=Jumper_Header 6x2 Fitted 1-2
+ComponentUpdate107=1
+ComponentIsDeviceSheet107=0
+ComponentLibIdentifierKind108=Library Name And Type
+ComponentLibraryIdentifier108=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID108=MCD-00717
+ComponentSymbolReference108=RJ45_KRJ-CB4.2GYZNL
+ComponentUpdate108=1
+ComponentIsDeviceSheet108=0
+ComponentLibIdentifierKind109=Library Name And Type
+ComponentLibraryIdentifier109=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID109=MCD-00722
+ComponentSymbolReference109=Capacitor
+ComponentUpdate109=1
+ComponentIsDeviceSheet109=0
+ComponentLibIdentifierKind110=Library Name And Type
+ComponentLibraryIdentifier110=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID110=MCD-00723
+ComponentSymbolReference110=Resistor
+ComponentUpdate110=1
+ComponentIsDeviceSheet110=0
+ComponentLibIdentifierKind111=Library Name And Type
+ComponentLibraryIdentifier111=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID111=MCD-00724
+ComponentSymbolReference111=Capacitor
+ComponentUpdate111=1
+ComponentIsDeviceSheet111=0
+ComponentLibIdentifierKind112=Library Name And Type
+ComponentLibraryIdentifier112=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID112=MCD-01062
+ComponentSymbolReference112=ESD-TRANSIL-DUAL-BIDIR
+ComponentUpdate112=1
+ComponentIsDeviceSheet112=0
+ComponentLibIdentifierKind113=Library Name And Type
+ComponentLibraryIdentifier113=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID113=MCD-01064
+ComponentSymbolReference113=DIODE
+ComponentUpdate113=1
+ComponentIsDeviceSheet113=0
+ComponentLibIdentifierKind114=Library Name And Type
+ComponentLibraryIdentifier114=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID114=MCD-01065
+ComponentSymbolReference114=DF01S
+ComponentUpdate114=1
+ComponentIsDeviceSheet114=0
+ComponentLibIdentifierKind115=Library Name And Type
+ComponentLibraryIdentifier115=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID115=MCD-01069
+ComponentSymbolReference115=LAN8740Ai-EN-TR
+ComponentUpdate115=1
+ComponentIsDeviceSheet115=0
+ComponentLibIdentifierKind116=Library Name And Type
+ComponentLibraryIdentifier116=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID116=MCD-01070
+ComponentSymbolReference116=LD1117S18TR
+ComponentUpdate116=1
+ComponentIsDeviceSheet116=0
+ComponentLibIdentifierKind117=Library Name And Type
+ComponentLibraryIdentifier117=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID117=MCD-01085
+ComponentSymbolReference117=STM32H745XIH6
+ComponentUpdate117=1
+ComponentIsDeviceSheet117=0
+ComponentLibIdentifierKind118=Library Name And Type
+ComponentLibraryIdentifier118=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID118=MCD-01089
+ComponentSymbolReference118=TS431AILT
+ComponentUpdate118=1
+ComponentIsDeviceSheet118=0
+ComponentLibIdentifierKind119=Library Name And Type
+ComponentLibraryIdentifier119=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID119=MCD-01091
+ComponentSymbolReference119=Capacitor
+ComponentUpdate119=1
+ComponentIsDeviceSheet119=0
+ComponentLibIdentifierKind120=Library Name And Type
+ComponentLibraryIdentifier120=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID120=MCD-01093
+ComponentSymbolReference120=Capacitor
+ComponentUpdate120=1
+ComponentIsDeviceSheet120=0
+ComponentLibIdentifierKind121=Library Name And Type
+ComponentLibraryIdentifier121=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID121=MCD-01095
+ComponentSymbolReference121=Capacitor
+ComponentUpdate121=1
+ComponentIsDeviceSheet121=0
+ComponentLibIdentifierKind122=Library Name And Type
+ComponentLibraryIdentifier122=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID122=MCD-01096
+ComponentSymbolReference122=Capacitor
+ComponentUpdate122=1
+ComponentIsDeviceSheet122=0
+ComponentLibIdentifierKind123=Library Name And Type
+ComponentLibraryIdentifier123=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID123=MCD-01098
+ComponentSymbolReference123=Capacitor
+ComponentUpdate123=1
+ComponentIsDeviceSheet123=0
+ComponentLibIdentifierKind124=Library Name And Type
+ComponentLibraryIdentifier124=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID124=MCD-01099
+ComponentSymbolReference124=Capacitor
+ComponentUpdate124=1
+ComponentIsDeviceSheet124=0
+ComponentLibIdentifierKind125=Library Name And Type
+ComponentLibraryIdentifier125=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID125=MCD-01100
+ComponentSymbolReference125=Capacitor
+ComponentUpdate125=1
+ComponentIsDeviceSheet125=0
+ComponentLibIdentifierKind126=Library Name And Type
+ComponentLibraryIdentifier126=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID126=MCD-01101
+ComponentSymbolReference126=Capacitor
+ComponentUpdate126=1
+ComponentIsDeviceSheet126=0
+ComponentLibIdentifierKind127=Library Name And Type
+ComponentLibraryIdentifier127=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID127=MCD-01103
+ComponentSymbolReference127=Capacitor
+ComponentUpdate127=1
+ComponentIsDeviceSheet127=0
+ComponentLibIdentifierKind128=Library Name And Type
+ComponentLibraryIdentifier128=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID128=MCD-01104
+ComponentSymbolReference128=Capacitor
+ComponentUpdate128=1
+ComponentIsDeviceSheet128=0
+ComponentLibIdentifierKind129=Library Name And Type
+ComponentLibraryIdentifier129=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID129=MCD-01109
+ComponentSymbolReference129=Inductor
+ComponentUpdate129=1
+ComponentIsDeviceSheet129=0
+ComponentLibIdentifierKind130=Library Name And Type
+ComponentLibraryIdentifier130=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID130=MCD-01110
+ComponentSymbolReference130=Inductor
+ComponentUpdate130=1
+ComponentIsDeviceSheet130=0
+ComponentLibIdentifierKind131=Library Name And Type
+ComponentLibraryIdentifier131=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID131=MCD-01111
+ComponentSymbolReference131=Resistor
+ComponentUpdate131=1
+ComponentIsDeviceSheet131=0
+ComponentLibIdentifierKind132=Library Name And Type
+ComponentLibraryIdentifier132=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID132=MCD-01112
+ComponentSymbolReference132=Resistor
+ComponentUpdate132=1
+ComponentIsDeviceSheet132=0
+ComponentLibIdentifierKind133=Library Name And Type
+ComponentLibraryIdentifier133=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID133=MCD-01113
+ComponentSymbolReference133=Resistor
+ComponentUpdate133=1
+ComponentIsDeviceSheet133=0
+ComponentLibIdentifierKind134=Library Name And Type
+ComponentLibraryIdentifier134=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID134=MCD-01114
+ComponentSymbolReference134=Resistor
+ComponentUpdate134=1
+ComponentIsDeviceSheet134=0
+ComponentLibIdentifierKind135=Library Name And Type
+ComponentLibraryIdentifier135=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID135=MCD-01115
+ComponentSymbolReference135=Resistor
+ComponentUpdate135=1
+ComponentIsDeviceSheet135=0
+ComponentLibIdentifierKind136=Library Name And Type
+ComponentLibraryIdentifier136=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID136=MCD-01116
+ComponentSymbolReference136=Resistor
+ComponentUpdate136=1
+ComponentIsDeviceSheet136=0
+ComponentLibIdentifierKind137=Library Name And Type
+ComponentLibraryIdentifier137=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID137=MCD-01117
+ComponentSymbolReference137=Resistor
+ComponentUpdate137=1
+ComponentIsDeviceSheet137=0
+ComponentLibIdentifierKind138=Library Name And Type
+ComponentLibraryIdentifier138=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID138=MCD-01118
+ComponentSymbolReference138=Resistor
+ComponentUpdate138=1
+ComponentIsDeviceSheet138=0
+ComponentLibIdentifierKind139=Library Name And Type
+ComponentLibraryIdentifier139=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID139=MCD-01119
+ComponentSymbolReference139=Resistor
+ComponentUpdate139=1
+ComponentIsDeviceSheet139=0
+ComponentLibIdentifierKind140=Library Name And Type
+ComponentLibraryIdentifier140=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID140=MCD-01127
+ComponentSymbolReference140=ST1L05APU33R
+ComponentUpdate140=1
+ComponentIsDeviceSheet140=0
+ComponentLibIdentifierKind141=Library Name And Type
+ComponentLibraryIdentifier141=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID141=MCD-01138
+ComponentSymbolReference141=REF6225IDGKT
+ComponentUpdate141=1
+ComponentIsDeviceSheet141=0
+ComponentLibIdentifierKind142=Library Name And Type
+ComponentLibraryIdentifier142=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID142=MCD-01225
+ComponentSymbolReference142=Capacitor
+ComponentUpdate142=1
+ComponentIsDeviceSheet142=0
+ComponentLibIdentifierKind143=Library Name And Type
+ComponentLibraryIdentifier143=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID143=MCD-01341
+ComponentSymbolReference143=Capacitor
+ComponentUpdate143=1
+ComponentIsDeviceSheet143=0
+ComponentLibIdentifierKind144=Library Name And Type
+ComponentLibraryIdentifier144=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID144=MCD-01355
+ComponentSymbolReference144=Capacitor
+ComponentUpdate144=1
+ComponentIsDeviceSheet144=0
+ComponentLibIdentifierKind145=Library Name And Type
+ComponentLibraryIdentifier145=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID145=MCD-01356
+ComponentSymbolReference145=Capacitor
+ComponentUpdate145=1
+ComponentIsDeviceSheet145=0
+ComponentLibIdentifierKind146=Library Name And Type
+ComponentLibraryIdentifier146=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID146=MCD-01431
+ComponentSymbolReference146=Inductor
+ComponentUpdate146=1
+ComponentIsDeviceSheet146=0
+ComponentLibIdentifierKind147=Library Name And Type
+ComponentLibraryIdentifier147=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID147=MCD-01715
+ComponentSymbolReference147=IMP34DT05TR
+ComponentUpdate147=1
+ComponentIsDeviceSheet147=0
+ComponentLibIdentifierKind148=Library Name And Type
+ComponentLibraryIdentifier148=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID148=MCD-01969
+ComponentSymbolReference148=BSN20
+ComponentUpdate148=1
+ComponentIsDeviceSheet148=0
+ComponentLibIdentifierKind149=Library Name And Type
+ComponentLibraryIdentifier149=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID149=MCD-02212
+ComponentSymbolReference149=Capacitor
+ComponentUpdate149=1
+ComponentIsDeviceSheet149=0
+ComponentLibIdentifierKind150=Library Name And Type
+ComponentLibraryIdentifier150=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID150=MCD-02402
+ComponentSymbolReference150=LD_BICOLOR_CMS
+ComponentUpdate150=1
+ComponentIsDeviceSheet150=0
+ComponentLibIdentifierKind151=Library Name And Type
+ComponentLibraryIdentifier151=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID151=MCD-02799
+ComponentSymbolReference151=eMMC_THGBMTG5D1LBAIL
+ComponentUpdate151=1
+ComponentIsDeviceSheet151=0
+ComponentLibIdentifierKind152=Library Name And Type
+ComponentLibraryIdentifier152=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID152=MCD-02899
+ComponentSymbolReference152=LED_red
+ComponentUpdate152=1
+ComponentIsDeviceSheet152=0
+ComponentLibIdentifierKind153=Library Name And Type
+ComponentLibraryIdentifier153=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID153=MCD-02900
+ComponentSymbolReference153=LED_green
+ComponentUpdate153=1
+ComponentIsDeviceSheet153=0
+ComponentLibIdentifierKind154=Library Name And Type
+ComponentLibraryIdentifier154=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID154=MCD-03054
+ComponentSymbolReference154=HMHA2801A
+ComponentUpdate154=1
+ComponentIsDeviceSheet154=0
+ComponentLibIdentifierKind155=Library Name And Type
+ComponentLibraryIdentifier155=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID155=MCD-03909
+ComponentSymbolReference155=RK043FN78H-CT661C
+ComponentUpdate155=1
+ComponentIsDeviceSheet155=0
+ComponentLibIdentifierKind156=Library Name And Type
+ComponentLibraryIdentifier156=MCD_PARTS_database.DbLib/MCD_PARTS$
+ComponentDesignItemID156=MCD-04225
+ComponentSymbolReference156=IS42S32400F-6BL
+ComponentUpdate156=1
+ComponentIsDeviceSheet156=0
+ComponentLibIdentifierKind157=Library Name And Type
+ComponentLibraryIdentifier157=MCD_PARTS_database.DbLib
+ComponentDesignItemID157=MCD-00033
+ComponentSymbolReference157=STPS1L40M
+ComponentUpdate157=1
+ComponentIsDeviceSheet157=0
+ComponentLibIdentifierKind158=Library Name And Type
+ComponentLibraryIdentifier158=MCD_PARTS_database.DbLib
+ComponentDesignItemID158=MCD-00036
+ComponentSymbolReference158=PCB
+ComponentUpdate158=1
+ComponentIsDeviceSheet158=0
+ComponentLibIdentifierKind159=Library Name And Type
+ComponentLibraryIdentifier159=MCD_PARTS_database.DbLib
+ComponentDesignItemID159=MCD-00159
+ComponentSymbolReference159=STMPS2151STR
+ComponentUpdate159=1
+ComponentIsDeviceSheet159=0
+ComponentLibIdentifierKind160=Library Name And Type
+ComponentLibraryIdentifier160=MCD_PARTS_database.DbLib
+ComponentDesignItemID160=MCD-00251
+ComponentSymbolReference160=ESD-TRANSIL
+ComponentUpdate160=1
+ComponentIsDeviceSheet160=0
+ComponentLibIdentifierKind161=Library Name And Type
+ComponentLibraryIdentifier161=MCD_PARTS_database.DbLib
+ComponentDesignItemID161=MCD-01063
+ComponentSymbolReference161=TRS_750315923
+ComponentUpdate161=1
+ComponentIsDeviceSheet161=0
+ComponentLibIdentifierKind162=Library Name And Type
+ComponentLibraryIdentifier162=MCD_PARTS_database.DbLib
+ComponentDesignItemID162=MCD-01067
+ComponentSymbolReference162=H2019NL
+ComponentUpdate162=1
+ComponentIsDeviceSheet162=0
+ComponentLibIdentifierKind163=Library Name And Type
+ComponentLibraryIdentifier163=MCD_PARTS_database.DbLib
+ComponentDesignItemID163=MCD-01080
+ComponentSymbolReference163=PM8800ATR
+ComponentUpdate163=1
+ComponentIsDeviceSheet163=0
+ComponentLibIdentifierKind164=Library Name And Type
+ComponentLibraryIdentifier164=MCD_PARTS_database.DbLib
+ComponentDesignItemID164=MCD-01081
+ComponentSymbolReference164=POE30P-50L
+ComponentUpdate164=1
+ComponentIsDeviceSheet164=0
+ComponentLibIdentifierKind165=Library Name And Type
+ComponentLibraryIdentifier165=MCD_PARTS_database.DbLib
+ComponentDesignItemID165=MCD-01083
+ComponentSymbolReference165=SMAJ58A-TR
+ComponentUpdate165=1
+ComponentIsDeviceSheet165=0
+ComponentLibIdentifierKind166=Library Name And Type
+ComponentLibraryIdentifier166=MCD_PARTS_database.DbLib
+ComponentDesignItemID166=MCD-01086
+ComponentSymbolReference166=STN4NF20L
+ComponentUpdate166=1
+ComponentIsDeviceSheet166=0
+ComponentLibIdentifierKind167=Library Name And Type
+ComponentLibraryIdentifier167=MCD_PARTS_database.DbLib
+ComponentDesignItemID167=MCD-01087
+ComponentSymbolReference167=STPS2L40UF
+ComponentUpdate167=1
+ComponentIsDeviceSheet167=0
+ComponentLibIdentifierKind168=Library Name And Type
+ComponentLibraryIdentifier168=MCD_PARTS_database.DbLib
+ComponentDesignItemID168=MCD-01128
+ComponentSymbolReference168=MT25QL512ABB8ESF-0SIT
+ComponentUpdate168=1
+ComponentIsDeviceSheet168=0
+ComponentLibIdentifierKind169=Library Name And Type
+ComponentLibraryIdentifier169=MCD_PARTS_database.DbLib
+ComponentDesignItemID169=MCD-01165
+ComponentSymbolReference169=SMAJ58A-TR
+ComponentUpdate169=1
+ComponentIsDeviceSheet169=0
+
+[Comparison Options]
+ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions4=Kind=Differential Pair|MinPercent=50|MinMatch=1|ShowMatch=0|UseName=0|InclAllRules=0
+ComparisonOptions5=Kind=Structure Class|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+
+[SmartPDF]
+PageOptions=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter
+Configuration_Name1=OutputConfigurationParameter1
+Configuration_Item1=DesignatorDisplayMode=Physical|PrintArea=DesignExtent|PrintAreaLowerLeftCornerX=0|PrintAreaLowerLeftCornerY=0|PrintAreaUpperRightCornerX=0|PrintAreaUpperRightCornerY=0|Record=PcbPrintView
+Configuration_Name2=OutputConfigurationParameter2
+Configuration_Item2=IncludeBottomLayerComponents=True|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=True|IncludeViewports=True|Index=0|Mirror=False|Name=Multilayer Composite Print|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False
+Configuration_Name3=OutputConfigurationParameter3
+Configuration_Item3=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name4=OutputConfigurationParameter4
+Configuration_Item4=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name5=OutputConfigurationParameter5
+Configuration_Item5=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MidLayer1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name6=OutputConfigurationParameter6
+Configuration_Item6=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MidLayer2|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name7=OutputConfigurationParameter7
+Configuration_Item7=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MidLayer3|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name8=OutputConfigurationParameter8
+Configuration_Item8=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MidLayer4|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name9=OutputConfigurationParameter9
+Configuration_Item9=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name10=OutputConfigurationParameter10
+Configuration_Item10=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=MultiLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name11=OutputConfigurationParameter11
+Configuration_Item11=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name12=OutputConfigurationParameter12
+Configuration_Item12=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=KeepOutLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name13=OutputConfigurationParameter13
+Configuration_Item13=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name14=OutputConfigurationParameter14
+Configuration_Item14=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical7|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name15=OutputConfigurationParameter15
+Configuration_Item15=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical8|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name16=OutputConfigurationParameter16
+Configuration_Item16=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical12|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name17=OutputConfigurationParameter17
+Configuration_Item17=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical13|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name18=OutputConfigurationParameter18
+Configuration_Item18=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical14|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name19=OutputConfigurationParameter19
+Configuration_Item19=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical15|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name20=OutputConfigurationParameter20
+Configuration_Item20=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical16|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration_Name21=OutputConfigurationParameter21
+Configuration_Item21=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical17|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+

@@ -24,7 +24,24 @@ board's MT25TL01G QSPI NOR flash via memory-mapped XIP. Highlights:
   QSPI regions from one ELF, and captures the boot log over the ST-Link VCP.
 
 See the project [README](stm32h750b-dk-mb1381/hal-freertos-lvgl/README.md) for
-build and flash instructions.
+build and flash instructions, and
+[docs-architecture.md](stm32h750b-dk-mb1381/hal-freertos-lvgl/docs-architecture.md)
+for the original architecture write-up (tick source, QSPI init, clock tree).
+
+### stm32h750b-dk-mb1381/board-cad
+
+MB1381B board design files for the STM32H750B-DK:
+
+- `MB1381B/Altium_Designer/` — ST's published Altium source plus KiCad
+  conversions of the PCB and all schematic sheets.
+- `mb1381-bdp/`, `mb1381-bom/`, `mb1381-manufacturing/` — ST board design
+  package, BOM, and manufacturing outputs (extracted from st.com downloads).
+- `mb1381-h750xb-b01-schematic.pdf`, `mb1381-h750xb-b04.pdf` — schematic PDFs.
+
+### stm32h750b-dk-mb1381/docs
+
+- [`qspi_xip_zephyr_notes.md`](stm32h750b-dk-mb1381/docs/qspi_xip_zephyr_notes.md)
+  — notes on a Zephyr-based QSPI XIP approach for the same board.
 
 ## Licensing
 
@@ -36,5 +53,9 @@ Mixed, per file:
 - Files derived from LVGL (`lv_conf.h` template) remain under the MIT license.
 - FreeRTOS, LVGL, and the STM32 HAL themselves are external dependencies
   (cloned separately, not vendored here) under their own licenses.
+- Board design files under `stm32h750b-dk-mb1381/board-cad/` are
+  STMicroelectronics material published for the STM32H750B-DK and remain
+  ST's property under the terms accompanying the original st.com downloads;
+  the KiCad conversions are derived from that material.
 - Original project code carries no separate license grant unless stated in
   the file.
