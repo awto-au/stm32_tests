@@ -111,7 +111,6 @@ set(APP_SOURCES
     Src/sysmem.c
     Src/qspi_init.c
     Src/can_init.c
-    Src/lvgl_mem_pool.c
     Src/startup_stm32h750xbhx.s
 )
 
@@ -130,7 +129,6 @@ set(APP_C_SOURCES
     Src/sysmem.c
     Src/qspi_init.c
     Src/can_init.c
-    Src/lvgl_mem_pool.c
 )
 
 add_executable(${PROJECT_NAME}.elf
@@ -158,7 +156,6 @@ target_include_directories(${PROJECT_NAME}.elf SYSTEM PRIVATE
 target_compile_definitions(${PROJECT_NAME}.elf PRIVATE
     USE_HAL_DRIVER
     STM32H750xx
-    STM32H7
     LV_DISABLE_API_MAPPING
 )
 
@@ -217,7 +214,6 @@ endif()
 target_compile_definitions(lvgl PRIVATE
     USE_HAL_DRIVER
     STM32H750xx
-    STM32H7
     LV_DISABLE_API_MAPPING
 )
 target_compile_options(lvgl PRIVATE ${CPU_FLAGS})

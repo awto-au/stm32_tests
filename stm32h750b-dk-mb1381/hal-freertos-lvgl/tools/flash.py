@@ -2,66 +2,128 @@
 """Flash STM32H750B-DK via SWD and capture boot log on /dev/ttyACM4."""
 
 import argparse
+import glob
 import os
+import re
+import shutil
 import subprocess
 import sys
 import threading
 import time
 from pathlib import Path
 
-BOARD_SN   = "0043002C3133510A36303739"
+DEFAULT_BOARD_SN   = "003400223137510E33333639"
 HEX_PATH   = "build/Debug/stm32h750_lvgl.hex"
-SERIAL_DEV = "/dev/ttyACM4"
+DEFAULT_SERIAL_DEV = "/dev/ttyACM4"
 BAUD       = 2_000_000
 LOG_FILE   = "boot.tmp"
 
 
-def find_stm32_programmer() -> str:
-    """Find STM32_Programmer_CLI in CubeIDE or standalone installation."""
-    candidates = [
-        # CubeIDE embedded version (most common paths)
-        Path.home() / "STMicroelectronics/STM32CubeIDE/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI",
-        Path.home() / ".local/opt/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI",
-        Path("/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI"),
-        # Fallback: standalone installation
-        Path.home() / "STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI",
-    ]
-    
-    for prog in candidates:
-        if prog.exists():
-            return str(prog)
-    
-    # If still not found, show error with search paths
-    sys.exit(f"STM32_Programmer_CLI not found. Checked:\n" + 
-             "\n".join(f"  {p}" for p in candidates))
+_CUBE_FALLBACK_DIRS  = ["~/.vscode-insiders/extensions", "~/.vscode/extensions"]
+_CUBE_BINARY_GLOB    = "stmicroelectronics.stm32cube-ide-core-*/resources/binaries/linux/x86_64/cube"
+_CUBE_FALLBACK_PATHS = ["~/.local/stm32cube/bin/cube"]
+
+_EXTLOADER_NAME = "MT25TL01G_STM32H750B-DISCO.stldr"
+_EXTLOADER_GLOBS = [
+    # Standalone STM32CubeProgrammer install (version-agnostic)
+    str(Path.home() / "STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader" / _EXTLOADER_NAME),
+    # CubeIDE embedded (any version)
+    str(Path.home() / "STMicroelectronics/STM32CubeIDE/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_*/tools/bin/ExternalLoader" / _EXTLOADER_NAME),
+    str(Path.home() / ".local/opt/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_*/tools/bin/ExternalLoader" / _EXTLOADER_NAME),
+]
 
 
-def find_extloader() -> str:
-    """Find MT25TL01G external loader."""
-    candidates = [
-        Path.home() / "STMicroelectronics/STM32CubeIDE/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr",
-        Path.home() / ".local/opt/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr",
-        Path("/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr"),
-        Path.home() / "STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr",
-    ]
-    
-    for loader in candidates:
-        if loader.exists():
-            return str(loader)
-    
-    sys.exit(f"MT25TL01G_STM32H750B-DISCO.stldr not found. Checked:\n" +
-             "\n".join(f"  {p}" for p in candidates))
+def _find_cube() -> str:
+    found = shutil.which("cube")
+    if found:
+        return found
+    for p in _CUBE_FALLBACK_PATHS:
+        cand = Path(p).expanduser()
+        if cand.is_file() and os.access(cand, os.X_OK):
+            return str(cand)
+    for base in _CUBE_FALLBACK_DIRS:
+        matches = sorted(glob.glob(str(Path(base).expanduser() / _CUBE_BINARY_GLOB)))
+        if matches:
+            return matches[-1]
+    sys.stderr.write(
+        "FATAL: 'cube' binary not found on PATH or in known fallback locations.\n"
+        "       Install STM32CubeIDE or the cube CLI, or add it to PATH.\n"
+    )
+    sys.exit(2)
 
 
-PROGRAMMER = find_stm32_programmer()
-EXTLOADER = find_extloader()
+def _find_extloader() -> str:
+    for pattern in _EXTLOADER_GLOBS:
+        matches = sorted(glob.glob(str(Path(pattern).expanduser())))
+        if matches:
+            return matches[-1]
+    sys.exit(
+        f"{_EXTLOADER_NAME} not found.\n"
+        "Install STM32CubeProgrammer standalone or STM32CubeIDE."
+    )
 
 
-def flash(hex_path: str) -> bool:
+def detect_board_and_uart() -> tuple[str, str]:
+    """Detect target ST-Link SN and matching UART port from --list output."""
+    cube = _find_cube()
+    try:
+        result = subprocess.run(
+            [cube, "programmer", "--list"],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except Exception as exc:
+        print(f"warn: failed to query programmer list ({exc}), using defaults", file=sys.stderr)
+        return DEFAULT_BOARD_SN, DEFAULT_SERIAL_DEV
+
+    text = result.stdout or ""
+
+    # Parse ST-LINK probes first.
+    probes = []
+    for m in re.finditer(
+        r"ST-LINK SN\s*:\s*([0-9A-Fa-f]+)\s*\n"
+        r"\s*ST-LINK FW\s*:[^\n]*\n"
+        r"\s*Access Port Number\s*:[^\n]*\n"
+        r"\s*Board Name\s*:\s*([^\n]*)",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        probes.append((m.group(1).upper(), m.group(2).strip()))
+
+    selected_sn = DEFAULT_BOARD_SN
+    for sn, board_name in probes:
+        if board_name.upper() == "STM32H750B-DK":
+            selected_sn = sn
+            break
+    else:
+        for sn, _ in probes:
+            if sn == DEFAULT_BOARD_SN:
+                selected_sn = sn
+                break
+
+    # Parse UART mapping blocks and match by ST-Link SN.
+    uart_by_sn: dict[str, str] = {}
+    for m in re.finditer(
+        r"ST-LINK SN:\s*([0-9A-Fa-f]+)\s*\n"
+        r"Port:\s*(tty\S+)",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        uart_by_sn[m.group(1).upper()] = f"/dev/{m.group(2)}"
+
+    serial_dev = uart_by_sn.get(selected_sn, DEFAULT_SERIAL_DEV)
+    if selected_sn == DEFAULT_BOARD_SN and selected_sn not in uart_by_sn:
+        print("warn: could not map ST-Link SN to UART port, using default serial device", file=sys.stderr)
+
+    return selected_sn, serial_dev
+
+
+def flash(hex_path: str, board_sn: str) -> bool:
     cmd = [
-        PROGRAMMER,
-        "--connect", f"port=SWD", f"sn={BOARD_SN}", "freq=4000", "reset=HWrst",
-        "--extload", EXTLOADER,
+        _find_cube(), "programmer",
+        "--connect", f"port=SWD", f"sn={board_sn}", "freq=4000", "reset=HWrst",
+        "--extload", _find_extloader(),
         "--download", hex_path,
         "--verify", "--run",
     ]
@@ -74,16 +136,16 @@ def flash(hex_path: str) -> bool:
     return ok
 
 
-def reset_only() -> None:
+def reset_only(board_sn: str) -> None:
     cmd = [
-        PROGRAMMER,
-        "--connect", f"port=SWD", f"sn={BOARD_SN}", "freq=4000", "reset=HWrst",
+        _find_cube(), "programmer",
+        "--connect", f"port=SWD", f"sn={board_sn}", "freq=4000", "reset=HWrst",
         "--hardRst",
     ]
     subprocess.run(cmd, capture_output=True)
 
 
-def capture_log(duration_s: int) -> list[str]:
+def capture_log(duration_s: int, serial_dev: str) -> tuple[list[str], threading.Thread]:
     try:
         import serial
     except ImportError:
@@ -94,7 +156,7 @@ def capture_log(duration_s: int) -> list[str]:
 
     def read_loop() -> None:
         try:
-            s = serial.Serial(SERIAL_DEV, BAUD, timeout=0.5)
+            s = serial.Serial(serial_dev, BAUD, timeout=0.5)
             deadline = time.monotonic() + duration_s
             while time.monotonic() < deadline:
                 raw = s.readline()
@@ -116,6 +178,9 @@ def main() -> None:
     parser.add_argument("--no-flash", action="store_true", help="Skip flashing, just reset and log")
     parser.add_argument("--output", default=LOG_FILE, help="Output .tmp file for log")
     args = parser.parse_args()
+    board_sn, serial_dev = detect_board_and_uart()
+    print(f"Using ST-Link SN: {board_sn}")
+    print(f"Using UART port:  {serial_dev}")
 
     lines: list[str] = []
     log_thread = None
@@ -131,19 +196,19 @@ def main() -> None:
     if args.no_flash:
         # Start capture before reset so we catch early boot lines
         if has_serial:
-            lines_ref, log_thread = capture_log(args.log_seconds)
+            lines_ref, log_thread = capture_log(args.log_seconds, serial_dev)
             time.sleep(0.1)
-        reset_only()
+        reset_only(board_sn)
     else:
-        ok = flash(args.hex)
+        ok = flash(args.hex, board_sn)
         if not ok:
             sys.exit("Flash failed")
         print("Flash OK", flush=True)
         # Open port first, then reset — same pattern as --no-flash so we don't miss boot
         if has_serial:
-            lines_ref, log_thread = capture_log(args.log_seconds)
+            lines_ref, log_thread = capture_log(args.log_seconds, serial_dev)
             time.sleep(0.1)
-        reset_only()
+        reset_only(board_sn)
 
     if log_thread is not None:
         log_thread.join()

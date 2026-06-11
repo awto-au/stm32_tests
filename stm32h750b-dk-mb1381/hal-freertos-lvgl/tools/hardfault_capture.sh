@@ -12,7 +12,8 @@ BAUD="2000000"
 SECONDS_CAPTURE="10"
 DO_RESET="1"
 LOG_DIR="${HOME}/logs"
-RESET_CMD_DEFAULT='PROG=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI; EL=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr; "$PROG" -c port=SWD sn=0043002C3133510A36303739 -el "$EL" -rst'
+# Auto-detect STM32_Programmer_CLI and MT25TL01G loader; override RESET_CMD if needed
+RESET_CMD_DEFAULT='STM32_Programmer_CLI -c port=SWD sn=0043002C3133510A36303739 -rst'
 RESET_CMD="$RESET_CMD_DEFAULT"
 
 usage() {

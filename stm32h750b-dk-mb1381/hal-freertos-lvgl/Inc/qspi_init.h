@@ -33,13 +33,6 @@ void QSPI_MemoryMapped_Init(void);
  */
 void QSPI_RunAggressiveBenchmark(void);
 
-/**
- * Run a quick memory-mapped read benchmark (no destructive writes).
- * Intended to be called with caches enabled to measure cached XIP throughput.
- * Reports MM read speed for 64 KB and 1 MB windows.
- */
-void QSPI_BenchmarkCachedRead(void);
-
 #ifdef __cplusplus
 }
 #endif

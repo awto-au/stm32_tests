@@ -139,12 +139,32 @@ Outputs: `build/Release/stm32h750_lvgl.elf.elf`
 
 Uses STM32CubeProgrammer with the MT25TL01G external loader so both the internal flash region and the QSPI region are programmed from the single ELF in one command.
 
-```sh
-PROG=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/STM32_Programmer_CLI
-EL=/opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.linux64_2.2.200.202503041107/tools/bin/ExternalLoader/MT25TL01G_STM32H750B-DISCO.stldr
+### Using the Python flash tool
 
-$PROG -c port=SWD sn=003400223137510E33333639 \
-      -el "$EL" \
+The easiest method is to use the provided `tools/flash.py` script, which auto-detects your ST-Link and UART:
+
+```sh
+python3 tools/flash.py
+```
+
+It will automatically locate `STM32_Programmer_CLI` and the `MT25TL01G` external loader from standard installations.
+
+### Manual flashing
+
+If you prefer to flash manually, first locate your STM32CubeProgrammer installation:
+
+```sh
+# Typical standalone installation
+which STM32_Programmer_CLI
+# or locate it manually:
+find ~/STMicroelectronics -name STM32_Programmer_CLI -type f
+```
+
+Then run:
+
+```sh
+STM32_Programmer_CLI -c port=SWD sn=003400223137510E33333639 \
+      -el /path/to/MT25TL01G_STM32H750B-DISCO.stldr \
       -w build/Release/stm32h750_lvgl.elf.elf \
       -v -rst
 ```

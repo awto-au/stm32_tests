@@ -17,36 +17,8 @@
  *   BK2_IO2  PG9   AF9
  *   BK2_IO3  PG14  AF9
  *
- * Read mode: Quad-IO Fast Read (0xEB, 1-4-4) — 1-line inst (8T), 4-line 32-bit addr (8T),
+ * Read mode: Quad-Output Fast Read (0x6B) — 1-line inst, 1-line 32-bit addr,
  * 8 dummy cycles, 4-line data.  Clock = AHB3 (200 MHz) / (1+1) = 100 MHz.
- * MT25TL01G is rated to 133 MHz; 100 MHz leaves margin for PCB parasitics.
- *
- * Per-burst overhead vs 0x6B (1-1-4, Quad Output Fast Read):
- *   0x6B: inst(1L,8T) + addr(1L,32T) + dummy(8T) = 48T total overhead
- *   0xEB: inst(1L,8T) + addr(4L, 8T) + dummy(8T) = 24T total overhead
- * 0xEB halves the overhead for every AHB burst, giving ~6× more throughput on
- * small/scattered reads (LVGL widget tree traversal, XIP code fetch misses).
- *
- * Dual-die 0xEB mode byte timing (empirical, important):
- * The datasheet defines a mode byte (M7-M0 = 0xF0) between address and dummy clocks
- * to signal continuous-read mode.  With STM32 ABMODE=4_LINES and ABSIZE=8_BITS in
- * dual-flash mode, the 8 IO pins (4 per die) transfer 8 bits in ONE clock instead
- * of the two clocks a single-die setup would use.  The flash therefore starts
- * outputting data 1 clock (= 2 bytes in dual 8-bit/clock mode) earlier than the
- * STM32 FIFO expects, producing a 2-byte offset on every read.
- *
- * Fix: AlternateByteMode=NONE, DummyCycles=8 (the VCR-configured value, unchanged).
- * With IO lines high-Z during the nominal mode-byte window the MT25TL01G absorbs
- * that clock phase as part of its internal output-enable delay, and the standard
- * 8 dummy cycles then align STM32 sampling to the first valid data edge.
- * (DummyCycles=10, i.e. +2 for the "missing" mode byte, was also tried but produced
- * the same 2-byte offset — the flash was already driving data before the extra
- * dummy window opened.)
- *
- * Measured bandwidth (100 MHz, dual-die, no D-/I-cache):
- *   Small reads  (4 KB):  ~16 MB/s  (was ~2.7 MB/s with 0x6B — 6× improvement)
- *   Large reads  (1 MB):  ~25 MB/s  (AHB/FIFO limit; identical for 0x6B and 0xEB)
- *   Cached reads (warm):  ~68 MB/s  (cache-hit dominated; same for both modes)
  */
 
 #include "qspi_init.h"
@@ -68,8 +40,7 @@
 #define MT25_SUBSECTOR_ERASE_CMD      0x20U
 #define MT25_PAGE_PROGRAM_CMD         0x02U
 #define MT25_QUAD_OUT_FAST_READ       0x6BU  /* 1-1-4: inst/addr on SIO0, data on 4 lines */
-#define MT25_QUAD_IO_FAST_READ        0xEBU  /* 1-4-4: inst on 1 line, addr+data on 4 lines */
-#define MT25_DUMMY_CYCLES             8U     /* VCR setting: real output-delay cycles for flash */
+#define MT25_DUMMY_CYCLES             8U
 
 /*
  * Single die = 64 MB = 2^26 bytes -> FlashSize field 25.
@@ -77,7 +48,7 @@
  */
 #define MT25_FLASH_SIZE_FIELD_SINGLE  25U
 #define MT25_FLASH_SIZE_FIELD_DUAL    26U
-#define QSPI_CLOCK_PRESCALER          1U   /* 200 MHz / 2 = 100 MHz (fallback only; QSPI_MemoryMapped_Init hardcodes prescaler=1) */
+#define QSPI_CLOCK_PRESCALER          3U   /* 200 MHz / 4 = 50 MHz */
 #define QSPI_KERNEL_CLOCK_HZ          200000000U
 
 /* Volatile config register dummy cycles field (bits 7:4 for quad read) */
@@ -401,12 +372,11 @@ static void QSPI_EnableMemoryMappedRead(uint8_t dummy_cycles)
     QSPI_MemoryMappedTypeDef mmap = {0};
 
     cmd.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
-    cmd.Instruction       = MT25_QUAD_IO_FAST_READ;  /* 0xEB = 1-4-4 */
-    cmd.AddressMode       = QSPI_ADDRESS_4_LINES;
+    cmd.Instruction       = MT25_QUAD_OUT_FAST_READ;
+    cmd.AddressMode       = QSPI_ADDRESS_1_LINE;
     cmd.AddressSize       = QSPI_ADDRESS_32_BITS;
     cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
     cmd.DataMode          = QSPI_DATA_4_LINES;
-    /* No alternate byte: dual-die absorbs the mode-byte window; VCR dummy cycles suffice. */
     cmd.DummyCycles       = dummy_cycles;
     cmd.DdrMode           = QSPI_DDR_MODE_DISABLE;
     cmd.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;
@@ -512,7 +482,7 @@ static void QSPI_InitPeripheral(const QSPI_TuneConfig *cfg)
 {
     hqspi.Instance                = QUADSPI;
     hqspi.Init.ClockPrescaler     = cfg->prescaler;
-    hqspi.Init.FifoThreshold      = 4U;
+    hqspi.Init.FifoThreshold      = 1U;
     hqspi.Init.SampleShifting     = cfg->sample_shifting;
     hqspi.Init.FlashSize          = MT25_FLASH_SIZE_FIELD_DUAL;
     hqspi.Init.ChipSelectHighTime = cfg->cs_high_time;
@@ -630,16 +600,14 @@ static void QSPI_ReadData(uint32_t address, uint8_t *data, uint32_t len)
 {
     QSPI_CommandTypeDef cmd = {0};
 
-    /* Use 0xEB (Quad IO Fast Read) — same command as MM mode for apples-to-apples BW. */
     cmd.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
-    cmd.Instruction       = MT25_QUAD_IO_FAST_READ;  /* 0xEB = 1-4-4 */
-    cmd.AddressMode       = QSPI_ADDRESS_4_LINES;
+    cmd.Instruction       = MT25_READ_DATA_CMD;
+    cmd.AddressMode       = QSPI_ADDRESS_1_LINE;
     cmd.AddressSize       = QSPI_ADDRESS_32_BITS;
     cmd.Address           = address;
     cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
-    cmd.DataMode          = QSPI_DATA_4_LINES;
-    /* No alternate byte: dual-die absorbs the mode-byte window; VCR dummy cycles suffice. */
-    cmd.DummyCycles       = MT25_DUMMY_CYCLES;
+    cmd.DataMode          = QSPI_DATA_1_LINE;
+    cmd.DummyCycles       = 0;
     cmd.NbData            = len;
     cmd.DdrMode           = QSPI_DDR_MODE_DISABLE;
     cmd.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;
@@ -689,12 +657,8 @@ static int QSPI_RunSelfTestAtCurrentSpeed(uint8_t dummy_cycles, uint32_t *write_
 
     t0 = DWT->CYCCNT;
     QSPI_EnableMemoryMappedRead(dummy_cycles);
-    {
-        volatile uint32_t *mm = (volatile uint32_t *)(0x90000000U + QSPI_SELFTEST_ADDR);
-        volatile uint32_t *dst = (volatile uint32_t *)(void *)rx;
-        for (i = 0; i < QSPI_SELFTEST_SIZE / 4U; i++) {
-            dst[i] = mm[i];
-        }
+    for (i = 0; i < QSPI_SELFTEST_SIZE; i++) {
+        rx[i] = *(__IO uint8_t *)(0x90000000U + QSPI_SELFTEST_ADDR + i);
     }
     mm_read_cycles = DWT->CYCCNT - t0;
     QSPI_DisableMemoryMappedRead();
@@ -1073,15 +1037,13 @@ static void MPU_ConfigQSPI(void)
     r.Enable           = MPU_REGION_ENABLE;
     r.Number           = MPU_REGION_NUMBER0;
     r.BaseAddress      = 0x90000000U;
-    r.Size             = MPU_REGION_SIZE_256MB;   /* cover full AXI QSPI window */
+    r.Size             = MPU_REGION_SIZE_64MB;
     r.SubRegionDisable = 0x00U;
-    /* Normal memory, WT/no-WA (TEX=0 C=1 B=0): I/D cache both active for XIP.
-     * Read-only NOR flash — write-back unnecessary, WT avoids coherency risk. */
-    r.TypeExtField     = MPU_TEX_LEVEL0;
-    r.AccessPermission = MPU_REGION_PRIV_RO_URO;  /* read-only: no accidental write */
-    r.DisableExec      = MPU_INSTRUCTION_ACCESS_ENABLE;
+    r.TypeExtField     = MPU_TEX_LEVEL0;          /* Normal memory            */
+    r.AccessPermission = MPU_REGION_FULL_ACCESS;
+    r.DisableExec      = MPU_INSTRUCTION_ACCESS_ENABLE; /* allow XIP          */
     r.IsShareable      = MPU_ACCESS_NOT_SHAREABLE;
-    r.IsCacheable      = MPU_ACCESS_CACHEABLE;
+    r.IsCacheable      = MPU_ACCESS_NOT_CACHEABLE;
     r.IsBufferable     = MPU_ACCESS_NOT_BUFFERABLE;
     HAL_MPU_ConfigRegion(&r);
 
@@ -1134,23 +1096,22 @@ void QSPI_MemoryMapped_Init(void)
     __DSB();
     __ISB();
 
-    /* Enable memory-mapped mode using 0xEB (1-4-4 Quad IO Fast Read) */
+    /* Enable memory-mapped mode using quad-read 0x6B per doc */
     cmd.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
-    cmd.Instruction       = MT25_QUAD_IO_FAST_READ;  /* 0xEB = 1-4-4 */
-    cmd.AddressMode       = QSPI_ADDRESS_4_LINES;
+    cmd.Instruction       = MT25_QUAD_OUT_FAST_READ;  /* 0x6B = 1-1-4 */
+    cmd.AddressMode       = QSPI_ADDRESS_1_LINE;
     cmd.AddressSize       = QSPI_ADDRESS_32_BITS;
     cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
-    cmd.DataMode          = QSPI_DATA_4_LINES;
-    /* No alternate byte: dual-die absorbs the mode-byte window; VCR dummy cycles suffice. */
+    cmd.DataMode          = QSPI_DATA_4_LINES;  /* 4-line data per spec */
     cmd.DummyCycles       = cfg.dummy_cycles;
     cmd.DdrMode           = QSPI_DDR_MODE_DISABLE;
     cmd.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;
     cmd.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;
 
     mmap.TimeOutActivation = QSPI_TIMEOUT_COUNTER_DISABLE;
-    APP_LOGI("QSPI", "enable MM cmd=0x%02x (0xEB=1-4-4) addr4lines dummy=%u (no AB: MT25 dual-die absorbs mode byte)",
+    APP_LOGI("QSPI", "enable MM cmd=0x%02x (0x6B=quad-read) dummy=%u datalines=4",
              (unsigned)cmd.Instruction,
-             (unsigned)cfg.dummy_cycles);
+             (unsigned)cmd.DummyCycles);
     QSPI_DumpQspiRegs("before-mm-enable");
     QSPI_DumpCoreRegs("before-mm-enable");
 
@@ -1249,23 +1210,5 @@ void QSPI_RunAggressiveBenchmark(void)
     APP_LOGI("QBENCH", "MM mode retained after benchmark");
 
     APP_LOGI("QBENCH", "aggressive benchmark PASS");
-}
-
-void QSPI_BenchmarkCachedRead(void)
-{
-    uint32_t mm64k_x100;
-    uint32_t mm1m_x100;
-
-    /* Must be called while QSPI is in memory-mapped mode and caches are ON. */
-    __DSB();
-    __ISB();
-    mm64k_x100 = QSPI_BenchmarkMmRead_x100(64U * 1024U, 32U);
-    mm1m_x100  = QSPI_BenchmarkMmRead_x100(1024U * 1024U, 8U);
-
-    APP_LOGI("QBENCH", "cached mm-64k=%lu.%02lu MB/s mm-1m=%lu.%02lu MB/s",
-             (unsigned long)(mm64k_x100 / 100U),
-             (unsigned long)(mm64k_x100 % 100U),
-             (unsigned long)(mm1m_x100 / 100U),
-             (unsigned long)(mm1m_x100 % 100U));
 }
 
